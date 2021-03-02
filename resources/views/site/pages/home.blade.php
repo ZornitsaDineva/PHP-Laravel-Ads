@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-7">
                     <h1>@lang('Welcome')</h1>
-                    <h2>iBikri.com</h2>
+                    <h2>BullSof.com</h2>
                     <p>@lang('Best market place to find used and unused Vehicles, Phones, Computers, Properties and Many more for Free!')</p>
                     <br/><br/><br/>
                     <div class="btn-group">

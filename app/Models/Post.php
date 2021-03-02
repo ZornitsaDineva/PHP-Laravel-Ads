@@ -56,7 +56,7 @@ class Post extends Model {
             $offerStarted = strtotime($offerStarted);
             $offerEnds = strtotime("+7 day", $offerStarted);
             
-            //date('Y-m-d 23:59:59', time());
+            date('Y-m-d 23:59:59', time());
             
             $offerStartObj = new DateTime(date('Y-m-d h:i:s', $offerStarted));
             $offerEndObj = new DateTime(date('Y-m-d 23:59:59', $offerEnds));
@@ -64,9 +64,9 @@ class Post extends Model {
             
             $validityLeft = $todayObj->diff($offerEndObj);
             
-//            echo "Start = $offerStarted###";
-//            echo "End = $offerEnds###";
-//            echo "Diff = ".($offerEnds - $offerStarted);
+          echo "Start = $offerStarted###";
+          echo "End = $offerEnds###";
+          echo "Diff = ".($offerEnds - $offerStarted);
             
             
             // shows the total amount of days (not divided into years, months and days like above)
@@ -79,8 +79,8 @@ class Post extends Model {
    
     public static function countPostsByMonth($startDate, $endDate) {
 
-        //$startDate = date('Y-m-d 00:00:00', time());
-        //$endDate = date('Y-m-d 23:59:59', time());
+        $startDate = date('Y-m-d 00:00:00', time());
+        $endDate = date('Y-m-d 23:59:59', time());
 
         $count = DB::table('posts')
                 ->where('posts.created_at', '>', $startDate)

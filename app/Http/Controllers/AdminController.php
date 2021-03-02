@@ -878,9 +878,9 @@ class AdminController extends Controller {
             $id = $request->page_id;
             $page = Page::find($id);
             $request->validate([
-//                'page_slug' => "required|string|unique:pages,page_slug,$id|max:50",
-//                'page_title_en' => "required|string|unique:pages,page_title_en,$id|max:100",
-//                'page_title_bg' => "required|string|unique:pages,page_title_bg,$id|max:100",
+                'page_slug' => "required|string|unique:pages,page_slug,$id|max:50",
+                'page_title_en' => "required|string|unique:pages,page_title_en,$id|max:100",
+                'page_title_bg' => "required|string|unique:pages,page_title_bg,$id|max:100",
                 'page_body_en' => 'required',
                 'page_body_bg' => 'required'
             ]);
