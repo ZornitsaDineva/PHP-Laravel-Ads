@@ -12,6 +12,11 @@
  */
 
 use App\Http\Middleware\CheckAdmin;
+use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Support\Facades\Auth;
+
+
 
 Route::group(
         [

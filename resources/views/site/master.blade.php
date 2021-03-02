@@ -10,7 +10,7 @@
         
         
 
-        <title>@lang('iBikri') | @lang('Bangladeshs Best Classifieds Portal')</title>
+        <title>@lang('Logo') | @lang('Title')</title>
         @stack('meta')
 
         <!-- CSS -->

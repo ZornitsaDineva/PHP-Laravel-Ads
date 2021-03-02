@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Http\Testing\File;
+use Illuminate\Support\Facades\View;
 
 
 /* Models */
@@ -16,10 +15,8 @@ use App\Models\Post;
 use App\Models\Postimage;
 use App\Models\Report;
 use App\Models\Favourites;
-use App\Models\Message;
 use App\Models\Featured;
 use App\Models\RechargeRequest;
-use View;
 
 session_start();
 

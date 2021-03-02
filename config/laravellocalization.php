@@ -216,7 +216,7 @@ return [
         //'ady'         => ['name' => 'Adyghe',                 'script' => 'Cyrl', 'native' => 'адыгэбзэ', 'regional' => ''],
         //'ba'          => ['name' => 'Bashkir',                'script' => 'Cyrl', 'native' => 'башҡорт теле', 'regional' => ''],
         //'be'          => ['name' => 'Belarusian',             'script' => 'Cyrl', 'native' => 'беларуская', 'regional' => 'be_BY'],
-        //'bg'          => ['name' => 'Bulgarian',              'script' => 'Cyrl', 'native' => 'български', 'regional' => 'bg_BG'],
+        'bg'          => ['name' => 'Bulgarian',              'script' => 'Cyrl', 'native' => 'български', 'regional' => 'bg_BG'],
         //'kv'          => ['name' => 'Komi',                   'script' => 'Cyrl', 'native' => 'коми кыв', 'regional' => ''],
         //'mk'          => ['name' => 'Macedonian',             'script' => 'Cyrl', 'native' => 'македонски', 'regional' => 'mk_MK'],
         //'mn'          => ['name' => 'Mongolian (Cyrillic)',   'script' => 'Cyrl', 'native' => 'монгол', 'regional' => 'mn_MN'],
@@ -312,6 +312,6 @@ return [
     // If you want to display the locales in particular order in the language selector you should write the order here. 
     //CAUTION: Please consider using the appropriate locale code otherwise it will not work
     //Example: 'localesOrder' => ['es','en'],
-    'localesOrder' => [],
+    'localesOrder' => ['en','bg','bn'],
 
 ];

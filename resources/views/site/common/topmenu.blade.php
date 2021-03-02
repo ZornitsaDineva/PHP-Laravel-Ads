@@ -1,7 +1,7 @@
 <div class="navbar-left">
     <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="{{ (Request::is('en') || Request::is('bn') || Request::is('/') )  ? 'active' : '' }}"><a href="{{url('/')}}">@lang('Home')</a></li>
+            <li class="{{ (Request::is('en') || Request::is('bn') ||Request::is('bg') ||Request::is('ru') || Request::is('/') )  ? 'active' : '' }}"><a href="{{url('/')}}">@lang('Home')</a></li>
             <li class="{{ ( Request::is('*/all-ads*') ) ? 'active' : '' }}"><a href="{{url('/all-ads')}}">@lang('All Ads')</a></li>
         </ul>
     </div>

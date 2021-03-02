@@ -80,9 +80,9 @@ return [
     */
 
     'locale' => 'en',
-    'locales' => ['en', 'bn'],
+    'locales' => ['en', 'bn','ru','es','fr','bg'],
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'en',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
