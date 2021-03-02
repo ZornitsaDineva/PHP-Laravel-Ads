@@ -37,13 +37,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="category_title_bn" class="col-sm-3 control-label">Category Name (Bengali)</label>
+                    <label for="category_title_bg" class="col-sm-3 control-label">Category Name (Bengali)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::text('category_title_bn', null, ['class' => 'form-control']) !!}                        
-                        @if ($errors->has('category_title_bn'))
+                        {!! Form::text('category_title_bg', null, ['class' => 'form-control']) !!}                        
+                        @if ($errors->has('category_title_bg'))
                         <span class="text-danger">
-                            <i class="fa fa-warning"></i> {{ $errors->first('category_title_bn') }}
+                            <i class="fa fa-warning"></i> {{ $errors->first('category_title_bg') }}
                         </span>
                         @endif
                     </div>

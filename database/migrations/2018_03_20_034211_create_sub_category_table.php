@@ -19,7 +19,7 @@ class CreateSubCategoryTable extends Migration
             $table->integer('subcategory_weight')->default(0);
             $table->text('subcategory_caption')->nullable();
             $table->string('subcategory_title_en');
-            $table->string('subcategory_title_bn');
+            $table->string('subcategory_title_bg');
             $table->timestamps();
         });
     }

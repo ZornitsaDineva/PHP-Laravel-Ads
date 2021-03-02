@@ -465,7 +465,7 @@ class AdminController extends Controller {
 
             $validatedData = $request->validate([
                 'category_title_en' => 'required|string|unique:categories|max:50',
-                'category_title_bn' => 'required|string|unique:categories|max:50',
+                'category_title_bg' => 'required|string|unique:categories|max:50',
                 'category_image' => 'required',
                 'category_icon' => 'required'
             ]);
@@ -484,7 +484,7 @@ class AdminController extends Controller {
 
 
         $category->category_title_en = $request->category_title_en;
-        $category->category_title_bn = $request->category_title_bn;
+        $category->category_title_bg = $request->category_title_bg;
 
         $category->category_icon = $request->category_icon;
 
@@ -606,7 +606,7 @@ class AdminController extends Controller {
             $validatedData = $request->validate([
                 'parent_category_id' => 'required',
                 'subcategory_title_en' => 'required|string',
-                'subcategory_title_bn' => 'required|string'
+                'subcategory_title_bg' => 'required|string'
             ]);
         } else {
 
@@ -614,7 +614,7 @@ class AdminController extends Controller {
             $validatedData = $request->validate([
                 'parent_category_id' => 'required',
                 'subcategory_title_en' => 'required|string|unique:subcategories|max:50',
-                'subcategory_title_bn' => 'required|string|unique:subcategories|max:50'
+                'subcategory_title_bg' => 'required|string|unique:subcategories|max:50'
             ]);
 
 
@@ -622,7 +622,7 @@ class AdminController extends Controller {
 
             Session::put('message', array(
                 'title' => 'Sub Category Created',
-                'body' => "Created New Sub Category $request->subcategory_title_en ($request->subcategory_title_bn)",
+                'body' => "Created New Sub Category $request->subcategory_title_en ($request->subcategory_title_bg)",
                 'type' => 'success'
             ));
         }
@@ -630,7 +630,7 @@ class AdminController extends Controller {
 
         $subcat->parent_category_id = $request->parent_category_id;
         $subcat->subcategory_title_en = $request->subcategory_title_en;
-        $subcat->subcategory_title_bn = $request->subcategory_title_bn;
+        $subcat->subcategory_title_bg = $request->subcategory_title_bg;
 
         if ($request->has('subcategory_weight')) {
             $subcat->subcategory_weight = $request->subcategory_weight;
@@ -713,7 +713,7 @@ class AdminController extends Controller {
 
             $validatedData = $request->validate([
                 'division_title_en' => 'required|string',
-                'division_title_bn' => 'required|string'
+                'division_title_bg' => 'required|string'
             ]);
 
             $division = Division::find($request->division_id);
@@ -727,20 +727,20 @@ class AdminController extends Controller {
 
             $validatedData = $request->validate([
                 'division_title_en' => 'required|string|unique:divisions|max:50',
-                'division_title_bn' => 'required|string|unique:divisions|max:50'
+                'division_title_bg' => 'required|string|unique:divisions|max:50'
             ]);
 
             $division = new Division;
 
             Session::put('message', array(
                 'title' => 'Division Created',
-                'body' => "Created New Division $request->division_title_en ($request->division_title_bn)",
+                'body' => "Created New Division $request->division_title_en ($request->division_title_bg)",
                 'type' => 'success'
             ));
         }
 
         $division->division_title_en = $request->division_title_en;
-        $division->division_title_bn = $request->division_title_bn;
+        $division->division_title_bg = $request->division_title_bg;
         $division->division_weight = $request->division_weight;
         $division->division_icon = $request->division_icon;
 
@@ -785,7 +785,7 @@ class AdminController extends Controller {
 
             $validatedData = $request->validate([
                 'city_title_en' => 'required|string',
-                'city_title_bn' => 'required|string'
+                'city_title_bg' => 'required|string'
             ]);
 
             $city = City::find($request->city_id);
@@ -799,14 +799,14 @@ class AdminController extends Controller {
 
             $validatedData = $request->validate([
                 'city_title_en' => 'required|string|unique:cities|max:50',
-                'city_title_bn' => 'required|string|unique:cities|max:50'
+                'city_title_bg' => 'required|string|unique:cities|max:50'
             ]);
 
             $city = new City;
 
             Session::put('message', array(
                 'title' => 'City Created',
-                'body' => "Created New City $request->city_title_en ($request->city_title_bn)",
+                'body' => "Created New City $request->city_title_en ($request->city_title_bg)",
                 'type' => 'success'
             ));
 
@@ -814,7 +814,7 @@ class AdminController extends Controller {
         }
 
         $city->city_title_en = $request->city_title_en;
-        $city->city_title_bn = $request->city_title_bn;
+        $city->city_title_bg = $request->city_title_bg;
         $city->city_weight = $request->city_weight;
 
         $city->division_id = $request->division_id;
@@ -880,27 +880,27 @@ class AdminController extends Controller {
             $request->validate([
 //                'page_slug' => "required|string|unique:pages,page_slug,$id|max:50",
 //                'page_title_en' => "required|string|unique:pages,page_title_en,$id|max:100",
-//                'page_title_bn' => "required|string|unique:pages,page_title_bn,$id|max:100",
+//                'page_title_bg' => "required|string|unique:pages,page_title_bg,$id|max:100",
                 'page_body_en' => 'required',
-                'page_body_bn' => 'required'
+                'page_body_bg' => 'required'
             ]);
         } else {
             $page = new Page;
             $request->validate([
                 'page_slug' => "required|string|unique:pages|max:50",
                 'page_title_en' => "required|string|unique:pages|max:100",
-                'page_title_bn' => "required|string|unique:pages|max:100",
+                'page_title_bg' => "required|string|unique:pages|max:100",
                 'page_body_en' => 'required',
-                'page_body_bn' => 'required'
+                'page_body_bg' => 'required'
             ]);
         }
 
 
         $page->page_slug = $request->page_slug;
         $page->page_title_en = $request->page_title_en;
-        $page->page_title_bn = $request->page_title_bn;
+        $page->page_title_bg = $request->page_title_bg;
         $page->page_body_en = $request->page_body_en;
-        $page->page_body_bn = $request->page_body_bn;
+        $page->page_body_bg = $request->page_body_bg;
         $page->save();
 
         Session::put('message', array(

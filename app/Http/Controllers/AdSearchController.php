@@ -52,7 +52,7 @@ class AdSearchController extends Controller {
         //Main Query
         $query = DB::table('posts')
                 ->select(
-                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bn', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bn', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bn', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bn', 'postimages.postimage_thumbnail'
+                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bg', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bg', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bg', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bg', 'postimages.postimage_thumbnail'
                 )
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('categories', 'categories.category_id', '=', 'subcategories.parent_category_id')
@@ -204,7 +204,7 @@ class AdSearchController extends Controller {
 
         $query = DB::table('posts')
                 ->select(
-                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bn', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bn', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bn', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bn', 'postimages.postimage_thumbnail'
+                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bg', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bg', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bg', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bg', 'postimages.postimage_thumbnail'
                 )
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('categories', 'categories.category_id', '=', 'subcategories.parent_category_id')
@@ -284,7 +284,7 @@ class AdSearchController extends Controller {
 
         $relatedPosts = DB::table('posts')
                 ->select(
-                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bn', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bn', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bn', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bn', 'postimages.postimage_thumbnail'
+                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bg', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bg', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bg', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bg', 'postimages.postimage_thumbnail'
                 )
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('categories', 'categories.category_id', '=', 'subcategories.parent_category_id')

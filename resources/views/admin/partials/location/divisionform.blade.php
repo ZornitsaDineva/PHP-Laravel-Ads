@@ -41,13 +41,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="division_title_bn" class="col-sm-3 control-label">Division Name (Bengali)</label>
+                    <label for="division_title_bg" class="col-sm-3 control-label">Division Name (Bengali)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::text('division_title_bn', null, ['class' => 'form-control']) !!}                        
-                        @if ($errors->has('division_title_bn'))
+                        {!! Form::text('division_title_bg', null, ['class' => 'form-control']) !!}                        
+                        @if ($errors->has('division_title_bg'))
                         <span class="text-danger">
-                            <i class="fa fa-warning"></i> {{ $errors->first('division_title_bn') }}
+                            <i class="fa fa-warning"></i> {{ $errors->first('division_title_bg') }}
                         </span>
                         @endif
                     </div>

@@ -23,7 +23,7 @@
                         <ul class="list-group">
                             @foreach($divisions as $aDivision)
                             <li class="list-group-item">
-                                <a data-toggle="tab" href="#division{{$aDivision->division_id}}"><i class="{{$aDivision->division_icon}}"></i>&nbsp;&nbsp; {{$aDivision->division_title_en}} ({{$aDivision->division_title_bn}})</a>
+                                <a data-toggle="tab" href="#division{{$aDivision->division_id}}"><i class="{{$aDivision->division_icon}}"></i>&nbsp;&nbsp; {{$aDivision->division_title_en}} ({{$aDivision->division_title_bg}})</a>
                                 <a class="pull-right" href="{{url('/admin/division/edit/'.$aDivision->division_id)}}"><i class="fa fa-pencil"></i></a>
                             </li>
                             @endforeach
@@ -36,7 +36,7 @@
                             ?>
                             <div class="list-group tab-pane" id="division{{$aDivision->division_id}}">
                                 @foreach($cities as $aCity)                                
-                                <a class="list-group-item" href="{{url('admin/city/edit/'.$aCity->city_id)}}">{{$aCity->city_title_bn}} ({{$aCity->city_title_en}})</a>
+                                <a class="list-group-item" href="{{url('admin/city/edit/'.$aCity->city_id)}}">{{$aCity->city_title_bg}} ({{$aCity->city_title_en}})</a>
                                 @endforeach
                             </div>
                         <?php }

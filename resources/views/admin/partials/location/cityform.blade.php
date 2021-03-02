@@ -32,7 +32,7 @@
                         $divisions = App\Models\Division::all();
                         $divisionArray = array();
                         foreach ($divisions as $aDivision) {
-                            $divisionArray[$aDivision->division_id] = $aDivision->division_title_en . "($aDivision->division_title_bn)";
+                            $divisionArray[$aDivision->division_id] = $aDivision->division_title_en . "($aDivision->division_title_bg)";
                         }
                         ?>
                         {!! Form::select('division_id',$divisionArray, null, ['class' => 'form-control select2'] ) !!}                        
@@ -57,13 +57,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="city_title_bn" class="col-sm-3 control-label">Location Name (Bengali)</label>
+                    <label for="city_title_bg" class="col-sm-3 control-label">Location Name (Bengali)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::text('city_title_bn', null, ['class' => 'form-control']) !!}                        
-                        @if ($errors->has('city_title_bn'))
+                        {!! Form::text('city_title_bg', null, ['class' => 'form-control']) !!}                        
+                        @if ($errors->has('city_title_bg'))
                         <span class="text-danger">
-                            <i class="fa fa-warning"></i> {{ $errors->first('city_title_bn') }}
+                            <i class="fa fa-warning"></i> {{ $errors->first('city_title_bg') }}
                         </span>
                         @endif
                     </div>

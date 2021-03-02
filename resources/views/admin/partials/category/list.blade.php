@@ -24,7 +24,7 @@
                         <ul class="list-group">
                             @foreach($categories as $aCategory)
                             <li class="list-group-item">
-                                <a data-toggle="tab" href="#category{{$aCategory->category_id}}"><i class="{{$aCategory->category_icon}}"></i> <img src="{{asset($aCategory->category_image)}}" width="20"/>&nbsp;&nbsp; {{$aCategory->category_title_bn}} ({{$aCategory->category_title_en}})</a>
+                                <a data-toggle="tab" href="#category{{$aCategory->category_id}}"><i class="{{$aCategory->category_icon}}"></i> <img src="{{asset($aCategory->category_image)}}" width="20"/>&nbsp;&nbsp; {{$aCategory->category_title_bg}} ({{$aCategory->category_title_en}})</a>
                                 <a class="pull-right" href="{{url('/admin/category/edit/'.$aCategory->category_id)}}"><i class="fa fa-pencil"></i></a>
                             </li>
                             @endforeach
@@ -37,7 +37,7 @@
                             ?>
                             <div class="list-group tab-pane" id="category{{$aCategory->category_id}}">
                                 @foreach($subCategories as $aSubCat)                                
-                                <a class="list-group-item" href="{{url('admin/subcategory/edit/'.$aSubCat->subcategory_id)}}">{{$aSubCat->subcategory_title_bn}} ({{$aSubCat->subcategory_title_en}})</a>
+                                <a class="list-group-item" href="{{url('admin/subcategory/edit/'.$aSubCat->subcategory_id)}}">{{$aSubCat->subcategory_title_bg}} ({{$aSubCat->subcategory_title_en}})</a>
                                 @endforeach
                             </div>
                         <?php }

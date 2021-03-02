@@ -258,7 +258,7 @@ return [
         //'sa'          => ['name' => 'Sanskrit',               'script' => 'Deva', 'native' => 'संस्कृतम्', 'regional' => 'sa_IN'],
         //'hi'          => ['name' => 'Hindi',                  'script' => 'Deva', 'native' => 'हिन्दी', 'regional' => 'hi_IN'],
         //'as'          => ['name' => 'Assamese',               'script' => 'Beng', 'native' => 'অসমীয়া', 'regional' => 'as_IN'],
-        'bn'          => ['name' => 'Bengali',                'script' => 'Beng', 'native' => 'বাংলা', 'regional' => 'bn_BD'],
+        //'bn'          => ['name' => 'Bengali',                'script' => 'Beng', 'native' => 'বাংলা', 'regional' => 'bn_BD'],
         //'mni'         => ['name' => 'Manipuri',               'script' => 'Beng', 'native' => 'মৈতৈ', 'regional' => 'mni_IN'],
         //'pa'          => ['name' => 'Punjabi (Gurmukhi)',     'script' => 'Guru', 'native' => 'ਪੰਜਾਬੀ', 'regional' => 'pa_IN'],
         //'gu'          => ['name' => 'Gujarati',               'script' => 'Gujr', 'native' => 'ગુજરાતી', 'regional' => 'gu_IN'],
@@ -312,6 +312,6 @@ return [
     // If you want to display the locales in particular order in the language selector you should write the order here. 
     //CAUTION: Please consider using the appropriate locale code otherwise it will not work
     //Example: 'localesOrder' => ['es','en'],
-    'localesOrder' => ['en','bg','bn'],
+    'localesOrder' => ['en','bg'],
 
 ];

@@ -17,7 +17,7 @@ class CreateDivisionsTable extends Migration
             $table->increments('division_id');
             $table->integer('division_weight')->default(0);
             $table->string('division_title_en');
-            $table->string('division_title_bn');
+            $table->string('division_title_bg');
             $table->string('division_icon')->nullable();
             $table->timestamps();
         });

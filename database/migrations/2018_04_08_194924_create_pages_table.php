@@ -17,9 +17,9 @@ class CreatePagesTable extends Migration
             $table->increments('page_id');
             $table->string('page_slug');
             $table->string("page_title_en");
-            $table->string("page_title_bn");
+            $table->string("page_title_bg");
             $table->text("page_body_en");
-            $table->text("page_body_bn");
+            $table->text("page_body_bg");
             $table->timestamps();
         });
     }

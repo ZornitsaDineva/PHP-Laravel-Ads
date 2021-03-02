@@ -48,13 +48,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="page_title_bn" class="col-sm-3 control-label">Page Title (Bengali)</label>
+                    <label for="page_title_bg" class="col-sm-3 control-label">Page Title (Bengali)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::text('page_title_bn', null, ['class' => 'form-control']) !!}                        
-                        @if ($errors->has('page_title_bn'))
+                        {!! Form::text('page_title_bg', null, ['class' => 'form-control']) !!}                        
+                        @if ($errors->has('page_title_bg'))
                         <span class="text-danger">
-                            <i class="fa fa-warning"></i> {{ $errors->first('page_title_bn') }}
+                            <i class="fa fa-warning"></i> {{ $errors->first('page_title_bg') }}
                         </span>
                         @endif
                     </div>
@@ -72,10 +72,10 @@
                 
                 
                 <div class="form-group">
-                    <label for="page_body_bn" class="col-sm-3 control-label">Page Body (Bengali)</label>
+                    <label for="page_body_bg" class="col-sm-3 control-label">Page Body (Bengali)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::textarea('page_body_bn', null, [ 'rows'=> '20', 'class' => 'ckeditor form-control']) !!}                        
+                        {!! Form::textarea('page_body_bg', null, [ 'rows'=> '20', 'class' => 'ckeditor form-control']) !!}                        
                     </div>
                 </div>
 

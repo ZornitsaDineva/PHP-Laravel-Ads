@@ -18,7 +18,7 @@ class CreateCitiesTable extends Migration
             $table->integer('city_weight')->default(0);
             $table->integer('division_id');
             $table->string('city_title_en');
-            $table->string('city_title_bn');
+            $table->string('city_title_bg');
             $table->timestamps();
         });
     }

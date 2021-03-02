@@ -1,4 +1,4 @@
-INSERT INTO `subcategories` (`subcategory_id`, `parent_category_id`, `subcategory_weight`, `subcategory_caption`, `subcategory_title_en`, `subcategory_title_bn`, `created_at`, `updated_at`) VALUES
+INSERT INTO `subcategories` (`subcategory_id`, `parent_category_id`, `subcategory_weight`, `subcategory_caption`, `subcategory_title_en`, `subcategory_title_bg`, `created_at`, `updated_at`) VALUES
 (2, 1, 0, NULL, 'Mobile Phone', 'মোবাইল ফোন', '2018-03-24 14:43:59', '2018-03-24 14:43:59'),
 (3, 1, 0, NULL, 'Computer Accessories', 'কম্পিউটার এক্সেসরিজ', '2018-03-24 14:44:36', '2018-03-24 14:44:36'),
 (4, 1, 0, NULL, 'TV', 'টিভি', '2018-03-24 14:44:55', '2018-03-24 14:44:55'),

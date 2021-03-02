@@ -36,7 +36,7 @@
                         $categories = App\Models\Category::all(); //lists('category_title_en', 'category_id');
                         $category = array();
                         foreach ($categories as $cat) {
-                            $category[$cat->category_id] = $cat->category_title_en . "($cat->category_title_bn)";
+                            $category[$cat->category_id] = $cat->category_title_en . "($cat->category_title_bg)";
                         }
                         ?>
                         {!! Form::select('parent_category_id',$category, null, ['class' => 'form-control select2'] ) !!}                        
@@ -61,13 +61,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="subcategory_title_bn" class="col-sm-3 control-label">Sub Category Name (Bengali)</label>
+                    <label for="subcategory_title_bg" class="col-sm-3 control-label">Sub Category Name (Bengali)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::text('subcategory_title_bn', null, ['class' => 'form-control']) !!}                        
-                        @if ($errors->has('subcategory_title_bn'))
+                        {!! Form::text('subcategory_title_bg', null, ['class' => 'form-control']) !!}                        
+                        @if ($errors->has('subcategory_title_bg'))
                         <span class="text-danger">
-                            <i class="fa fa-warning"></i> {{ $errors->first('subcategory_title_bn') }}
+                            <i class="fa fa-warning"></i> {{ $errors->first('subcategory_title_bg') }}
                         </span>
                         @endif
                     </div>

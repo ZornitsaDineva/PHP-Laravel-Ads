@@ -1,4 +1,4 @@
-INSERT INTO `divisions` (`division_id`, `division_weight`, `division_title_en`, `division_title_bn`, `division_icon`, `created_at`, `updated_at`) VALUES
+INSERT INTO `divisions` (`division_id`, `division_weight`, `division_title_en`, `division_title_bg`, `division_icon`, `created_at`, `updated_at`) VALUES
 (1, 4, 'Barisal', 'বরিশাল', 'icofont icofont-island-alt', '2018-03-25 02:18:27', '2018-03-25 02:25:06'),
 (2, 1, 'Chittagong', 'চট্টগ্রাম', 'icofont icofont-hill-side', '2018-03-25 02:17:59', '2018-03-25 02:24:21'),
 (3, 0, 'Dhaka', 'ঢাকা', 'icofont icofont-building-alt', '2018-03-25 02:17:09', '2018-03-25 02:24:11'),

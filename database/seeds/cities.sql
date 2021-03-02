@@ -1,4 +1,4 @@
-INSERT INTO `cities` (`city_id`, `city_weight`, `division_id`, `city_title_en`, `city_title_bn`, `created_at`, `updated_at`) VALUES
+INSERT INTO `cities` (`city_id`, `city_weight`, `division_id`, `city_title_en`, `city_title_bg`, `created_at`, `updated_at`) VALUES
 (1, 0, 3, 'Dhaka', 'ঢাকা', NULL, NULL),
 (2, 0, 3, 'Faridpur', 'ফরিদপুর', NULL, NULL),
 (3, 0, 3, 'Gazipur', 'গাজীপুর', NULL, NULL),
