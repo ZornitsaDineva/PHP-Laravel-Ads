@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="col-sm-5 pull-right">                            
-                    @include('site.bangladeshmap')
+                    @include('site.bulgariamap')
                 </div>
             </div><!-- row -->
         </div><!-- contaioner -->
