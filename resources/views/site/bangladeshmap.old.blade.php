@@ -1,4 +1,4 @@
-<svg id='BangladeshSVG' width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2100">
+<svg id='BangladeshSVG' width="800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800">
     <style>
         .divisions path{
             /*fill: rgba(55,255,206,0.35);*/
