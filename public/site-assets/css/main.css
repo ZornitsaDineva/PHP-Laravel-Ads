@@ -3542,6 +3542,10 @@ a.verified i {
     display: inline-block;
 }
 
+img.logo{
+    width: 70px;
+}
+
 .upcoming-section h1 {
     font-size: 48px;
     font-weight: 300;

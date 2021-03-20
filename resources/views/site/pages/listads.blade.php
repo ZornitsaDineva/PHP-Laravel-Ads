@@ -200,7 +200,7 @@ $currentQuery = Illuminate\Support\Facades\Request::query();
                                                 <?php
                                                 $prices = explode(",",$_GET['price_range']);
                                                 ?>
-                                                 <span>{{currency($prices[0],'BDT')}} - <strong>{{currency($prices[1],'BDT')}}</strong></span>
+                                                 <span>{{currency($prices[0],'EUR')}} - <strong>{{currency($prices[1],'EUR')}}</strong></span>
                                                 <input form="search-bar-form" 
                                                        name='price_range' 
                                                        type="text"
@@ -211,7 +211,7 @@ $currentQuery = Illuminate\Support\Facades\Request::query();
                                                        id="price" ><br />
                                                 <button class="btn btn-success pull-right" type="submit" form="search-bar-form"><i class="fa fa-refresh"></i></button>
                                                 @else
-                                                <span>{{currency(1000,'BDT')}} - <strong>{{currency(100000,'BDT')}}</strong></span>
+                                                <span>{{currency(1000,'EUR')}} - <strong>{{currency(100000,'EUR')}}</strong></span>
                                                 <input form="search-bar-form" 
                                                        name='price_range' 
                                                        type="text"
@@ -339,7 +339,7 @@ $currentQuery = Illuminate\Support\Facades\Request::query();
                             <div class="item-info col-sm-8">
                                 <!-- ad-info -->
                                 <div class="ad-info">
-                                    <h3 class="item-price">{{currency($aTopAd->item_price,'BDT')}}</h3>
+                                    <h3 class="item-price">{{currency($aTopAd->item_price,'EUR')}}</h3>
                                     <h4 class="item-title"><a href='{{url("ad/$aTopAd->post_id/$aTopAd->ad_title")}}'>{{$aTopAd->ad_title}}</a></h4>
                                     <div class="item-cat">
                                         <span><a href="{{url('all-ads').'?category_id='.$aTopAd->category_id}}">{{$aTopAd->$category_title}}</a></span> /
@@ -378,7 +378,7 @@ $currentQuery = Illuminate\Support\Facades\Request::query();
                             <div class="item-info col-sm-8">
                                 <!-- ad-info -->
                                 <div class="ad-info">
-                                    <h3 class="item-price">{{currency($anAd->item_price,'BDT')}}</h3>
+                                    <h3 class="item-price">{{currency($anAd->item_price,'EUR')}}</h3>
                                     <h4 class="item-title"><a href='{{url("ad/$anAd->post_id/$anAd->ad_title")}}'>{{$anAd->ad_title}}</a></h4>
                                     <div class="item-cat">
                                         <span><a href="{{url('all-ads').'?category_id='.$anAd->category_id}}">{{$anAd->$category_title}}</a></span> /

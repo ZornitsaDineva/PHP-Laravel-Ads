@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-9">
                     <div class=" section">
-                        <h2>@lang('Balance')<span class="pull-right balance-display">{{currency($user->user_balance,'BDT')}}</span></h2>
+                        <h2>@lang('Balance')<span class="pull-right balance-display">{{currency($user->user_balance,'EUR')}}</span></h2>
 
                         <h4 class="text-success text-center">iBikri @lang('Merchant Account Number : 019595XXXXX')</h4>
                         <img src='{{asset("site-assets/images/bkashprocess.jpg")}}' class="img-responsive"/>                        
@@ -80,7 +80,7 @@
                             <div class="item-info col-sm-8">
                                 <!-- ad-info -->
                                 <div class="ad-info">
-                                    <h3 class="item-price">{{currency($anAd->item_price,'BDT')}}</h3>
+                                    <h3 class="item-price">{{currency($anAd->item_price,'EUR')}}</h3>
                                     <h4 class="item-title"><a href="{{url('ad/'.$anAd->post_id)}}">{{$anAd->ad_title}}</a></h4>
                                     <div class="item-cat">
                                         <?php

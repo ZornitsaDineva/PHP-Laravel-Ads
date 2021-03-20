@@ -85,7 +85,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{{url('/')}}"><img class="img-responsive" src="{{asset('site-assets/logo/35p-with-text.png')}}" alt="Logo"></a>
+                        <a class="navbar-brand" href="{{url('/')}}"><img class="img-responsive logo" src="{{asset('site-assets/logo/BullSofLogo.png')}}" alt="Logo" ></a>
                     </div>
                     <!-- /navbar-header -->
 

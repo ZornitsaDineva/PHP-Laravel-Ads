@@ -114,7 +114,7 @@
                         <div class="item-info col-sm-9">
                             <!-- ad-info -->
                             <div class="ad-info">
-                                <h3 class="item-price">{{currency($anAd->item_price,'BDT')}}</h3>
+                                <h3 class="item-price">{{currency($anAd->item_price,'EUR')}}</h3>
                                 <h4 class="item-title"><a href='{{url("ad/$anAd->post_id/$anAd->ad_title")}}'>{{$anAd->ad_title}}</a></h4>
                                 <div class="item-cat">
                                     <span><a href="{{url('all-ads').'?category_id='.$anAd->category_id}}">{{$anAd->$category_title}}</a></span> /
@@ -155,7 +155,7 @@
                         <div class="item-info col-sm-9">
                             <!-- ad-info -->
                             <div class="ad-info">
-                                <h3 class="item-price">{{currency($anAd->item_price,'BDT')}}</h3>
+                                <h3 class="item-price">{{currency($anAd->item_price,'EUR')}}</h3>
                                 <h4 class="item-title"><a href='{{url("ad/$anAd->post_id/$anAd->ad_title")}}'>{{$anAd->ad_title}}</a></h4>
                                 <div class="item-cat">
                                     <span><a href="{{url('all-ads').'?category_id='.$anAd->category_id}}">{{$anAd->$category_title}}</a></span> /

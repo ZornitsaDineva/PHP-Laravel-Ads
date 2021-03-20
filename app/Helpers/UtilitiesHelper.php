@@ -59,7 +59,7 @@ function formatDateLocalized($string) {
 
     $date = number($date);
     $Month = __($Month);
-    $year = str_replace(",", "", number($year));
+    $year = str_replace(","," ", $year);
 
     return "$date $Month $year";
 }
