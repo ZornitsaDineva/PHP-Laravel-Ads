@@ -381,7 +381,7 @@ textarea {
         Main
  ========================================================================== */
 #main {
-    background-image: url(../images/bg/main.png);
+    background-image: url(../images/bg/);
     background-repeat: no-repeat;
     background-position: top center;
     background-color: #f7f7f7;
@@ -1050,7 +1050,7 @@ a.verified i {
 }
 
 #banner-two {
-    background-image: url('../images/bg/2.jpg');
+    background-image: url('../images/bg');
     padding: 70px 0;
     margin-bottom: 50px;
 }
@@ -1187,7 +1187,7 @@ a.verified i {
 }
 
 #home-section {
-    background-image: url('../images/bg/pbs.JPG');
+    background-image: url('../images/bg/2_6051efd95faf3.jpg');
     padding: 70px 0 90px;
     color:#fff;
 }

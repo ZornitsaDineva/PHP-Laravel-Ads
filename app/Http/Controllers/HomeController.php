@@ -423,9 +423,9 @@ class HomeController extends Controller {
         $post->item_condition = $request->item_condition;
         $post->subcategory_id = $request->subcategory_id;
         $post->item_price = $request->item_price;
-        $post->model = $request->model;
-        $post->brand = $request->brand;
-        $post->delivery = $request->delivery;
+        //$post->model = $request->model;
+        //$post->brand = $request->brand;
+        //$post->delivery = $request->delivery;
         $post->short_description = $request->short_description;
         $post->long_description = $request->long_description;
 
@@ -572,7 +572,7 @@ class HomeController extends Controller {
             'item_condition' => 'required',
             'subcategory_id' => 'required',
             'item_price' => 'required|numeric|min:1',
-            'model' => 'required|string|max:100',
+            //'model' => 'required|string|max:100',
             'short_description' => 'required|string|max:300',
             'long_description' => 'required|string|max:5000',
         ]);
@@ -589,7 +589,7 @@ class HomeController extends Controller {
         $post->item_condition = $request->item_condition;
         $post->subcategory_id = $request->subcategory_id;
         $post->item_price = $request->item_price;
-        $post->model = $request->model;
+        //$post->model = $request->model;
         $post->short_description = $request->short_description;
         $post->long_description = $request->long_description;
 

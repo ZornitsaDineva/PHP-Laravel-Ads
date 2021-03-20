@@ -190,7 +190,7 @@
                             <div class="row form-group select-price">
                                 <label class="col-sm-3 label-title">@lang('Price')<span class="required">*</span></label>
                                 <div class="col-sm-9">
-                                    <label>@lang('BDT')</label>
+                                    <label>@lang('EUR')</label>
                                     {!! Form::text('item_price', null , ['form'=>'new-post-form','class' => 'form-control' ]) !!}
                                     @if ($errors->has('item_price'))
                                     <br/>
@@ -204,7 +204,7 @@
                                 </div>
                             </div> 
 
-                            <div class="row form-group model-name">
+ <!--                           <div class="row form-group model-name">
                                 <label class="col-sm-3 label-title">@lang('Delivery')</label>
                                 <div class="col-sm-9">
                                     <?php
@@ -239,6 +239,7 @@
                                     @endif
                                 </div>
                             </div>
+                                -->
 
                             <div class="row form-group item-description">
                                 <label class="col-sm-3 label-title">@lang('Short Description')<span class="required">*</span></label>
@@ -267,7 +268,8 @@
                                 <div class="col-sm-9 col-sm-offset-3">
                                     <p><span id="desc_char_left">5000</span>@lang(' characters left')</p>
                                 </div>
-                            </div>								
+                            </div>		
+                          					
                         </div>
                         <!-- section -->
 

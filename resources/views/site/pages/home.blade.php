@@ -7,16 +7,16 @@
     <div id="home-section" class="parallax-section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <h1>@lang('Welcome')</h1>
                     <h2>BullSof.com</h2>
-                    <p>@lang('Best market place to find used and unused Vehicles, Phones, Computers, Properties and Many more for Free!')</p>
+                    <p>@lang('Advertisements are reaching an audience!')</p>
                     <br/><br/><br/>
                     <div class="btn-group">
                         <a href="{{url('post-ad')}}" class="btn btn-primary">@lang('Place Your Ad')</a>
                     </div>
                 </div>
-                <div class="col-sm-5 pull-right">                            
+                <div class="col-sm-6 pull-right">                            
                     @include('site.bulgariamap')
                 </div>
             </div><!-- row -->
