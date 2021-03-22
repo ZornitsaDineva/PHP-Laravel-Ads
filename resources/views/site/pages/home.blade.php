@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1>@lang('Welcome')</h1>
-                    <h2>BullSof.com</h2>
+                    <h2>bullsof.com</h2>
                     <p>@lang('Advertisements are reaching an audience!')</p>
                     <br/><br/><br/>
                     <div class="btn-group">

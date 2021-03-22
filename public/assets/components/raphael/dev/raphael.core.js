@@ -5021,7 +5021,7 @@ define(["eve"], function(eve) {
         return s;
     };
     setproto.toString = function () {
-        return "Rapha\xebl\u2018s set";
+        return "Rapha\xebl\u2021s set";
     };
 
     setproto.glow = function(glowConfig) {

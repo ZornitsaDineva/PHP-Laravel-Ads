@@ -606,7 +606,7 @@
                 "source": "https://github.com/JakubOnderka/PHP-Console-Color/tree/master"
             },
             "abandoned": "php-parallel-lint/php-console-color",
-            "time": "2018-09-29T17:23:10+00:00"
+            "time": "2021-09-29T17:23:10+00:00"
         },
         {
             "name": "jakub-onderka/php-console-highlighter",
@@ -657,7 +657,7 @@
                 "source": "https://github.com/JakubOnderka/PHP-Console-Highlighter/tree/master"
             },
             "abandoned": "php-parallel-lint/php-console-highlighter",
-            "time": "2018-09-29T18:48:56+00:00"
+            "time": "2021-09-29T18:48:56+00:00"
         },
         {
             "name": "jenssegers/date",
@@ -1071,7 +1071,7 @@
                 "issues": "https://github.com/LaravelCollective/html/issues",
                 "source": "https://github.com/LaravelCollective/html"
             },
-            "time": "2018-06-18T15:04:16+00:00"
+            "time": "2021-06-18T15:04:16+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2000,7 +2000,7 @@
                 "issues": "https://github.com/paragonie/random_compat/issues",
                 "source": "https://github.com/paragonie/random_compat"
             },
-            "time": "2018-07-02T15:55:56+00:00"
+            "time": "2021-07-02T15:55:56+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -2166,7 +2166,7 @@
                 "source": "https://github.com/Propaganistas/Laravel-Intl/tree/master"
             },
             "abandoned": true,
-            "time": "2018-05-17T13:29:34+00:00"
+            "time": "2021-05-17T13:29:34+00:00"
         },
         {
             "name": "psr/container",
@@ -5704,7 +5704,7 @@
                 "issues": "https://github.com/nunomaduro/collision/issues",
                 "source": "https://github.com/nunomaduro/collision"
             },
-            "time": "2018-11-21T21:40:54+00:00"
+            "time": "2021-11-21T21:40:54+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -5763,7 +5763,7 @@
                 "issues": "https://github.com/phar-io/manifest/issues",
                 "source": "https://github.com/phar-io/manifest/tree/master"
             },
-            "time": "2018-07-08T19:23:20+00:00"
+            "time": "2021-07-08T19:23:20+00:00"
         },
         {
             "name": "phar-io/version",
@@ -5814,7 +5814,7 @@
                 "issues": "https://github.com/phar-io/version/issues",
                 "source": "https://github.com/phar-io/version/tree/master"
             },
-            "time": "2018-07-08T19:19:57+00:00"
+            "time": "2021-07-08T19:19:57+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -6106,7 +6106,7 @@
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/master"
             },
-            "time": "2018-10-31T16:06:48+00:00"
+            "time": "2021-10-31T16:06:48+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -7140,7 +7140,7 @@
             "support": {
                 "source": "https://github.com/shababhsiddique/Faker/tree/master"
             },
-            "time": "2018-04-12T07:08:40+00:00"
+            "time": "2021-04-12T07:08:40+00:00"
         },
         {
             "name": "symfony/thanks",

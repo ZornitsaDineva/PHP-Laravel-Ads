@@ -48,7 +48,7 @@
 
     <div class="footer-bottom clearfix text-center">
         <div class="container">
-            <p>@lang('Copyright') &copy; @lang('2018. Developed by') <a href="http://shababhsiddique.com/">@lang('Shabab Haider Siddique')</a></p>
+            <p>@lang('Copyright') &copy; @lang('2021. Developed by') <a href="/">@lang('BullSof')</a></p>
         </div>
     </div><!-- footer-bottom -->
 </footer><!-- footer -->

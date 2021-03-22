@@ -301,7 +301,7 @@
                         <div class="checkbox section agreement">
                             <label for="confirm">
                                 <input type="checkbox" name="send" id="confirm">
-                                @lang('By clicking "Post", you agree to our ')<a href="#">Terms of Use</a> @lang('and') <a href="#">Privacy Policy</a> @lang('and acknowledge that you are the rightful owner of this item and using iBikri to find a genuine buyer.')
+                                @lang('By clicking "Post", you agree to our ')<a href="#">Terms of Use</a> @lang('and') <a href="#">Privacy Policy</a> @lang('and acknowledge that you are the rightful owner of this item and using BullSof to find a genuine buyer.')
                                 <span id="confirm-err" class="text-danger"></span>
                             </label>
                             <button type="submit" onclick="return verifyTick()" class="btn btn-primary">@lang('Post Your Ad')</button>
@@ -328,19 +328,23 @@
                     @if(isset($postData)) 
                     <div class="section quick-rules">
                         <h4>@lang('Help')</h4>
-                        <p class="lead">@lang('To change location and contact info of your ad visit your ')<a href="{{url('/account')}}">@lang('account settings')</a></p>
+                        <p class="lead">@lang('To change location and contact info of your ad visit your ')
+                            <a href="{{url('/account')}}">
+                            @lang('account settings')</a></p>
                     </div>
                     @endif
                     <div class="section quick-rules">
                         <h4>@lang('Quick rules')</h4>
-                        <p class="lead">@lang('Posting an ad on ')<a href="#">iBikri.com</a>@lang(' is free! However, all ads must follow our rules'):</p>
+                        <p class="lead">@lang('Posting an ad on ')
+                            <a href="#">BullSof.com</a>                            
+                            @lang(' is free! However, all ads must follow our rules'):</p>
 
                         <ul>
                             <li>@lang('Make sure you post in the correct category.')</li>
                             <li>@lang('Do not post the same ad more than once or repost an ad within 48 hours.')</li>
                             <li>@lang('Do not upload pictures with watermarks.')</li>
                             <li>@lang('Do not post ads containing multiple items unless it is a package deal.')</li>
-                            <li>@lang('iBikri.com has the right to un unpulish your ad anytime')</li>
+                            <li>@lang('BullSof.com has the right to un unpulish your ad anytime')</li>
                             <li>@lang('Do not post images/text with profanity or hurtful content, doing so will result in account ban')</li>
                         </ul>
                     </div>

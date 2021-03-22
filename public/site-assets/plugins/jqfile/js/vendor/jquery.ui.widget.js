@@ -1,4 +1,4 @@
-/*! jQuery UI - v1.12.1 - 2018-02-10
+/*! jQuery UI - v1.12.1 - 2021-02-10
  * http://jqueryui.com
  * Includes: widget.js
  * Copyright jQuery Foundation and other contributors; Licensed MIT */

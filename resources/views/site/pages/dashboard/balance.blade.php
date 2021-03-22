@@ -24,7 +24,7 @@
                     <div class=" section">
                         <h2>@lang('Balance')<span class="pull-right balance-display">{{currency($user->user_balance,'EUR')}}</span></h2>
 
-                        <h4 class="text-success text-center">iBikri @lang('Merchant Account Number : 019595XXXXX')</h4>
+                        <h4 class="text-success text-center">BullSof @lang('Merchant Account Number : 019595XXXXX')</h4>
                         <img src='{{asset("site-assets/images/bkashprocess.jpg")}}' class="img-responsive"/>                        
                         <p class="recharge-how">
                             @lang('Recharge your account by sending taka to 01959XXXXXX by bkash. Send the money in the above process and submit your transaction ID in the form below.')

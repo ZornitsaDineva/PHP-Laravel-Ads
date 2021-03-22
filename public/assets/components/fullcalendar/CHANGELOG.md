@@ -1,12 +1,12 @@
 
-v3.8.2 (2018-01-30)
+v3.8.2 (2021-01-30)
 -------------------
 
 Bugfixes:
 - Fix TypeScript definitions file with strictNullChecks (#4035)
 
 
-v3.8.1 (2018-01-28)
+v3.8.1 (2021-01-28)
 -------------------
 
 Bugfixes:

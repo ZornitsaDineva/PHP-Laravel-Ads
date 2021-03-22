@@ -7,7 +7,7 @@
         <meta name="author" content="Theme Region">
         <meta name="description" content="">
 
-        <title>@lang('iBikri') | @lang('Bangladeshs Best Classifieds Portal')</title>
+        <title>@lang('BullSof') | @lang('Bangladeshs Best Classifieds Portal')</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="{{asset('site-assets/bootstrap-3.3.7/css/bootstrap.min.css')}}" >
@@ -60,7 +60,7 @@
                             <p>@lang('We could not find the page you where looking for. now what?')</p>
                             <br/><br/><br/>
                             <div class="btn-group">
-                                <a href="{{url('/')}}" class="btn btn-success">@lang('Get Back to') iBikri.com</a>
+                                <a href="{{url('/')}}" class="btn btn-success">@lang('Get Back to') BullSof.com</a>
                             </div>
                         </div>                        
                     </div><!-- row -->

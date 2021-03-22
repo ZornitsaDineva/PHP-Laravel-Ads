@@ -60,7 +60,7 @@ ul {
 
 a {
     font-family: 'Ubuntu','Mukti', sans-serif;
-    color: #00a651;
+    color: #6b1809;
 }
 
 
@@ -97,7 +97,7 @@ input:focus, textarea:focus, select:focus, .form-control:focus {
 }
 
 .form-control:focus {
-    border-color: #00a651;
+    border-color: #6b1809;
 }
 
 .title {
@@ -167,7 +167,7 @@ textarea {
     font-size:18px;
     font-weight:400;
     text-transform:capitalize;
-    background-color:#00a651;
+    background-color:#6b1809;
     padding:10px 40px 12px;
     border:0;
     -webkit-transition: all 0.3s ease-in-out;
@@ -178,7 +178,7 @@ textarea {
 }
 
 .btn.btn-primary:hover {
-    background-color:#0072bc;
+    background-color:#6b1809;
     color:#fff;
 }
 
@@ -196,11 +196,11 @@ textarea {
 }
 
 .navbar-default .navbar-toggle {
-    border-color:#00a651;
+    border-color:#6b1809;
 }
 
 .navbar-default .navbar-toggle .icon-bar{
-    background-color: #00a651;
+    background-color: #6b1809;
 }
 
 .navbar-default .navbar-toggle:focus, 
@@ -253,7 +253,7 @@ textarea {
 .dropdown-menu>.active>a:focus, 
 .dropdown-menu>.active>a:hover {
     background-color: transparent;    
-    color: #00a651;
+    color: #6b1809;
 }
 
 .dropdown-menu{
@@ -291,7 +291,7 @@ textarea {
 }
 
 .language-dropdown a:hover {
-    color:#00a651;
+    color:#6b1809;
 }
 
 .language-dropdown li>a {
@@ -314,7 +314,7 @@ textarea {
 .language-dropdown i.fa-globe,
 .sign-in li i {
     font-size: 14px;
-    color: #00a651;
+    color: #6b1809;
     margin-right: 5px;
 }
 
@@ -341,7 +341,7 @@ textarea {
     padding-bottom: 13px;
 }
 .nav-right .dropdown-menu li a:hover {
-    color: #00a651;
+    color: #6b1809;
     background-color: transparent;
 }
 
@@ -351,13 +351,13 @@ textarea {
 }
 
 .sign-in li a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 #header a.btn,
 .download-button a.btn {
     padding: 5px 25px 7px;
-    background-color: #0072bc;
+    background-color: #6b1809;
     font-weight: 400;
     font-size: 14px;
     color: #fff;
@@ -366,11 +366,11 @@ textarea {
 
 #header a.btn:hover,
 .download-button a.btn:hover {
-    background-color: #00a651;
+    background-color: #6b1809;
 }
 
 .badge {
-    background-color: #00a651;
+    background-color: #6b1809;
     margin-left: 5px;
     font-size: 10px;
     font-weight: 500;
@@ -475,11 +475,11 @@ textarea {
     right:-2px;
     bottom:-1px;
     max-width: 114px;
-    background-color: #00a651;
+    background-color: #6b1809;
     border-radius: 0 5px 5px 0 ;
     color: #fff;
     text-transform: uppercase;
-    border-color:#00a651;
+    border-color:#6b1809;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -489,8 +489,8 @@ textarea {
 }
 
 .banner-form button:hover {
-    background-color: #0072bc;
-    border-color: #0072bc;
+    background-color: #6b1809;
+    border-color: #6b1809;
 }
 
 .banner-socail li {
@@ -579,7 +579,7 @@ textarea {
 
 .category-item:hover .category-quantity,
 .category-item:hover .category-title {
-    color :#00a651;
+    color :#6b1809;
 }
 
 .featureds {
@@ -663,7 +663,7 @@ textarea {
 
 .ad-info .item-cat a:hover, 
 .ad-info .item-price {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .ad-meta {
@@ -701,7 +701,7 @@ textarea {
 }
 
 .ad-meta .meta-content a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .ad-meta .user-option a{
@@ -720,11 +720,11 @@ textarea {
 
 .ad-meta .user-option a:hover {
     background-color:#fff;
-    color: #00a651;
+    color: #6b1809;
 }
 
 .ad-meta .user-option a.edit-item:hover {
-    color:#0072bc;
+    color:#6b1809;
 }
 
 .ad-meta .user-option a.delete-item {
@@ -752,7 +752,7 @@ a.verified {
 a.verified i {
     height: 20px;
     width: 20px;
-    background-color: #00a651;
+    background-color: #6b1809;
     color: #fff;
     line-height: 25px;
     text-align: center;
@@ -765,7 +765,7 @@ a.verified i {
 
 .featured-image a i:after {
     position: absolute;
-    border-right: 40px solid #00a651;
+    border-right: 40px solid #6b1809;
     border-bottom: 40px solid transparent;
     border-left: 40px solid transparent;
     top: 0px;
@@ -812,7 +812,7 @@ a.verified i {
 
 .owl-carousel .owl-next:hover,
 .owl-carousel .owl-prev:hover {
-    color:#00a651;
+    color:#6b1809;
 }
 
 .owl-carousel .owl-next {
@@ -935,7 +935,7 @@ a.verified i {
     background-color: #fcfcfc;
     border-bottom: #f2f2f2;
     border-radius: 0;
-    color: #00a651;
+    color: #6b1809;
 }
 
 .my-ads .ad-meta .pending {
@@ -1079,7 +1079,7 @@ a.verified i {
 }
 
 .home-one .banner-form input[type="submit"]:hover {
-    background-color: #0072bc;
+    background-color: #6b1809;
     color: #fff;
 }
 
@@ -1197,7 +1197,7 @@ a.verified i {
 }
 
 #home-section h1 {
-    color: #00a651;
+    color: #6b1809;
     margin: 65px 0 0;
 }
 
@@ -1290,7 +1290,7 @@ a.verified i {
 }
 
 .single-service li a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 
@@ -1411,7 +1411,7 @@ a.verified i {
 }
 
 .recommended-cta .single-cta a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 #something-sell h4 {
@@ -1423,12 +1423,12 @@ a.verified i {
 
 #something-sell .btn.btn-primary {
     margin-top: 15px;
-    border:1px solid #00a651;
+    border:1px solid #6b1809;
 }
 
 #something-sell a.btn:hover {
     background-color: transparent;
-    border: 1px solid #00a651;
+    border: 1px solid #6b1809;
 }
 
 /* Accordion */
@@ -1459,7 +1459,7 @@ a.verified i {
 }
 
 #accordion .panel-body h5 i {
-    color: #00a651;
+    color: #6b1809;
 }
 
 #accordion .panel-body a {
@@ -1481,7 +1481,7 @@ a.verified i {
 
 #accordion .panel-body a:hover, 
 #accordion .panel-body a:hover i {
-    color: #00a651;
+    color: #6b1809;
 }
 
 #accordion .panel-body ul li a span {
@@ -1528,7 +1528,7 @@ a.verified i {
 #accordion .panel-body label.checked:before, 
 .checkbox label.checked:before {
     content: "\f046";
-    color: #00a651;
+    color: #6b1809;
 }
 
 #accordion span.border {
@@ -1542,7 +1542,7 @@ a.verified i {
 }
 
 #accordion a.see-more:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 #accordion .panel-body .category-change li a {
@@ -1580,7 +1580,7 @@ a.verified i {
 .pagination>.active>a:focus, 
 .pagination>.active>a:hover {
     color: #fff;
-    background-color: #00a651;
+    background-color: #6b1809;
     border: 1px solid #008c44;
 }
 
@@ -1781,7 +1781,7 @@ a.verified i {
 }
 
 .slider-text h2 {
-    color: #00a651;
+    color: #6b1809;
     font-size: 36px;
     font-weight: 500;
     margin: 0;
@@ -1837,7 +1837,7 @@ a.verified i {
 
 .slider-text span.icon a strong {
     font-weight: 400;
-    color: #00a651;
+    color: #6b1809;
 }
 
 .short-info h4 {
@@ -1930,7 +1930,7 @@ a.verified i {
 
 .slider-text span a:hover,
 .slider-text a:hover {
-    color:#00a651;
+    color:#6b1809;
 }
 
 .hide-number, .show-number .hide {
@@ -2004,11 +2004,11 @@ a.verified i {
 }
 
 .short-info li a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .short-info li a span {
-    color: #00a651;
+    color: #6b1809;
     font-weight: 400;
 }
 
@@ -2051,7 +2051,7 @@ a.verified i {
 .postdetails  li a:hover, 
 .postdetails  li.active a, 
 .postdetails  .edit:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .selected-product {
@@ -2080,7 +2080,7 @@ a.verified i {
 }
 
 .selected-product  .edit {
-    color: #0072bc;
+    color: #6b1809;
     position: absolute;
     right: 0;
     top: 14px;
@@ -2127,11 +2127,11 @@ a.verified i {
 }
 
 .adpost-details input[type="radio"] + label:before {
-    border: 2px solid #00a651;
+    border: 2px solid #6b1809;
 }
 
 .adpost-details input[type="radio"]:checked + label:after {
-    border: 5px solid #00a651;
+    border: 5px solid #6b1809;
 }
 
 .required {
@@ -2178,7 +2178,7 @@ a.verified i {
     left:0;
     top:3px;
     font-size: 36px;
-    color: #00a651;
+    color: #6b1809;
 }
 
 .add-image label.upload-image {
@@ -2216,7 +2216,7 @@ a.verified i {
 }
 
 .add-image label.upload-image:hover:before {
-    color:#00a651;
+    color:#6b1809;
 }
 
 .add-image label.upload-image input {
@@ -2296,7 +2296,7 @@ a.verified i {
 
 .adpost-details .agreement label a:hover, 
 .quick-rules .lead a:hover {
-    color:#00a651;
+    color:#6b1809;
 
 }
 
@@ -2320,7 +2320,7 @@ a.verified i {
 
 .quick-rules li:before {
     position: absolute;
-    color: #00a651;
+    color: #6b1809;
     font-size: 16px;
     content: "\f105";
     font-family:'FontAwesome';
@@ -2347,13 +2347,13 @@ a.verified i {
 
 .congratulations i {
     font-size: 72px;
-    color: #00a651;
+    color: #6b1809;
     margin-bottom: 18px;
 }
 
 .congratulations h2 {
     font-weight: 700;
-    color: #00a651;
+    color: #6b1809;
     margin: 0 0 4px;
 }
 
@@ -2379,7 +2379,7 @@ a.verified i {
 }
 
 .user-account h2 {
-    color: #00a651;
+    color: #6b1809;
     font-weight: 700;
     margin-bottom: 55px;
 }
@@ -2391,7 +2391,7 @@ a.verified i {
 }
 
 .user-account .btn {
-    background-color: #00a651;
+    background-color: #6b1809;
     color: #fff;
     padding: 5px 32px 7px;
     margin-top: 10px;	
@@ -2409,7 +2409,7 @@ a.verified i {
 }
 
 .user-account .checkbox label:hover, .forgot-password a:hover {
-    color:#00a651;
+    color:#6b1809;
 }
 .user-account .user-option {
     overflow:hidden;
@@ -2426,11 +2426,11 @@ a.verified i {
     font-size:18px;
     border-radius:4px;
     margin-top:25px;
-    background-color:#0072bc;
+    background-color:#6b1809;
 }
 
 .user-page .btn-primary:hover {
-    background-color:#00a651;
+    background-color:#6b1809;
 }
 /* ==========================================================================
        Post Page
@@ -2461,7 +2461,7 @@ a.verified i {
     font-size: 30px;
     content: "\f105";
     font-family: 'FontAwesome';
-    color: #00a651;	
+    color: #6b1809;	
     opacity: 0;    	
 }
 
@@ -2479,7 +2479,7 @@ a.verified i {
 .post-option li a:hover, 
 .post-option li.active a, 
 .post-option li.link-active a {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .select-category li a img {
@@ -2501,7 +2501,7 @@ a.verified i {
 }
 
 .next-stap h2 span {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .next-stap .btn-section {
@@ -2522,13 +2522,13 @@ a.verified i {
 }
 
 .next-stap .btn:hover {
-    border: 1px solid #00a651;
+    border: 1px solid #6b1809;
     background-color: transparent;
 }
 
 .next-stap .btn:hover, 
 .next-stap .btn-info:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 
@@ -2588,7 +2588,7 @@ a.verified i {
 
 .ad-profile .user h2 a {
     font-weight: 700;
-    color: #00a651;
+    color: #6b1809;
 }
 
 .ad-profile .user h5 {
@@ -2617,12 +2617,12 @@ a.verified i {
 
 .ad-profile .favorites-user a {
     font-size: 48px;
-    color: #00a651;
+    color: #6b1809;
     display:block;
 }
 
 .ad-profile .favorites-user small:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .ad-profile .user-menu {
@@ -2642,7 +2642,7 @@ a.verified i {
 
 .ad-profile .user-menu li.active a,
 .ad-profile .user-menu li a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .user-pro-section .section {
@@ -2696,10 +2696,10 @@ a.verified i {
 
 .profile a.btn,
 .buttons a.btn {
-    background-color: #00a651;
+    background-color: #6b1809;
     color: #fff;
     padding: 6px 26px 7px;
-    border: 1px solid #00a651;	
+    border: 1px solid #6b1809;	
     margin: 9px 0 0;
     margin-bottom: 30px;
 }
@@ -2718,8 +2718,8 @@ a.verified i {
 .profile a.btn:hover,
 .buttons a.btn:hover {
     background-color: transparent;
-    color: #00a651;
-    border: 1px solid #00a651;
+    color: #6b1809;
+    border: 1px solid #6b1809;
 }
 
 
@@ -2951,12 +2951,12 @@ a.verified i {
 }
 
 .faq-page .panel-heading i:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .faq-page .panel-heading .panel-title:hover, 
 .faq-page .active-faq.panel-heading .panel-title {
-    color: #00a651;
+    color: #6b1809;
 }
 
 /* ==========================================================================
@@ -3014,7 +3014,7 @@ a.verified i {
 }
 
 .contact-info address a:hover  {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .contact-info ul.social li {
@@ -3027,7 +3027,7 @@ a.verified i {
 }
 
 .contact-info .social i.fa-facebook {
-    color: #0072bc;
+    color: #6b1809;
 }
 
 .contact-info .social i.fa-twitter {
@@ -3072,15 +3072,15 @@ a.verified i {
 
 .feedback .btn {
     padding:6px 15px;
-    background-color: #00a651;
+    background-color: #6b1809;
     color: #fff;
-    border: 1px solid #00a651;
+    border: 1px solid #6b1809;
 }
 
 .feedback .btn:hover {
     background-color: transparent;
-    border: 1px solid #00a651;
-    color: #00a651;
+    border: 1px solid #6b1809;
+    color: #6b1809;
 }
 
 .contact-info, .feedback {
@@ -3105,7 +3105,7 @@ a.verified i {
 
 .footer-widget h3 {
     font-weight: 400;
-    color: #3DB8AC;
+    color: #ecc455;
     line-height: 28px;
     margin-bottom: 15px;
 }
@@ -3204,7 +3204,7 @@ a.verified i {
 }
 
 .footer-bottom {
-    background-color: #3DB8AC;
+    background-color: #ecc455;
     color: #FFF;
     font-size: 14px;
     padding: 19px 0 12px;
@@ -3216,7 +3216,7 @@ a.verified i {
 }
 
 .footer-bottom a:hover {
-    color: #00a651;
+    color: #6b1809;
     text-decoration: underline;
 }
 
@@ -3257,7 +3257,7 @@ a.verified i {
 }
 
 .car-info .socail li a i:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .home-banner h1 {
@@ -3339,7 +3339,7 @@ a.verified i {
 
 .home-banner .dropdown.category-dropdown a:hover,
 .home-banner .dropdown.category-dropdown a:hover i {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .home-banner .dropdown.category-dropdown a i {
@@ -3358,12 +3358,12 @@ a.verified i {
     float: right;
     color: #fff;
     margin-top: 20px;	
-    border: 1px solid #00a651;
-    background-color: #00a651;
+    border: 1px solid #6b1809;
+    background-color: #6b1809;
 }
 
 .home-banner .contact-form .form-control:hover {
-    color: #00a651;
+    color: #6b1809;
     background-color: transparent;
 }
 
@@ -3423,7 +3423,7 @@ a.verified i {
 }
 
 .category-menu li a:hover {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .section.cars-ads {
@@ -3544,6 +3544,9 @@ a.verified i {
 
 img.logo{
     width: 70px;
+    position: relative;
+    top: -10px;
+    border-radius: 5px;
 }
 
 .upcoming-section h1 {
@@ -3815,7 +3818,7 @@ img.logo{
 }
 
 .pricing-section .pric li i.fa-check {
-    color: #00a651;
+    color: #6b1809;
 }
 
 .pricing-section .pric li i.fa-times {
@@ -3846,7 +3849,7 @@ img.logo{
 
 .pricing-section .pric .popular h2 {
     font-size: 14px;
-    background-color: #00a651;
+    background-color: #6b1809;
     padding: 10px 80px;
     color: #fff;
     -webkit-transform:rotate(40deg) ;
@@ -3871,7 +3874,7 @@ img.logo{
 
 .found-section h1 {
     font-size: 112px;
-    color: #00a651;
+    color: #6b1809;
     font-weight: 700;
     margin-bottom: 0;
 }
@@ -4088,7 +4091,7 @@ input, select, a, .transition,
 }
 
 .style-chooser-inner ul li.preset1 a {
-    background-color: #00a651;
+    background-color: #6b1809;
 }
 
 .style-chooser-inner ul li.preset2 a {
@@ -4150,8 +4153,8 @@ body.bn a.list-group-item{
     transition: all 0.3s ease-in-out;
 }
 .btn-success:hover , .btn-success:active{
-    background-color: #0072bc;
-    border-color: #0072bc;
+    background-color: #6b1809;
+    border-color: #6b1809;
 }
 
 
@@ -4256,7 +4259,7 @@ ul.children{
 h2.price{
     padding: 11px;
     width: fit-content;
-    background-color: #14A99B;
+    background-color: #6b1809;
     color: white !important;
     border-top-right-radius: 21px;
 }
@@ -4322,7 +4325,7 @@ ul.order-by-change li.nav-divider{
 }*/
 
 .balance-display{
-    color: #14a99b !important;
+    color: #ecc455 !important;
     font-weight: bold;
 }
 

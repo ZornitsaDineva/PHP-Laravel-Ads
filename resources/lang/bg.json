@@ -4,8 +4,9 @@
     "Welcome": "Добре дошъл",
     "Best market place to find used and unused Vehicles, Phones, Computers, Properties and Many more for Free!": "Най-доброто пазарно място за намиране на използваните и неизползваните превозни средства, телефони, компютри, имоти и много други безплатно!",
     "Place Your Ad": "Поставете вашата реклама",
+    "Advertisements are reaching an audience!":"Рекламите ще ви достигнат!",
     "BullSof": "BullSof",
-    "Bangladeshs Best Classifieds Portal": "BullSof Най-добър портал за обяви",
+    "Bangladeshs Best Classifieds Portal": "BullSof Най-добър портал за вашата реклама",
     "Toggle navigation": "Превключване на навигацията",
     "Home": "Начало",
     "All Ads": "Всички реклами",
@@ -86,7 +87,7 @@
     " characters left": "останали знаци",
     "By clicking \"Post\", you agree to our ": "Като кликнете върху \"Публикувай\", Вие се съгласявате с ",
     "and": "и",
-    "and acknowledge that you are the rightful owner of this item and using iBikri to find a genuine buyer.": "и потвърдете, че сте законният собственик на този артикул и използвате BullSof, за да намерите истински купувач.",
+    "and acknowledge that you are the rightful owner of this item and using BullSof to find a genuine buyer.": "и потвърдете, че сте законният собственик на този артикул и използвате BullSof, за да намерите истински купувач.",
     "Quick rules": "Бързи правила",
     "Posting an ad on ": "Публикуване на реклама в",
     " is free! However, all ads must follow our rules": "е свободен! Всички реклами обаче трябва да следват нашите правила",
@@ -211,5 +212,7 @@
     "Chat Now!": "Чат сега!",
     "Recharge your account by sending taka to 01959XXXXXX by bkash. Send the money in the above process and submit your transaction ID in the form below.": "Презаредете сметката си, като изпратите taka на 01959XXXXXX от bkash. Изпратете парите в горния процес и изпратете идентификационния номер на транзакцията си във формата по-долу.",
     "Current Promoted Ads": "Текущи популяризирани реклами",
-    "Merchant Account Number : 019595XXXXX": "Номер на търговска сметка: 019595XXXXX"
+    "Merchant Account Number : 019595XXXXX": "Номер на търговска сметка: 019595XXXXX",
+    "Logo": "BullSof",
+    "Title":"Реклами"
 }

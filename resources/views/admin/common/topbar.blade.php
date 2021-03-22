@@ -5,7 +5,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>iB</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>iBikri</b>admin</span>
+    <span class="logo-lg"><b>BullSof</b>admin</span>
 </a>
 
 <!-- Header Navbar: style can be found in header.less -->
@@ -108,7 +108,7 @@
                         <img src="{{asset('assets/img/avatar5.png')}}" class="img-circle" alt="User Image">
 
                         <p>
-                            Administrator - iBikri.com
+                            Administrator - BullSof.com
                             <small></small>
                         </p>
                     </li>
