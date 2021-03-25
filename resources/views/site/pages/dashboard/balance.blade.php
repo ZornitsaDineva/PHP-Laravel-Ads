@@ -25,9 +25,9 @@
                         <h2>@lang('Balance')<span class="pull-right balance-display">{{currency($user->user_balance,'EUR')}}</span></h2>
 
                         <h4 class="text-success text-center">BullSof @lang('Merchant Account Number : 019595XXXXX')</h4>
-                        <img src='{{asset("site-assets/images/bkashprocess.jpg")}}' class="img-responsive"/>                        
+                        <img src='{{asset("site-assets/images/Payment-System.jpg")}}' class="img-responsive"/>                        
                         <p class="recharge-how">
-                            @lang('Recharge your account by sending taka to 01959XXXXXX by bkash. Send the money in the above process and submit your transaction ID in the form below.')
+                            @lang('Recharge your account')
                         </p>
 
                         {!! Form::open(['url' => 'balance-request', 'class'=> 'form-horizontal', 'method' => 'post']) !!}
@@ -44,7 +44,8 @@
                                     </span>
                                     @endif
                                 </div>                                
-                            </div>   
+                            </div>
+                            <!--  
                             <div class="form-group">
                                 <label class="control-label col-sm-3">@lang('bKash Confirm Code')</label>
                                 <div class="col-sm-9">                                    
@@ -56,6 +57,8 @@
                                     @endif
                                 </div>                                
                             </div>   
+-->
+
                             <div class="form-group">
                                 <label class="control-label col-sm-3"></label>
                                 <div class="col-sm-9">

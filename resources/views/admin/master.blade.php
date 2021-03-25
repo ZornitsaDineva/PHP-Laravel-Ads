@@ -107,10 +107,9 @@
 
             <footer class="main-footer hidden-print">
                 <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.4.0
+                    <b>Version</b> 1.0.0
                 </div>
-                <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-                reserved.
+                <strong>Copyright &copy; 2021 <a href="https://bullsof.com">IT Step Academy</a>.</strong>
             </footer>
 
             <!-- Control Sidebar -->

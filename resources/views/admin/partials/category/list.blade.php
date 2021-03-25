@@ -24,7 +24,9 @@
                         <ul class="list-group">
                             @foreach($categories as $aCategory)
                             <li class="list-group-item">
-                                <a data-toggle="tab" href="#category{{$aCategory->category_id}}"><i class="{{$aCategory->category_icon}}"></i> <img src="{{asset($aCategory->category_image)}}" width="20"/>&nbsp;&nbsp; {{$aCategory->category_title_bg}} ({{$aCategory->category_title_en}})</a>
+                                <a data-toggle="tab" href="#category{{$aCategory->category_id}}"><i class="{{$aCategory->category_icon}}"></i> 
+                                <!--<img src="{{asset($aCategory->category_image)}}" width="20"/>-->
+                                &nbsp;&nbsp; {{$aCategory->category_title_bg}} ({{$aCategory->category_title_en}})</a>
                                 <a class="pull-right" href="{{url('/admin/category/edit/'.$aCategory->category_id)}}"><i class="fa fa-pencil"></i></a>
                             </li>
                             @endforeach

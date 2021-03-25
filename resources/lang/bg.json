@@ -210,9 +210,11 @@
     "Top Ad": "Топ реклама",
     "online": "Онлайн",
     "Chat Now!": "Чат сега!",
-    "Recharge your account by sending taka to 01959XXXXXX by bkash. Send the money in the above process and submit your transaction ID in the form below.": "Презаредете сметката си, като изпратите taka на 01959XXXXXX от bkash. Изпратете парите в горния процес и изпратете идентификационния номер на транзакцията си във формата по-долу.",
+    "Recharge your account": "Презаредете сметката си",
     "Current Promoted Ads": "Текущи популяризирани реклами",
     "Merchant Account Number : 019595XXXXX": "Номер на търговска сметка: 019595XXXXX",
     "Logo": "BullSof",
-    "Title":"Реклами"
+    "Title":"Реклами",
+    "Insufficient Funds":"Недостатъчна наличност",
+    "You need 100EUR for promoting an ad 7 days, please refill":"Баланса трябва да е 1000EUR за да прмотирате тази реклама, моля презаредете"
 }

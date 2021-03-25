@@ -41,7 +41,7 @@
                 {data: 'recharge_request_id', name: 'recharge_request_id'},
                 {data: 'name', name: 'users.name'},
                 {data: 'recharge_amount', name: 'recharge_amount'},
-                {data: 'bkash_code', name: 'bkash_code'},
+                //{data: 'bkash_code', name: 'bkash_code'},
                 {data: 'request_status', name: 'request_status'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'actions', name: 'actions', orderable: false, searchable: false}

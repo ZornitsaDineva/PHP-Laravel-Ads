@@ -207,9 +207,11 @@
     "Top Ad": "Top Ad",
     "online": "online",
     "Chat Now!": "Chat Now!",
-    "Recharge your account by sending taka to 01959XXXXXX by bkash. Send the money in the above process and submit your transaction ID in the form below.": "Recharge your account by sending taka to 01959XXXXXX by bkash. Send the money in the above process and submit your transaction ID in the form below.",
+    "Recharge your account": "Recharge your account",
     "Current Promoted Ads": "Current Promoted Ads",
     "Merchant Account Number : 019595XXXXX": "Merchant Account Number : 019595XXXXX",
     "Logo": "BullSof",
-    "Title":"Ads"
+    "Title":"Ads",
+    "Insufficient Funds":"Insufficient Funds",
+    "You need 100EUR for promoting an ad 7 days, please refill":"You need 1000EUR for promoting an ad 7 days, please refill"
 }

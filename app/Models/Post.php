@@ -63,10 +63,10 @@ class Post extends Model {
             $todayObj = new DateTime("now");
             
             $validityLeft = $todayObj->diff($offerEndObj);
-            
+          /*  
           echo "Start = $offerStarted###";
           echo "End = $offerEnds###";
-          echo "Diff = ".($offerEnds - $offerStarted);
+          echo "Diff = ".($offerEnds - $offerStarted);*/
             
             
             // shows the total amount of days (not divided into years, months and days like above)
