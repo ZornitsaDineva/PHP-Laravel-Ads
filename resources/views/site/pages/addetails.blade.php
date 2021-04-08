@@ -94,8 +94,10 @@
                             <h4>@lang("Short Info")</h4>
                             <h4 class="visible-print">{{$adDetails->user->mobile}}</h4>
                             <p><strong>@lang("Condition"): </strong><a href="#">{{__($adDetails->item_condition)}}</a> </p>
+                            <!--
                             <p><strong>@lang("Model"): </strong><a href="#">{{$adDetails->model}}</a></p>
                             <p><strong>@lang("Delivery"): </strong><a href="#">{{__($adDetails->delivery)}}</a></p>
+                            -->
                             <p>{{$adDetails->short_description}}</p>
                         </div><!-- short-info -->
 

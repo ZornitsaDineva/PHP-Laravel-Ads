@@ -321,7 +321,7 @@ class AdminController extends Controller {
                     'recharge_requests.recharge_request_id',
                     'users.name',
                     'recharge_requests.recharge_amount',
-                    'recharge_requests.bkash_code',
+                    //'recharge_requests.bkash_code',
                     'recharge_requests.request_status',
                     'recharge_requests.created_at'
                 ])

@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="city_title_bg" class="col-sm-3 control-label">Location Name (Bengali)</label>
+                    <label for="city_title_bg" class="col-sm-3 control-label">Location Name </label>
 
                     <div class="col-sm-9">
                         {!! Form::text('city_title_bg', null, ['class' => 'form-control']) !!}                        
