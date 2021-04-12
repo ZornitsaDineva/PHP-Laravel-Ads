@@ -43,7 +43,7 @@ class CreateUsersTable extends Migration
                 array(
                     'id' => 0,
                     'name' => 'Administrator',
-                    'email' => 'admin@BullSof.com',                    
+                    'email' => 'admin@BulSofa.com',                    
                     'password' => md5('root1234'),
                     'created_at' => date('Y-m-d 01:10:11')
                 )

@@ -72,7 +72,7 @@
                 
                 
                 <div class="form-group">
-                    <label for="page_body_bg" class="col-sm-3 control-label">Page Body (Bengali)</label>
+                    <label for="page_body_bg" class="col-sm-3 control-label">Page Body (Bg)</label>
 
                     <div class="col-sm-9">
                         {!! Form::textarea('page_body_bg', null, [ 'rows'=> '20', 'class' => 'ckeditor form-control']) !!}                        

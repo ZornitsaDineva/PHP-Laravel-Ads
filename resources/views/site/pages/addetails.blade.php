@@ -140,7 +140,7 @@
 
                             <ul class="list-inline">
                                 <li><a class="popupFacebook" data-href="{{url()->current()}}" href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                <li><a class="popupTwitter" data-href="{{url()->current()}}" data-text='check it out {{$adDetails->ad_title}} at {{$adDetails->item_price}}-Tk @BullSof.com' href="#"><i class="fa fa-twitter-square"></i></a></li>
+                                <li><a class="popupTwitter" data-href="{{url()->current()}}" data-text='check it out {{$adDetails->ad_title}} at {{$adDetails->item_price}}-Tk @BulSofa.com' href="#"><i class="fa fa-twitter-square"></i></a></li>
                             </ul>
                         </div>
                         <!-- social-links -->						

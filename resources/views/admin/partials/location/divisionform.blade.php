@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="division_title_bg" class="col-sm-3 control-label">Division Name (Bengali)</label>
+                    <label for="division_title_bg" class="col-sm-3 control-label">Division Name (Bg)</label>
 
                     <div class="col-sm-9">
                         {!! Form::text('division_title_bg', null, ['class' => 'form-control']) !!}                        

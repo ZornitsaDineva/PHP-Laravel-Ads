@@ -109,7 +109,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 1.0.0
                 </div>
-                <strong>Copyright &copy; 2021 <a href="https://bullsof.com">IT Step Academy</a>.</strong>
+                <strong>Copyright &copy; 2021 <a href="https://BulSofa.com">IT Step Academy</a>.</strong>
             </footer>
 
             <!-- Control Sidebar -->

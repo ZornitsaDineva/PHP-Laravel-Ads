@@ -172,7 +172,7 @@
                             <div class="form-group">                                
                                 <div class="col-sm-9">
                                     <label>
-                                        <input type="checkbox" name="newsletter_enabled" checked="<?php echo ($userData->newsletter_enabled ? 'checked' : '') ?>">@lang('Send me newsletter from BullSof')
+                                        <input type="checkbox" name="newsletter_enabled" checked="<?php echo ($userData->newsletter_enabled ? 'checked' : '') ?>">@lang('Send me newsletter from BulSofa')
                                     </label>
                                 </div>                                
                             </div>
