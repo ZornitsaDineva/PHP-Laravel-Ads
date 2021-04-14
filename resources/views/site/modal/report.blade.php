@@ -17,7 +17,7 @@
                         <a class="btn btn-primary" href="{{url('login')}}">@lang('Login')</a>
                         @else
                         <h3>@lang('Report This Ad')</h3>
-                        <p>We are trying our best bring you the best advertisements. If you have anything to say about this particular post please leave your comment. We are on it!</p>
+                        <p>@lang('We are trying our best to bring you the best advertisements. If you have anything to say about this particular post please leave your comment.')</p>
                         {!! Form::open([ 'url' => 'report','method' => 'post']) !!}
                         <div class="form-group">
                             <label class="control-label">@lang('Your Name')</label>

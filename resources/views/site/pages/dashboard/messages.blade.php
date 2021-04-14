@@ -23,7 +23,7 @@
                 <div class="col-md-12">
                     <div class="section">                        
                         <div id="vue-app">
-                            <h3>Inbox</h3>                            
+                            <h3>@lang('Inbox')</h3>                            
                             <ul class="list-group">
                                 <li class="list-group-item" v-for='(thread, index) in threads'>
                                     <a v-bind:href="messageUrl(thread.thread,thread.sender_id,thread.receiver_id)"><strong>@{{thread.sender}} , @{{thread.receiver}} <span class="badge" v-if="thread.unread > 0">@{{thread.unread}}</span></strong></a>

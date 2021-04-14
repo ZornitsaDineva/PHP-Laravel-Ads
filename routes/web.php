@@ -55,6 +55,7 @@ Route::group(
 
     /* basic site pages */
     Route::get('/help/{slug}', 'SiteController@page');
+    Route::get('/help', 'HomeController@help');
 
 
 

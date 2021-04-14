@@ -204,21 +204,21 @@ $currentQuery = Illuminate\Support\Facades\Request::query();
                                                 <input form="search-bar-form" 
                                                        name='price_range' 
                                                        type="text"
-                                                       data-slider-min="1000" 
-                                                       data-slider-max="100000"
-                                                       data-slider-step="1000"
+                                                       data-slider-min="100" 
+                                                       data-slider-max="1000000"
+                                                       data-slider-step="100"
                                                        data-slider-value="[{{$_GET['price_range']}}]"
                                                        id="price" ><br />
                                                 <button class="btn btn-success pull-right" type="submit" form="search-bar-form"><i class="fa fa-refresh"></i></button>
                                                 @else
-                                                <span>{{currency(1000,'EUR')}} - <strong>{{currency(100000,'EUR')}}</strong></span>
+                                                <span>{{currency(100,'EUR')}} - <strong>{{currency(1000000,'EUR')}}</strong></span>
                                                 <input form="search-bar-form" 
                                                        name='price_range' 
                                                        type="text"
-                                                       data-slider-min="1000" 
-                                                       data-slider-max="100000"
-                                                       data-slider-step="1000"
-                                                       data-slider-value="[2000,90000]"
+                                                       data-slider-min="100" 
+                                                       data-slider-max="1000000"
+                                                       data-slider-step="100"
+                                                       data-slider-value="[100,1000000]"
                                                        id="price" ><br />
                                                 <button class="btn btn-success pull-right" type="submit" form="search-bar-form"><i class="fa fa-refresh"></i></button>
                                                 @endif                                                

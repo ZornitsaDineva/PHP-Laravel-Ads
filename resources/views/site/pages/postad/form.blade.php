@@ -110,13 +110,13 @@
 
                                     @if (old('ad_type') == 'newbuy')
                                     <input type="radio" name="ad_type" form="new-post-form" value="newsell" id="newsell"> <label for="newsell">@lang('I want to sell')</label>                                    
-                                    <input type="radio" checked="" name="ad_type" form="new-post-form" value="newbuy" id="newbuy"> <label for="newbuy">@lang('I want to buy')</label>	                                    
+                                    <input type="radio" checked="" name="ad_type" form="new-post-form" value="newbuy" id="newbuy"> <label for="newbuy">@lang('I want to rent out')</label>	                                    
                                     @elseif(isset($postData) && ($postData->ad_type == 'newbuy'))
                                     <input type="radio" name="ad_type" form="new-post-form" value="newsell" id="newsell"> <label for="newsell">@lang('I want to sell')</label>                                    
-                                    <input type="radio" checked="" name="ad_type" form="new-post-form" value="newbuy" id="newbuy"> <label for="newbuy">@lang('I want to buy')</label>	                                    
+                                    <input type="radio" checked="" name="ad_type" form="new-post-form" value="newbuy" id="newbuy"> <label for="newbuy">@lang('I want to rent out')</label>	                                    
                                     @else
                                     <input type="radio" checked="" name="ad_type" form="new-post-form" value="newsell" id="newsell"> <label for="newsell">@lang('I want to sell')</label>                                    
-                                    <input type="radio" name="ad_type" form="new-post-form" value="newbuy" id="newbuy"> <label for="newbuy">@lang('I want to buy')</label>	                                    
+                                    <input type="radio" name="ad_type" form="new-post-form" value="newbuy" id="newbuy"> <label for="newbuy">@lang('I want to rent out')</label>	                                    
                                     @endif                                    
 
                                     @if ($errors->has('ad_type'))
@@ -275,7 +275,7 @@
 
                         @if(!isset($postData))
                         <div class="section seller-info">
-                            <h4>Seller Information</h4>
+                            <h4>@lang('Person information')</h4>
                             <div class="row form-group">
                                 <label class="col-sm-3 label-title">@lang('Your Name')</label>
                                 <div class="col-sm-9">
@@ -301,7 +301,9 @@
                         <div class="checkbox section agreement">
                             <label for="confirm">
                                 <input type="checkbox" name="send" id="confirm">
-                                @lang('By clicking "Post", you agree to our ')<a href="#">Terms of Use</a> @lang('and') <a href="#">Privacy Policy</a> @lang('and acknowledge that you are the rightful owner of this item and using BulSofa to find a genuine buyer.')
+                                @lang('By clicking "Post", you agree to our ')<a href="#">@lang('Terms of Use')</a>
+                                 <!--@lang('and') <a href="#">Privacy Policy</a> -->
+                                @lang('and acknowledge that you are the rightful owner of this item and using BulSofa to find a genuine buyer.')
                                 <span id="confirm-err" class="text-danger"></span>
                             </label>
                             <button type="submit" onclick="return verifyTick()" class="btn btn-primary">@lang('Post Your Ad')</button>

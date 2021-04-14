@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <!-- footer-widget -->
-                <div class="col-sm-4">
+                <!--<div class="col-sm-4">
                     <div class="footer-widget">
                         <h3>@lang('Quick Links')</h3>
                         <ul>
@@ -14,16 +14,16 @@
                             <li><a href="{{url('help/faq')}}">@lang('Help & Support')</a></li>
                         </ul>
                     </div>
-                </div><!-- footer-widget -->
+                //</div><!-- footer-widget -->
 
                 <!-- footer-widget -->
                 <div class="col-sm-4">
                     <div class="footer-widget">
-                        <h3>@lang('How To')</h3>
+                        <h3>@lang('Help & Support')</h3>
                         <ul>
-                            <li><a href="{{url('help/faq')}}">@lang('How to sell fast')</a></li>
-                            <li><a href="{{url('help/faq')}}">@lang('Promote your ad')</a></li>
-                            <li><a href="{{url('help/faq')}}">@lang('FAQ')</a></li>
+                            <!--<li><a href="{{url('help/faq')}}">@lang('How to sell fast')</a></li>-->
+                            <li><a href="{{url('help')}}">@lang('Promote your ad')</a></li>
+                            <!--<li><a href="{{url('help/faq')}}">@lang('FAQ')</a></li>-->
                         </ul>
                     </div>
                 </div><!-- footer-widget -->
@@ -35,6 +35,17 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook-official"></i>@lang('Facebook')</a></li>
                             <li><a href="#"><i class="fa fa-twitter-square"></i>@lang('Twitter')</a></li>
+                            <!--<li><a href="#"><i class="fa fa-google-plus-square"></i>@lang('Google+')</a></li>-->
+                            <!--<li><a href="#"><i class="fa fa-youtube-play"></i>@lang('Youtube')</a></li>-->
+                        </ul>
+                    </div>
+                </div><!-- footer-widget -->
+                <div class="col-sm-4">
+                    <div class="footer-widget social-widget">
+                        <h3>@lang('Follow us on')</h3>
+                        <ul>
+                            <!--<li><a href="#"><i class="fa fa-facebook-official"></i>@lang('Facebook')</a></li>-->
+                            <!--<li><a href="#"><i class="fa fa-twitter-square"></i>@lang('Twitter')</a></li>-->
                             <li><a href="#"><i class="fa fa-google-plus-square"></i>@lang('Google+')</a></li>
                             <li><a href="#"><i class="fa fa-youtube-play"></i>@lang('Youtube')</a></li>
                         </ul>

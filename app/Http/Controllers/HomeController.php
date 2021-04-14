@@ -83,6 +83,21 @@ class HomeController extends Controller {
     }
 
     /**
+     * Show help page
+     * @return type
+     */
+    public function help() {
+
+        //Load Component
+        $this->layout['siteContent'] = view('site.pages.help');;
+
+
+        //return view
+        return view('site.master', $this->layout);
+    }
+
+
+    /**
      * Show balance and refil page
      * 
      * @return type
@@ -133,8 +148,9 @@ class HomeController extends Controller {
         $rechargeRequest->save();
 
         Session::put('message', array(
-            'title' => 'Request Sent',
-            'body' => 'Your account balance recharge request has been sent for approval.',
+            'title' => __('Request Sent'),
+            'body' =>__ ('Your account balance recharge request has been sent for approval.')
+            ,
             'type' => 'success'
         ));
 
@@ -187,8 +203,8 @@ class HomeController extends Controller {
         if ($generatedCode != $code) {
             //This is not the right url
             Session::put('message', array(
-                'title' => 'Error',
-                'body' => 'Something wrong with the link you tried to access',
+                'title' => __('Error'),
+                'body' => __('Something wrong with the link you tried to access'),
                 'type' => 'danger'
             ));
 
@@ -289,8 +305,8 @@ class HomeController extends Controller {
 
         //Message for Notification Builder
         Session::put('message', array(
-            'title' => 'Updated',
-            'body' => 'Youre account detail has been updated',
+            'title' => __('Updated'),
+            'body' => __('Youre account detail has been updated'),
             'type' => 'success'
         ));
 
@@ -480,8 +496,8 @@ class HomeController extends Controller {
 
         //Message for Notification Builder
         Session::put('message', array(
-            'title' => 'Ad Posted',
-            'body' => 'Ad has been posted',
+            'title' => __('Ad Posted'),
+            'body' => __('Ad has been posted'),
             'type' => 'success'
         ));
 
@@ -542,15 +558,15 @@ class HomeController extends Controller {
 
             //Message for Notification Builder
             Session::put('message', array(
-                'title' => 'Ad Image Deleted',
-                'body' => 'image deleted',
+                'title' => __('Ad Image Deleted'),
+                'body' => __('image deleted'),
                 'type' => 'success'
             ));
         } else {
             //Message for Notification Builder
             Session::put('message', array(
-                'title' => 'This ad needs atleast 1 image.',
-                'body' => 'add one more image before deleting this',
+                'title' => __('This ad needs atleast 1 image.'),
+                'body' => __('add one more image before deleting this'),
                 'type' => 'warning'
             ));
         }
@@ -635,8 +651,8 @@ class HomeController extends Controller {
 
         //Message for Notification Builder
         Session::put('message', array(
-            'title' => 'Ad Updated',
-            'body' => 'Ad has been updated',
+            'title' => __('Ad Updated'),
+            'body' => __('Ad has been updated'),
             'type' => 'success'
         ));
 
@@ -669,8 +685,8 @@ class HomeController extends Controller {
 
 //        //Message for Notification Builder
         Session::put('message', array(
-            'title' => 'Ad Deleted',
-            'body' => 'Ad has been permenently deleted',
+            'title' => __('Ad Deleted'),
+            'body' => __('Ad has been permenently deleted'),
             'type' => 'success'
         ));
 
@@ -688,8 +704,8 @@ class HomeController extends Controller {
 
         if ($already) {
             Session::put('message', array(
-                'title' => 'You Reported this already',
-                'body' => 'Be patient we will see it',
+                'title' => __('You Reported this already'),
+                'body' => __('Be patient we will see it'),
                 'type' => 'warning'
             ));
 
@@ -712,8 +728,8 @@ class HomeController extends Controller {
         $report->save();
 
         Session::put('message', array(
-            'title' => 'Ad Reported',
-            'body' => 'We will see your complain shortly',
+            'title' => __('Ad Reported'),
+            'body' => __('We will see your complaint shortly'),
             'type' => 'success'
         ));
 
@@ -732,8 +748,8 @@ class HomeController extends Controller {
                 ->first();
         if ($already) {
             Session::put('message', array(
-                'title' => 'Already in favourite',
-                'body' => 'You can see this ad on your dashboard > favourites',
+                'title' => __('Already in favorite'),
+                'body' => __('You can see this ad on your dashboard > favorites'),
                 'type' => 'warning'
             ));
         } else {
@@ -744,8 +760,8 @@ class HomeController extends Controller {
             $favourite->save();
 
             Session::put('message', array(
-                'title' => 'Added to favourites',
-                'body' => 'You will see this ad on your dashboard > favourites',
+                'title' => __('Added to favorites'),
+                'body' => __('You will see this ad on your dashboard > favorites'),
                 'type' => 'success'
             ));
         }
@@ -770,15 +786,15 @@ class HomeController extends Controller {
         if (!$postToPromote) {
             //Invalid Post Selected
             Session::put('message', array(
-                'title' => 'This ad doesnt exist',
-                'body' => 'This ad does not exist, or it does not belong to you.',
+                'title' => __('This ad doesnt exist'),
+                'body' => __('This ad does not exist, or it does not belong to you.'),
                 'type' => 'danger'
             ));
         } elseif ($already) {
             //Already running promotion
             Session::put('message', array(
-                'title' => 'Already Running Promotion',
-                'body' => 'You can see this ad on your dashboard > balance',
+                'title' => __('Already Running Promotion'),
+                'body' => __('You can see this ad on your dashboard > balance'),
                 'type' => 'warning'
             ));
         } else {
@@ -802,8 +818,8 @@ class HomeController extends Controller {
                 $featured->save();
 
                 Session::put('message', array(
-                    'title' => 'Ad Promoted to show as top ad',
-                    'body' => 'You will see this ad on top 2 on all ads for 7 days',
+                    'title' => __('Ad Promoted to show as top ad'),
+                    'body' => __('You will see this ad on top 2 on all ads for 7 days'),
                     'type' => 'success'
                 ));
             }
