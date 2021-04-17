@@ -249,6 +249,10 @@
      "This ad does not exist, or it does not belong to you.":"Тази реклама не съществува или не ви принадлежи",
      "Already Running Promotion":"Вече е в промоция",
      "You can see this ad on your dashboard > balance":"Можете да видите тази реклама на таблото си в баланс",
-     "Ad Promoted to show as the top ad":"Рекламата е популяризирана, и ще се покаже като водеща реклама"
+     "Ad Promoted to show as the top ad":"Рекламата е популяризирана, и ще се покаже като водеща реклама",
+     "Admin Message":"Съобщение до администратора",
+     "You send mеssage to our administrator":"Вие изпратихте съобщение до нашия администратор",
+     "contact us through this form:":"свържете се с нас чрез тази форма:"
+
 
 }

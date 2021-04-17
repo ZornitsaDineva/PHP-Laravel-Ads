@@ -17,6 +17,7 @@ use App\Models\Report;
 use App\Models\Favourites;
 use App\Models\Featured;
 use App\Models\RechargeRequest;
+use App\Models\AdminMessage;
 
 session_start();
 
@@ -76,20 +77,6 @@ class HomeController extends Controller {
         //Load Component
         $this->layout['siteContent'] = view('site.pages.dashboard.favourites')
                 ->with("favAds", $favouriteAds);
-
-
-        //return view
-        return view('site.master', $this->layout);
-    }
-
-    /**
-     * Show help page
-     * @return type
-     */
-    public function help() {
-
-        //Load Component
-        $this->layout['siteContent'] = view('site.pages.help');;
 
 
         //return view
@@ -828,5 +815,42 @@ class HomeController extends Controller {
 
         return Redirect::to("dashboard");
     }
+
+    /**
+     * Show help page
+     * @return type
+     */
+    public function help() {
+        //Load Component
+        $this->layout['siteContent'] = view('site.pages.help');
+
+        //return view
+        return view('site.master', $this->layout);
+    }
+
+    /**
+     * Show help page
+     * @return type
+     */
+    public function sendAdminMessage(Request $request) {
+        Session::put('message', array(
+            'title' => __('Admin Message'),
+            'body' => __('You send mеssage to our administrator'),
+            'type' => 'success'
+        ));
+
+        $request->validate([
+            'comment' => 'required|string|max:500'
+        ]);
+
+        $adminMessage = new AdminMessage;
+        $adminMessage->sender_id = \Auth::user()->id;
+        $adminMessage->comment = $request->comment;
+        $adminMessage->read_status = 0; //0 means new
+        $adminMessage->save();
+
+        return Redirect::to("help");
+    }
+
 
 }

@@ -269,7 +269,7 @@ class AdminController extends Controller {
                             $buttons = "";
 
                             /* View Complain */
-                            $buttons .= "<button  title='View Original Post' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->report_id/report'><i class='fa fa-eye'></i></button>";
+                            $buttons .= "<button  title='View Original Post' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->post_id/report'><i class='fa fa-eye'></i></button>";
 
                             if ($row->status == 1) {
                                 $buttons .= "<button title='Unpublish This Post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='fa fa-thumbs-down'></i></button>";

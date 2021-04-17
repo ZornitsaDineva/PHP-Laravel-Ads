@@ -17,15 +17,16 @@
 
         <img src="/images/category/brand3.png" width="150" height="160">
         <img src="/images/category/brand1.png" width="150" height="160">
-        <br>
-        <br>
-        <form action="/action_page.php" id="usrform">
-            Name: <input type="text" name="usrname">
-            <input type="submit">
-        </form>
-        <br>
-        <textarea rows="4" cols="50" name="comment" form="usrform">@lang('Enter text here...')</textarea>
-
+        <div>
+            <form action="{{ route('sendAdminMessage') }}" id="usrform" method="POST">
+                {{ csrf_field() }}
+                <h1>{{ Auth::user()->name }}, @lang('contact us through this form:')</h1>
+                <textarea rows="4" cols="50" name="comment" form="usrform">@lang('Enter text here...')</textarea>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
         <!-- row -->
     </div><!-- container -->
 </section><!-- myads-page -->

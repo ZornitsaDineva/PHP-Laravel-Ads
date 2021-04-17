@@ -55,7 +55,8 @@ Route::group(
 
     /* basic site pages */
     Route::get('/help/{slug}', 'SiteController@page');
-    Route::get('/help', 'HomeController@help');
+    Route::get('/help', 'HomeController@help')->name('help');
+    Route::post('/sendAdminMessage', 'HomeController@sendAdminMessage')->name('sendAdminMessage');
 
 
 
