@@ -90,9 +90,9 @@ class AdminController extends Controller {
                             $buttons = "";
 
                             if ($row->status == 1) {
-                                $buttons .= "<button title='Unpublish This Post'  class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='fa fa-thumbs-down'></i></button>";
+                                $buttons .= "<button title='Unpublish This Post'  class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='glyphicon glyphicon-stop'></i></button>";
                             } elseif ($row->status == 0) {
-                                $buttons .= "<button title='Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='fa fa-thumbs-up'></i></button>";
+                                $buttons .= "<button title='Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='glyphicon glyphicon-play'></i></button>";
                             }
 
                             $buttons .= "<button title='Delete This Post' class='btn btn-xs btn-danger dtbutton' data-href='" . url('admin/ads/changeStatus/delete') . "/$row->post_id'><i class='fa fa-times'></i></button>";
@@ -177,9 +177,9 @@ class AdminController extends Controller {
                             $buttons = "";
 
                             if ($row->account_status == 1) {
-                                $buttons .= "<button title='Ban This user and unpublish all post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/users/changeStatus/ban') . "/$row->id'><i class='fa fa-thumbs-down'></i></button>";
+                                $buttons .= "<button title='Ban This user and unpublish all post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/users/changeStatus/ban') . "/$row->id'><i class='glyphicon glyphicon-stop'></i></button>";
                             } elseif ($row->account_status == 0) {
-                                $buttons .= "<button title='Un Ban This user' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/users/changeStatus/unban') . "/$row->id'><i class='fa fa-thumbs-up'></i></button>";
+                                $buttons .= "<button title='Un Ban This user' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/users/changeStatus/unban') . "/$row->id'><i class='glyphicon glyphicon-play'></i></button>";
                             }
 
                             return "<div class='btn-group'>$buttons</div>";
@@ -272,9 +272,9 @@ class AdminController extends Controller {
                             $buttons .= "<button  title='View Original Post' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->post_id/report'><i class='fa fa-eye'></i></button>";
 
                             if ($row->status == 1) {
-                                $buttons .= "<button title='Unpublish This Post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='fa fa-thumbs-down'></i></button>";
+                                $buttons .= "<button title='Unpublish This Post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='glyphicon glyphicon-stop'></i></button>";
                             } elseif ($row->status == 0) {
-                                $buttons .= "<button title='Re Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='fa fa-thumbs-up'></i></button>";
+                                $buttons .= "<button title='Re Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='glyphicon glyphicon-play'></i></button>";
                             }
 
                             /* End Report */
@@ -321,7 +321,6 @@ class AdminController extends Controller {
                     'recharge_requests.recharge_request_id',
                     'users.name',
                     'recharge_requests.recharge_amount',
-                    //'recharge_requests.bkash_code',
                     'recharge_requests.request_status',
                     'recharge_requests.created_at'
                 ])

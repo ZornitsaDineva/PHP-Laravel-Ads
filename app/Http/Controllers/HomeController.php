@@ -123,14 +123,12 @@ class HomeController extends Controller {
     public function requestRecharge(Request $request) {
 
         $request->validate([
-            //'bkash_code' => 'required|string|max:20',
             'recharge_amount' => 'required|numeric'
         ]);
 
         $rechargeRequest = new RechargeRequest;
         $rechargeRequest->user_id = \Auth::user()->id;
         $rechargeRequest->recharge_amount = $request->recharge_amount;
-        //$rechargeRequest->bkash_code = $request->bkash_code;
         $rechargeRequest->request_status = 1; //1 = new
         $rechargeRequest->save();
 
@@ -789,14 +787,14 @@ class HomeController extends Controller {
             if ($user->user_balance < 1000) {
                 Session::put('message', array(
                     'title' => __('Insufficient Funds'),
-                    'body' => __('You need 100EUR for promoting an ad 7 days, please refill '),
+                    'body' => __('You need 10EUR for promoting an ad 7 days, please refill '),
                     'type' => 'danger'
                 ));
             } else {
 
                 //set as featured, and reduce fund
                 $user = User::find($user_id);
-                $user->user_balance = $user->user_balance - 1000;
+                $user->user_balance = $user->user_balance - 100;
                 $user->save();
 
                 $featured = new Featured;
