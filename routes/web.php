@@ -116,7 +116,7 @@ Route::post('/admin/authenticate', 'AdminLoginController@verifyUser');
 Route::group(['prefix' => 'admin', 'middleware' => [CheckAdmin::class]], function() {
 
     Route::get('/logout', 'AdminController@logout');
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'AdminController@index')->name('admin');
 
     /* User Management */
     Route::get('/users', 'AdminController@usersDatatable');
@@ -172,13 +172,7 @@ Route::group(['prefix' => 'admin', 'middleware' => [CheckAdmin::class]], functio
     Route::post('/city/save-city', 'AdminController@citySave');
 
 
-    /* Basic Content Management */
-    Route::get('/pages', 'AdminController@pagesView');
-    Route::get('/page/create', 'AdminController@pageCreate');
-    Route::get('/page/edit/{id}', 'AdminController@pageEdit');
-    Route::post('/page/save-page', 'AdminController@pageSave');
-
-
+  
     Route::get('/sample/table', 'AdminController@table');
     Route::get('/sample/form', 'AdminController@form');
 });

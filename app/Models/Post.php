@@ -6,25 +6,29 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use DateTime;
 
-class Post extends Model {
-
+class Post extends Model
+{
     protected $primaryKey = "post_id";
     protected $table = 'posts';
 
-    public function Postimages() {
+    public function Postimages()
+    {
         //Each product has many batches
         return $this->hasMany('App\Models\Postimage', 'post_id', 'post_id');
     }
 
-    public function Subcategory() {
+    public function Subcategory()
+    {
         return $this->hasOne('App\Models\Subcategory', 'subcategory_id', 'subcategory_id');
     }
 
-    public function User() {
+    public function User()
+    {
         return $this->hasOne('App\User', 'id', 'user_id');
     }
 
-    public static function findPublished($id) {
+    public static function findPublished($id)
+    {
         return self::join('users', 'users.id', '=', 'posts.user_id')
                         ->where("post_id", $id)
                         ->where("status", 1)
@@ -32,9 +36,10 @@ class Post extends Model {
                         ->first();
     }
 
-    public function isPromoted() {
+    public function isPromoted()
+    {
 
-        //7 day ago 
+        //7 day ago
         $startDate = date('Y-m-d 00:00:00', strtotime('-7 days'));
 
         
@@ -63,10 +68,10 @@ class Post extends Model {
             $todayObj = new DateTime("now");
             
             $validityLeft = $todayObj->diff($offerEndObj);
-          /*  
-          echo "Start = $offerStarted###";
-          echo "End = $offerEnds###";
-          echo "Diff = ".($offerEnds - $offerStarted);*/
+            /*
+            echo "Start = $offerStarted###";
+            echo "End = $offerEnds###";
+            echo "Diff = ".($offerEnds - $offerStarted);*/
             
             
             // shows the total amount of days (not divided into years, months and days like above)
@@ -77,11 +82,8 @@ class Post extends Model {
     }
     
    
-    public static function countPostsByMonth($startDate, $endDate) {
-
-        $startDate = date('Y-m-d 00:00:00', time());
-        $endDate = date('Y-m-d 23:59:59', time());
-
+    public static function countPostsByMonth($startDate, $endDate)
+    {
         $count = DB::table('posts')
                 ->where('posts.created_at', '>', $startDate)
                 ->where('posts.created_at', '<', $endDate)
@@ -90,13 +92,13 @@ class Post extends Model {
         return $count;
     }
 
-    protected static function boot() {
+    protected static function boot()
+    {
         parent::boot();
 
-        static::deleting(function($post) { // before delete() method call this
+        static::deleting(function ($post) { // before delete() method call this
             $post->Postimages()->delete();
             // do the rest of the cleanup...
         });
     }
-
 }

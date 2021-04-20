@@ -58,14 +58,6 @@
         </ul>
     </li>
     
-    
-    <li class="{{ Request::is('admin/page*') ? 'active' : '' }}">
-        <a href="{{url('admin/pages')}}">
-            <i class="fa fa-paragraph"></i> <span>Manage Pages</span>
-        </a>
-    </li>
-    
-    
-    
+       
     
 </ul>
