@@ -3,21 +3,21 @@
 @section('adminContent')
 
 <div class="row">
-    <div class="col-md-3 col-xs-12">
+    <div class="col-md-2">
         <!-- small box -->
         <a href="{{url('admin/ads')}}" class="small-box bg-aqua">
             <div class="inner">
                 <h3><?php echo \App\Models\Post::all()->count() ?></h3>
-                <p>Total Ads</p>
+                <p>Ads</p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>
             </div>
-            <span class="small-box-footer">View Ads&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
+            <span class="small-box-footer">View&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
         </a>
     </div>
     <!-- ./col -->
-    <div class="col-md-3 col-xs-12">
+    <div class="col-md-2">
         <!-- small box -->
         <a href="{{url('admin/payments')}}"  class="small-box bg-green">
             <div class="inner">
@@ -25,16 +25,16 @@
                     echo \App\Models\RechargeRequest::where('request_status', 1)->get()->count();
                     ?><sup style="font-size: 20px"></sup></h3>
 
-                <p>Pending Payments</p>
+                <p>Payments</p>
             </div>
             <div class="icon">
                 <i class="fa fa-dollar"></i>
             </div>
-            <span class="small-box-footer">Confirm Payment Requests&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
+            <span class="small-box-footer">Confirm &nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
         </a>
     </div>
     <!-- ./col -->
-    <div class="col-md-3 col-xs-12">
+    <div class="col-md-2">
         <!-- small box -->
         <a href="{{url('admin/users')}}"  class="small-box bg-yellow">
             <div class="inner">
@@ -47,10 +47,10 @@
             <div class="icon">
                 <i class="ion ion-person-stalker"></i>
             </div>
-            <span class="small-box-footer">Manage Users&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
+            <span class="small-box-footer">View&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
         </a>
     </div>
-    <div class="col-md-3 col-xs-12">
+    <div class="col-md-2">
         <!-- small box -->
         <a href="{{url('admin/ad/complains')}}"  class="small-box bg-red">
             <div class="inner">
@@ -58,12 +58,28 @@
                     echo \App\Models\Report::where('report_status', 0)->get()->count();
                     ?></h3>
 
-                <p>Open Complains</p>
+                <p>Complains</p>
             </div>
             <div class="icon">
                 <i class="ion ion-alert-circled"></i>
             </div>
-            <span class="small-box-footer">View Complains&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
+            <span class="small-box-footer">View&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
+        </a>
+    </div>
+    <div class="col-md-2" >
+        <!-- small box -->
+        <a href="{{url('admin/ad/')}}"  class="small-box bg-purple">
+            <div class="inner">
+                <h3><?php
+                    echo \App\Models\AdminMessage::where('read_status', 0)->get()->count();
+                    ?></h3>
+
+                <p>Message</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-android-mail"></i>
+            </div>
+            <span class="small-box-footer">View&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></span>
         </a>
     </div>
     <!-- ./col -->
@@ -110,36 +126,7 @@
             </div>
             <!-- ./box-body -->
             <div class="box-footer">
-                <div class="row">
-                    <!--                    <div class="col-sm-3 col-xs-6">
-                                            <div class="description-block border-right">
-                                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                                <h5 class="description-header"></h5>
-                                                <span class="description-text">TOTAL REVENUE</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="description-block border-right">
-                                                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                                <h5 class="description-header"></h5>
-                                                <span class="description-text">TOTAL COST</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="description-block border-right">
-                                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                                <h5 class="description-header"></h5>
-                                                <span class="description-text">TOTAL PROFIT</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="description-block">
-                                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                                <h5 class="description-header">1200</h5>
-                                                <span class="description-text">GOAL COMPLETIONS</span>
-                                            </div>
-                                        </div>-->
-                </div>
+            
             </div>
             <!-- /.box-footer -->
         </div>
@@ -150,17 +137,10 @@
 <!-- /.row -->
 
 
-<!-- Morris.js charts -->
-<!--<script src="{{asset('assets/components/raphael/raphael.min.js')}}"></script>-->
-<!--<script src="{{asset('assets/components/morris.js/morris.min.js')}}"></script>-->
-
-<!--<script src="{{asset('assets/js/dashboardmorris.js')}}"></script>-->
-<!--<script src="{{asset('assets/js/dashboardchart.js')}}"></script>-->
 <?php
 $monthNames = [];
 $monthSales = [];
 for ($i = 5; $i >= 0; $i--) {
-
     $monthNames[] = "'" . date("F", strtotime("-" . $i . " month")) . "'";
 
 
@@ -177,12 +157,9 @@ for ($i = 5; $i >= 0; $i--) {
 $lastSixMonths = implode(",", $monthNames); //"'January', 'February', 'March', 'April', 'May', 'June', 'July', 'Auguest', 'September', 'October', 'November', 'December'";
 $lastSixMonthSaleValues = implode(",", $monthSales); //"28, 48, 40, 45, 86, 60, 50, 55, 50, 40, 35, 60";
 
-//$lastSixMonthSaleValues =  "28, 48, 40, 45, 86, 60, 50, 55, 50, 40, 35, 60";
 ?>
 <script type="text/javascript">
     $(function () {
-        
-
         'use strict';
 
         // -----------------------
@@ -228,7 +205,7 @@ $lastSixMonthSaleValues = implode(",", $monthSales); //"28, 48, 40, 45, 86, 60, 
             // Boolean - Whether the line is curved between points
             bezierCurve: false,
             // Number - Tension of the bezier curve between points
-//    bezierCurveTension      : 0.3,
+            //    bezierCurveTension      : 0.3,
             // Boolean - Whether to show a dot for each point
             pointDot: true,
             // Number - Radius of each point dot in pixels

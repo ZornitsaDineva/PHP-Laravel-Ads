@@ -53,7 +53,7 @@ Route::group(
 
 
 
-    /* basic site pages */
+    /* help site pages */
     Route::get('/help/{slug}', 'SiteController@page');
     Route::get('/help', 'HomeController@help')->name('help');
     Route::post('/sendAdminMessage', 'HomeController@sendAdminMessage')->name('sendAdminMessage');
@@ -144,10 +144,6 @@ Route::group(['prefix' => 'admin', 'middleware' => [CheckAdmin::class]], functio
 
     Route::get('/ad/complain/end/{id}', 'AdminController@reportsEnd');
 
-    Route::get('/ads/changeStatus/{status}/{id}', 'AdminController@adsChangeStatus');
-
-
-
     /* Category Management */
     Route::get('/categories', 'AdminController@categoryView');
 
@@ -170,7 +166,6 @@ Route::group(['prefix' => 'admin', 'middleware' => [CheckAdmin::class]], functio
     Route::get('/city/create', 'AdminController@cityCreate');
     Route::get('/city/edit/{city_id}', 'AdminController@cityEdit');
     Route::post('/city/save-city', 'AdminController@citySave');
-
 
   
     Route::get('/sample/table', 'AdminController@table');
