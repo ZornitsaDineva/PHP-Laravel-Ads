@@ -68,7 +68,7 @@
     </div>
     <div class="col-md-2" >
         <!-- small box -->
-        <a href="{{url('admin/ad/')}}"  class="small-box bg-purple">
+        <a href="{{url('admin/admin_messages')}}"  class="small-box bg-purple">
             <div class="inner">
                 <h3><?php
                     echo \App\Models\AdminMessage::where('read_status', 0)->get()->count();

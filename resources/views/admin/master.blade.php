@@ -123,7 +123,7 @@
         <script src="{{asset('assets/components/chart.js/Chart.js')}}"></script>
 
 
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <!-- Admin dashboard demo (This is only for demo purposes) -->
         <!--<script src="{{asset('assets/js/pages/dashboard2.js')}}"></script>-->
 
         <!-- select2 -->
@@ -135,7 +135,7 @@
 
 
         <script src="{{asset('assets/js/scripts.js')}}"></script>
-        <!-- AdminLTE for demo purposes -->
+        <!-- Admin for demo purposes -->
         <!--<script src="{{asset('assets/js/demo.js')}}"></script>-->
     </body>
 </html>

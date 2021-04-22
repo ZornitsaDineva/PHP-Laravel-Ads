@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">User Payments</h3>
+                <h3 class="box-title">Admin Massage</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -14,11 +14,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Admin Massage</th>
                             <th>User Name</th>
-                            <th>Amount</th>
-                            <th>Code</th>
-                            <th>Status</th>
-                            <th>Date</th>
+                            <th>Comment</th>
+                            <th>Read Status</th>
+                            <th>Sent</th>
                             <th style="min-width: 80px"></th>
                         </tr>
                     </thead>
@@ -36,13 +36,13 @@
         oTable = $('.datatable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{{ route("datatables/rechargegetdata") }}',
+            ajax: '{{ route("datatable/get_admin_messages_data") }}',
             columns: [
-                {data: 'recharge_request_id', name: 'recharge_request_id'},
+                {data: 'admin_message_id', name: 'admin_messages.admin_message_id'},
                 {data: 'name', name: 'users.name'},
-                {data: 'recharge_amount', name: 'recharge_amount'},
-                {data: 'request_status', name: 'request_status'},
-                {data: 'created_at', name: 'created_at'},
+                {data: 'comment', name: 'admin_messages.comment'},
+                {data: 'read_status', name: 'admin_messages.read_status'},
+                {data: 'created_at', name: 'admin_messages.created_at'},
                 {data: 'actions', name: 'actions', orderable: false, searchable: false}
             ]
         });

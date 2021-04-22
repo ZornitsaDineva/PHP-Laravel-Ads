@@ -9,6 +9,7 @@ use App\Http\Middleware\CheckAdmin;
 use Illuminate\Support\Facades\Input;
 use DataTables;
 use App\Models\Admin;
+use App\Models\AdminMessage;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Division;
@@ -23,13 +24,15 @@ use Cache;
 
 session_start();
 
-class AdminController extends Controller {
+class AdminController extends Controller
+{
 
     //Layout holder
     private $layout;
 
     //Construct Common Items and Check Auth
-    public function __construct() {
+    public function __construct()
+    {
 //        $this->middleware(CheckAdmin::class);
 
         Cache::flush();
@@ -41,7 +44,8 @@ class AdminController extends Controller {
      * Show dashboard
      * @return type
      */
-    public function index() {
+    public function index()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.dashboard');
@@ -54,7 +58,8 @@ class AdminController extends Controller {
      * Show Posts in Datatable
      * @return type
      */
-    public function adsDatatable() {
+    public function adsDatatable()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.ads.datatable');
@@ -66,8 +71,8 @@ class AdminController extends Controller {
     /**
      * datatables/getdata handler
      */
-    public function adsDatatableGetData() {
-
+    public function adsDatatableGetData()
+    {
         $posts = Post::select(['posts.post_id', 'users.name', 'posts.ad_title', 'cities.city_title_en', 'subcategories.subcategory_title_en', 'posts.short_description', 'posts.status', 'posts.created_at'])
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('users', 'users.id', '=', 'posts.user_id')
@@ -76,8 +81,7 @@ class AdminController extends Controller {
 
 
         return \DataTables::of($posts)
-                        ->editColumn('status', function($row) {
-
+                        ->editColumn('status', function ($row) {
                             $status = 'something wrong';
                             if ($row->status == 1) {
                                 $status = '<span class="label label-success">Published</span>';
@@ -86,7 +90,7 @@ class AdminController extends Controller {
                             }
                             return $status;
                         })
-                        ->addColumn('actions', function($row) {
+                        ->addColumn('actions', function ($row) {
                             $buttons = "";
 
                             if ($row->status == 1) {
@@ -103,8 +107,8 @@ class AdminController extends Controller {
                         ->make(true);
     }
 
-    public function adsChangeStatus($status, $id) {
-
+    public function adsChangeStatus($status, $id)
+    {
         $post = Post::find($id);
 
         switch ($status) {
@@ -142,7 +146,8 @@ class AdminController extends Controller {
      * Show users in datatable
      * @return type
      */
-    public function usersDatatable() {
+    public function usersDatatable()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.users.datatable');
@@ -154,8 +159,8 @@ class AdminController extends Controller {
     /**
      * datatables/usersgetdata handler
      */
-    public function usersDatatableGetData() {
-
+    public function usersDatatableGetData()
+    {
         $users = User::select(['users.id', DB::raw("COUNT(posts.post_id) as post_count"), 'users.name', 'users.mobile', 'users.account_status', 'cities.city_title_en', 'users.created_at'])
                 ->join('posts', 'posts.user_id', '=', 'users.id')
                 ->join('cities', 'cities.city_id', '=', 'users.city_id')
@@ -163,8 +168,7 @@ class AdminController extends Controller {
 
 
         return \DataTables::of($users)
-                        ->editColumn('account_status', function($row) {
-
+                        ->editColumn('account_status', function ($row) {
                             $status = 'something wrong';
                             if ($row->account_status == 1) {
                                 $status = "<span class='label label-success'>Active</span>";
@@ -173,7 +177,7 @@ class AdminController extends Controller {
                             }
                             return $status;
                         })
-                        ->addColumn('actions', function($row) {
+                        ->addColumn('actions', function ($row) {
                             $buttons = "";
 
                             if ($row->account_status == 1) {
@@ -188,8 +192,8 @@ class AdminController extends Controller {
                         ->make(true);
     }
 
-    public function usersChangeStatus($status, $id) {
-
+    public function usersChangeStatus($status, $id)
+    {
         $user = User::find($id);
 
         switch ($status) {
@@ -212,7 +216,8 @@ class AdminController extends Controller {
      * Show Posts in Datatable
      * @return type
      */
-    public function reportsDatatable() {
+    public function reportsDatatable()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.reports.datatable');
@@ -224,8 +229,8 @@ class AdminController extends Controller {
     /**
      * datatables/getdata handler
      */
-    public function reportsDatatableGetData() {
-
+    public function reportsDatatableGetData()
+    {
         $reports = Report::select([
                     'reports.report_id',
                     'users.name',
@@ -239,14 +244,13 @@ class AdminController extends Controller {
                 ])
                 ->join('users', 'users.id', '=', 'reports.user_id')
                 ->join('posts', 'posts.post_id', '=', 'reports.post_id')
-                ->orderBy("report_status",'asc')
+                ->orderBy("report_status", 'asc')
 //                ->where('report_status', '=', 0)
                 ;
 
 
         return \DataTables::of($reports)
-                        ->editColumn('status', function($row) {
-
+                        ->editColumn('status', function ($row) {
                             $status = 'something wrong';
                             if ($row->status == 1) {
                                 $status = '<span class="label label-success">Published</span>';
@@ -255,8 +259,7 @@ class AdminController extends Controller {
                             }
                             return $status;
                         })
-                        ->editColumn('report_status', function($row) {
-
+                        ->editColumn('report_status', function ($row) {
                             $status = 'something wrong';
                             if ($row->report_status == 1) {
                                 $status = '<span class="label label-success">Reviewed</span>';
@@ -265,7 +268,7 @@ class AdminController extends Controller {
                             }
                             return $status;
                         })
-                        ->addColumn('actions', function($row) {
+                        ->addColumn('actions', function ($row) {
                             $buttons = "";
 
                             /* View Complain */
@@ -286,13 +289,81 @@ class AdminController extends Controller {
                         ->make(true);
     }
 
-    public function reportsEnd($id) {
-
+    public function reportsEnd($id)
+    {
         $report = Report::find($id);
         $report->report_status = 1;
         $report->save();
 
         return Redirect::to('admin/ads');
+    }
+
+    /**
+     * Admin Message
+     */
+
+    /**
+     * Show Comment in Data table
+     *@return type
+     */
+
+    /**
+     * datatables/getdata handler
+     */
+    public function adminMessagesDatatableGetData()
+    {
+        $admin_messages = AdminMessage::select([
+                    'admin_messages.admin_message_id',
+                    'users.name',
+                    'admin_messages.read_status',
+                    'admin_messages.comment',
+                    'admin_messages.created_at'
+                ])
+                ->join('users', 'users.id', '=', 'admin_messages.sender_id')
+                ->orderBy("read_status", 'asc')
+                ;
+
+
+        return \DataTables::of($admin_messages)
+                        
+                        ->editColumn('read_status', function ($row) {
+                            $status = 'something wrong';
+                            if ($row->read_status == 1) {
+                                $status = '<span class="label label-success">Reviewed</span>';
+                            } elseif ($row->readt_status == 0) {
+                                $status = '<span class="label label-warning">New</span>';
+                            }
+                            return $status;
+                        })
+                        ->addColumn('actions', function ($row) {
+                            $buttons = "";
+
+                            /* View Comment */
+                            $buttons .= "<button  title='View Original comment' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->admin_messages_id/report'><i class='fa fa-eye'></i></button>";
+
+                            
+                            /* End Report */
+                            $buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-danger dtbutton confirmalert' data-href='" . url('admin/ad/admin_message/end') . "/$row->report_id'><i class='fa fa-times'></i></button>";
+
+                            return "<div class='btn-group'>$buttons</div>";
+                        })
+                        ->rawColumns(['actions', 'status','report_status'])
+                        ->make(true);
+    }
+
+
+     /**
+     * Show Comment in Datatable
+     * @return type
+     */
+    public function adminMessagesDatatable()
+    {
+
+        //Load Component
+        $this->layout['adminContent'] = view('admin.partials.admin_message.datatable');
+
+        //return view
+        return view('admin.master', $this->layout);
     }
 
     /**
@@ -303,7 +374,8 @@ class AdminController extends Controller {
      * Show Posts in Datatable
      * @return type
      */
-    public function rechargeDatatable() {
+    public function rechargeDatatable()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.recharge.datatable');
@@ -315,8 +387,8 @@ class AdminController extends Controller {
     /**
      * datatables/getdata handler
      */
-    public function rechargeDatatableGetData() {
-
+    public function rechargeDatatableGetData()
+    {
         $recharges = RechargeRequest::select([
                     'recharge_requests.recharge_request_id',
                     'users.name',
@@ -329,8 +401,7 @@ class AdminController extends Controller {
 
 
         return \DataTables::of($recharges)
-                        ->editColumn('request_status', function($row) {
-
+                        ->editColumn('request_status', function ($row) {
                             $status = 'something wrong';
                             if ($row->request_status == 1) {
                                 $status = '<span class="label label-success">New</span>';
@@ -339,7 +410,7 @@ class AdminController extends Controller {
                             }
                             return $status;
                         })
-                        ->addColumn('actions', function($row) {
+                        ->addColumn('actions', function ($row) {
                             $buttons = "";
 
                             /* View Complain */
@@ -358,8 +429,8 @@ class AdminController extends Controller {
     }
 
     /* Accept recharge, or undo */
-    public function rechargeChangeStatus($status, $id) {
-
+    public function rechargeChangeStatus($status, $id)
+    {
         switch ($status) {
             case 'received':
                 $recharge = RechargeRequest::find($id);
@@ -389,6 +460,8 @@ class AdminController extends Controller {
         return Redirect::to('admin/ads');
     }
 
+
+
     /**
      * Category Management Start
      */
@@ -397,8 +470,8 @@ class AdminController extends Controller {
      * List Category
      * @return type
      */
-    public function categoryView() {
-
+    public function categoryView()
+    {
         $categories = Category::orderBy('category_weight', 'ASC')->get();
 
         //Load Component
@@ -414,8 +487,8 @@ class AdminController extends Controller {
      * @param type $id
      * @return type
      */
-    public function categoryEdit($id) {
-
+    public function categoryEdit($id)
+    {
         $oldCategoryData = Category::find($id);
 
         //Load Component
@@ -430,7 +503,8 @@ class AdminController extends Controller {
      * Create Category Form
      * @return type
      */
-    public function categoryCreate() {
+    public function categoryCreate()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.category.categorycreate');
@@ -444,13 +518,11 @@ class AdminController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function categorySaveCategory(Request $request) {
-
-
+    public function categorySaveCategory(Request $request)
+    {
         $redirectUrl = '/admin/categories';
 
         if (isset($request->category_id)) {
-
             $redirectUrl = '/admin/category/edit/' . $request->category_id;
 
             $category = Category::find($request->category_id);
@@ -461,7 +533,6 @@ class AdminController extends Controller {
                 'type' => 'info'
             ));
         } else {
-
             $validatedData = $request->validate([
                 'category_title_en' => 'required|string|unique:categories|max:50',
                 'category_title_bg' => 'required|string|unique:categories|max:50',
@@ -498,14 +569,13 @@ class AdminController extends Controller {
 
         //File Is Selected, Proceed with upload
         if ($files) {
-
             $extension = $files->extension();
 
             $allowedExtensions = ['png'];
 
-            if (!( $request->file('category_image')->isValid() && (in_array($extension, $allowedExtensions)) )) {
+            if (!($request->file('category_image')->isValid() && (in_array($extension, $allowedExtensions)))) {
 
-                //File Upload Failed, 
+                //File Upload Failed,
                 Session::put('message', array(
                     'title' => 'Invalid File Selected',
                     'body' => "Please select image file with png extension. With less than 10kb size",
@@ -533,10 +603,10 @@ class AdminController extends Controller {
 
                 $category->category_image = $imgUrl;
 
-                //If it is an edit , remove old file
+            //If it is an edit , remove old file
             } else {
 
-                //File Upload Failed, 
+                //File Upload Failed,
                 Session::put('message', array(
                     'title' => 'Error',
                     'body' => "File Upload Failed",
@@ -555,8 +625,8 @@ class AdminController extends Controller {
      * @param type $subcategory_id
      * @return type
      */
-    public function subcategoryEdit($subcategory_id) {
-
+    public function subcategoryEdit($subcategory_id)
+    {
         $oldCategoryData = Subcategory::find($subcategory_id);
 
         //Load Component
@@ -571,7 +641,8 @@ class AdminController extends Controller {
      * Sub Category Create Form
      * @return type
      */
-    public function subcategoryCreate() {
+    public function subcategoryCreate()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.subcategory.form');
@@ -585,12 +656,11 @@ class AdminController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function subcategorySave(Request $request) {
-
+    public function subcategorySave(Request $request)
+    {
         $redirectUrl = '/admin/subcategory/create';
 
         if (isset($request->subcategory_id)) {
-
             $redirectUrl = '/admin/subcategory/edit/' . $request->subcategory_id;
 
             $subcat = Subcategory::find($request->subcategory_id);
@@ -608,8 +678,6 @@ class AdminController extends Controller {
                 'subcategory_title_bg' => 'required|string'
             ]);
         } else {
-
-
             $validatedData = $request->validate([
                 'parent_category_id' => 'required',
                 'subcategory_title_en' => 'required|string|unique:subcategories|max:50',
@@ -654,8 +722,8 @@ class AdminController extends Controller {
      * List Locations
      * @return type
      */
-    public function locationView() {
-
+    public function locationView()
+    {
         $divisions = Division::orderBy('division_weight', 'ASC')->get();
 
         //Load Component
@@ -670,7 +738,8 @@ class AdminController extends Controller {
      * Show Create Division FOrm
      * @return type
      */
-    public function divisionCreate() {
+    public function divisionCreate()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.location.divisionform');
@@ -684,8 +753,8 @@ class AdminController extends Controller {
      * @param type $id
      * @return type
      */
-    public function divisionEdit($id) {
-
+    public function divisionEdit($id)
+    {
         $oldDivisionData = Division::find($id);
 
         //Load Component
@@ -701,13 +770,11 @@ class AdminController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function divisionSave(Request $request) {
-
-
+    public function divisionSave(Request $request)
+    {
         $redirectUrl = '/admin/division/create';
 
         if (isset($request->division_id)) {
-
             $redirectUrl = '/admin/division/edit/' . $request->division_id;
 
             $validatedData = $request->validate([
@@ -723,7 +790,6 @@ class AdminController extends Controller {
                 'type' => 'info'
             ));
         } else {
-
             $validatedData = $request->validate([
                 'division_title_en' => 'required|string|unique:divisions|max:50',
                 'division_title_bg' => 'required|string|unique:divisions|max:50'
@@ -752,7 +818,8 @@ class AdminController extends Controller {
      * Show Create City Form
      * @return type
      */
-    public function cityCreate() {
+    public function cityCreate()
+    {
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.location.cityform');
@@ -761,8 +828,8 @@ class AdminController extends Controller {
         return view('admin.master', $this->layout);
     }
 
-    public function cityEdit($id) {
-
+    public function cityEdit($id)
+    {
         $oldCityData = City::find($id);
 
         //Load Component
@@ -773,13 +840,11 @@ class AdminController extends Controller {
         return view('admin.master', $this->layout);
     }
 
-    public function citySave(Request $request) {
-
-
+    public function citySave(Request $request)
+    {
         $redirectUrl = '/admin/city/create';
 
         if (isset($request->city_id)) {
-
             $redirectUrl = '/admin/city/edit/' . $request->city_id;
 
             $validatedData = $request->validate([
@@ -795,7 +860,6 @@ class AdminController extends Controller {
                 'type' => 'info'
             ));
         } else {
-
             $validatedData = $request->validate([
                 'city_title_en' => 'required|string|unique:cities|max:50',
                 'city_title_bg' => 'required|string|unique:cities|max:50'
@@ -832,7 +896,8 @@ class AdminController extends Controller {
      * Sample page with a table
      */
 
-    public function table() {
+    public function table()
+    {
 
 
         //Load Component
@@ -843,7 +908,8 @@ class AdminController extends Controller {
         return view('admin.master', $this->layout);
     }
 
-    public function form() {
+    public function form()
+    {
 
 
         //Load Component
@@ -854,7 +920,8 @@ class AdminController extends Controller {
         return view('admin.master', $this->layout);
     }
 
-    public function logout() {
+    public function logout()
+    {
 
 
         //Admin informations
@@ -874,5 +941,4 @@ class AdminController extends Controller {
 
         return Redirect::to('/')->send();
     }
-
 }
