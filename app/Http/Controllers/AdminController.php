@@ -315,8 +315,8 @@ class AdminController extends Controller
         $admin_messages = AdminMessage::select([
                     'admin_messages.admin_message_id',
                     'users.name',
-                    'admin_messages.read_status',
                     'admin_messages.comment',
+                    'admin_messages.read_status',
                     'admin_messages.created_at'
                 ])
                 ->join('users', 'users.id', '=', 'admin_messages.sender_id')
@@ -330,7 +330,7 @@ class AdminController extends Controller
                             $status = 'something wrong';
                             if ($row->read_status == 1) {
                                 $status = '<span class="label label-success">Reviewed</span>';
-                            } elseif ($row->readt_status == 0) {
+                            } elseif ($row->read_status == 0) {
                                 $status = '<span class="label label-warning">New</span>';
                             }
                             return $status;
@@ -338,16 +338,16 @@ class AdminController extends Controller
                         ->addColumn('actions', function ($row) {
                             $buttons = "";
 
-                            /* View Comment */
-                            $buttons .= "<button  title='View Original comment' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->admin_messages_id/report'><i class='fa fa-eye'></i></button>";
+                            /* Sent response */
+                            $buttons .= "<button  title='Send response' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('admin/admin_messages/respond') . "/$row->admin_messages_id'><i class='fa fa-eye'></i></button>";
 
                             
-                            /* End Report */
-                            $buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-danger dtbutton confirmalert' data-href='" . url('admin/ad/admin_message/end') . "/$row->report_id'><i class='fa fa-times'></i></button>";
+                            /* read status */
+                            $buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-primary dtbutton confirmalert' data-href='" . url('admin/admin_messages/end') . "/$row->admin_message_id'><i class='fa fa-eye'></i></button>";
 
                             return "<div class='btn-group'>$buttons</div>";
                         })
-                        ->rawColumns(['actions', 'status','report_status'])
+                        ->rawColumns(['actions', 'status','read_status'])
                         ->make(true);
     }
 
@@ -364,6 +364,15 @@ class AdminController extends Controller
 
         //return view
         return view('admin.master', $this->layout);
+    }
+
+    public function adminMessagesEnd($id)
+    {
+        $admin_messages = AdminMessage::find($id);
+        $admin_messages->read_status = 1;
+        $admin_messages->save();
+
+        return Redirect::to('admin/admin_messages');
     }
 
     /**

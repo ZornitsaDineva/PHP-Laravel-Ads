@@ -147,6 +147,10 @@ Route::group(['prefix' => 'admin', 'middleware' => [CheckAdmin::class]], functio
     /*Admin Message Managment*/
     Route::get('/admin_messages', 'AdminController@adminMessagesDatatable');
     Route::get('/admin_messages/getdata', 'AdminController@adminMessagesDatatableGetData')->name('datatable/get_admin_messages_data');
+    Route::get('/admin_messages/end/{id}', 'AdminController@adminMessagesEnd');
+    Route::get('/admin_messages/respond/{id}', 'AdminController@adminMessagesRespond');
+
+
 
     /* Category Management */
     Route::get('/categories', 'AdminController@categoryView');

@@ -14,11 +14,10 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Admin Massage</th>
                             <th>User Name</th>
                             <th>Comment</th>
                             <th>Read Status</th>
-                            <th>Sent</th>
+                            <th>Created at</th>
                             <th style="min-width: 80px"></th>
                         </tr>
                     </thead>
