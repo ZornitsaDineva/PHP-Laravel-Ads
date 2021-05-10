@@ -572,6 +572,7 @@ class HomeController extends Controller {
             'ad_title' => 'required|string|max:200',
             'item_condition' => 'required',
             'subcategory_id' => 'required',
+            'city_id'=>'required',
             'item_price' => 'required|numeric|min:1',
             //'model' => 'required|string|max:100',
             'short_description' => 'required|string|max:300',
@@ -589,6 +590,7 @@ class HomeController extends Controller {
         $post->ad_title = $request->ad_title;
         $post->item_condition = $request->item_condition;
         $post->subcategory_id = $request->subcategory_id;
+        $post->city_id = $request->city_id;
         $post->item_price = $request->item_price;
         //$post->model = $request->model;
         $post->short_description = $request->short_description;

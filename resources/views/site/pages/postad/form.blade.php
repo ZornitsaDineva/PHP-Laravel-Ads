@@ -74,15 +74,15 @@
                                     {!! Form::hidden('subcategory_id', null , ['form'=>'new-post-form','id' => 'category-selector-value']) !!}                                    
                                 </div>
                             </div>
-                            @if(!isset($postData))    
+                            {{--@if(!isset($postData))--}}    
                             <div class="row form-group">
                                 <label class="col-sm-3 label-title">@lang('Location')</label>
                                 <div class="col-sm-9">
                                     <?php
                                     $columnCity = __('city_title_en');
-                                    if (old('city_id')) {
+                                    if (old('city_id') || isset($postData) && $postData->city_id != 0) {
                                         //Form validation redirect
-                                        $city = \App\Models\City::find(old('city_id'));
+                                        $city = \App\Models\City::find(old('city_id') ?? $postData->city_id);
                                         $city_text = $city->$columnCity;
                                         $city_id = old('city_id');
                                     } elseif (isset($userData->city)) {
@@ -91,7 +91,7 @@
                                         $city_id = $userData->city->city_id;
                                     } else {
                                         //fresh form user city not given yet
-                                        $city_text = __('Please Select');
+                                        $city_text = __('Select');
                                         $city_id = null;
                                     }
                                     ?>
@@ -103,7 +103,7 @@
                                     @include('site.common.categorymodal')
                                 </div>
                             </div>
-                            @endif
+                            {{--@endif--}}
                             <div class="row form-group">
                                 <label class="col-sm-3">@lang('Type of ad')<span class="required">*</span></label>
                                 <div class="col-sm-9">
