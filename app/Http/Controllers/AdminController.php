@@ -327,7 +327,7 @@ class AdminController extends Controller
         return \DataTables::of($admin_messages)
                         
                         ->editColumn('read_status', function ($row) {
-                            $status = 'something wrong';
+                            $status = '';
                             if ($row->read_status == 1) {
                                 $status = '<span class="label label-success">Reviewed</span>';
                             } elseif ($row->read_status == 0) {
@@ -339,7 +339,7 @@ class AdminController extends Controller
                             $buttons = "";
 
                             /* Sent response */
-                            $buttons .= "<button  title='Send response' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('admin/admin_messages/respond') . "/$row->admin_messages_id'><i class='fa fa-eye'></i></button>";
+                            $buttons .= "<button  title='Send response' id='external' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/admin_messages/respond') . "/$row->admin_message_id'><i class='fa fa-reply'></i></button>";
 
                             
                             /* read status */
@@ -950,4 +950,43 @@ class AdminController extends Controller
 
         return Redirect::to('/')->send();
     }
+
+    
+    public function showAdminMessage($id) {
+
+        $admin_message_respond = AdminMessage::select([
+            'admin_messages.admin_message_id',
+            'users.name',
+            'admin_messages.comment'
+        ])
+        ->join('users', 'users.id', '=', 'admin_messages.sender_id')
+        ->where('admin_message_id', '=', $id)
+        ->first();
+
+        //Load Component
+        $this->layout['adminContent'] = view('admin.partials.admin_message.respond_form')
+            ->with('admin_message', $admin_message_respond);
+
+        //return view
+        return view('admin.master', $this->layout);
+    }
+
+   /**
+    * Show admin_messages/respond page
+    * @return \Illuminate\Http\RedirectResponse
+    */
+   public function adminMessageRespond(Request $request) {
+       
+       $request->validate([
+           'id'=>'required|int',
+           'text' => 'required|string|max:500'
+       ]);
+
+       $admin_message = AdminMessage::find($request->id);
+       $admin_message->response = $request->text;
+       $admin_message->save();
+
+       return Redirect::to('admin/admin_messages');
+   }
+
 }
