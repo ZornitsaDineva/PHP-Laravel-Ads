@@ -18,6 +18,7 @@ class CreateAdminMessagesTable extends Migration
             $table->integer('sender_id')->default(0);
             $table->tinyInteger('read_status')->default(0);
             $table->text('comment');
+            $table->text('response');
             $table->timestamps();
         });
     }

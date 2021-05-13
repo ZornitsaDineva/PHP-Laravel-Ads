@@ -16,6 +16,7 @@
                             <th>#</th>
                             <th>User Name</th>
                             <th>Comment</th>
+                            <th>Response</th>
                             <th>Read Status</th>
                             <th>Created at</th>
                             <th style="min-width: 80px"></th>
@@ -40,6 +41,7 @@
                 {data: 'admin_message_id', name: 'admin_messages.admin_message_id'},
                 {data: 'name', name: 'users.name'},
                 {data: 'comment', name: 'admin_messages.comment'},
+                {data: 'response', name: 'admin_messages.response'},
                 {data: 'read_status', name: 'admin_messages.read_status'},
                 {data: 'created_at', name: 'admin_messages.created_at'},
                 {data: 'actions', name: 'actions', orderable: false, searchable: false}

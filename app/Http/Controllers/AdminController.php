@@ -33,7 +33,7 @@ class AdminController extends Controller
     //Construct Common Items and Check Auth
     public function __construct()
     {
-//        $this->middleware(CheckAdmin::class);
+        //        $this->middleware(CheckAdmin::class);
 
         Cache::flush();
 
@@ -74,37 +74,37 @@ class AdminController extends Controller
     public function adsDatatableGetData()
     {
         $posts = Post::select(['posts.post_id', 'users.name', 'posts.ad_title', 'cities.city_title_en', 'subcategories.subcategory_title_en', 'posts.short_description', 'posts.status', 'posts.created_at'])
-                ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
-                ->join('users', 'users.id', '=', 'posts.user_id')
-                ->join('cities', 'cities.city_id', '=', 'users.city_id')
-                ->orderBy('posts.post_id', "DESC");
+            ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
+            ->join('users', 'users.id', '=', 'posts.user_id')
+            ->join('cities', 'cities.city_id', '=', 'users.city_id')
+            ->orderBy('posts.post_id', "DESC");
 
 
         return \DataTables::of($posts)
-                        ->editColumn('status', function ($row) {
-                            $status = 'something wrong';
-                            if ($row->status == 1) {
-                                $status = '<span class="label label-success">Published</span>';
-                            } elseif ($row->status == 0) {
-                                $status = '<span class="label label-warning">Unpublished</span>';
-                            }
-                            return $status;
-                        })
-                        ->addColumn('actions', function ($row) {
-                            $buttons = "";
+            ->editColumn('status', function ($row) {
+                $status = 'something wrong';
+                if ($row->status == 1) {
+                    $status = '<span class="label label-success">Published</span>';
+                } elseif ($row->status == 0) {
+                    $status = '<span class="label label-warning">Unpublished</span>';
+                }
+                return $status;
+            })
+            ->addColumn('actions', function ($row) {
+                $buttons = "";
 
-                            if ($row->status == 1) {
-                                $buttons .= "<button title='Unpublish This Post'  class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='glyphicon glyphicon-stop'></i></button>";
-                            } elseif ($row->status == 0) {
-                                $buttons .= "<button title='Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='glyphicon glyphicon-play'></i></button>";
-                            }
+                if ($row->status == 1) {
+                    $buttons .= "<button title='Unpublish This Post'  class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='glyphicon glyphicon-stop'></i></button>";
+                } elseif ($row->status == 0) {
+                    $buttons .= "<button title='Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='glyphicon glyphicon-play'></i></button>";
+                }
 
-                            $buttons .= "<button title='Delete This Post' class='btn btn-xs btn-danger dtbutton' data-href='" . url('admin/ads/changeStatus/delete') . "/$row->post_id'><i class='fa fa-times'></i></button>";
+                $buttons .= "<button title='Delete This Post' class='btn btn-xs btn-danger dtbutton' data-href='" . url('admin/ads/changeStatus/delete') . "/$row->post_id'><i class='fa fa-times'></i></button>";
 
-                            return "<div class='btn-group'>$buttons</div>";
-                        })
-                        ->rawColumns(['actions', 'status'])
-                        ->make(true);
+                return "<div class='btn-group'>$buttons</div>";
+            })
+            ->rawColumns(['actions', 'status'])
+            ->make(true);
     }
 
     public function adsChangeStatus($status, $id)
@@ -162,34 +162,34 @@ class AdminController extends Controller
     public function usersDatatableGetData()
     {
         $users = User::select(['users.id', DB::raw("COUNT(posts.post_id) as post_count"), 'users.name', 'users.mobile', 'users.account_status', 'cities.city_title_en', 'users.created_at'])
-                ->join('posts', 'posts.user_id', '=', 'users.id')
-                ->join('cities', 'cities.city_id', '=', 'users.city_id')
-                ->groupBy('users.id');
+            ->join('posts', 'posts.user_id', '=', 'users.id')
+            ->join('cities', 'cities.city_id', '=', 'users.city_id')
+            ->groupBy('users.id');
 
 
         return \DataTables::of($users)
-                        ->editColumn('account_status', function ($row) {
-                            $status = 'something wrong';
-                            if ($row->account_status == 1) {
-                                $status = "<span class='label label-success'>Active</span>";
-                            } elseif ($row->account_status == 0) {
-                                $status = '<span class="label label-warning">Banned</span>';
-                            }
-                            return $status;
-                        })
-                        ->addColumn('actions', function ($row) {
-                            $buttons = "";
+            ->editColumn('account_status', function ($row) {
+                $status = 'something wrong';
+                if ($row->account_status == 1) {
+                    $status = "<span class='label label-success'>Active</span>";
+                } elseif ($row->account_status == 0) {
+                    $status = '<span class="label label-warning">Banned</span>';
+                }
+                return $status;
+            })
+            ->addColumn('actions', function ($row) {
+                $buttons = "";
 
-                            if ($row->account_status == 1) {
-                                $buttons .= "<button title='Ban This user and unpublish all post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/users/changeStatus/ban') . "/$row->id'><i class='glyphicon glyphicon-stop'></i></button>";
-                            } elseif ($row->account_status == 0) {
-                                $buttons .= "<button title='Un Ban This user' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/users/changeStatus/unban') . "/$row->id'><i class='glyphicon glyphicon-play'></i></button>";
-                            }
+                if ($row->account_status == 1) {
+                    $buttons .= "<button title='Ban This user and unpublish all post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/users/changeStatus/ban') . "/$row->id'><i class='glyphicon glyphicon-stop'></i></button>";
+                } elseif ($row->account_status == 0) {
+                    $buttons .= "<button title='Un Ban This user' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/users/changeStatus/unban') . "/$row->id'><i class='glyphicon glyphicon-play'></i></button>";
+                }
 
-                            return "<div class='btn-group'>$buttons</div>";
-                        })
-                        ->rawColumns(['actions', 'account_status'])
-                        ->make(true);
+                return "<div class='btn-group'>$buttons</div>";
+            })
+            ->rawColumns(['actions', 'account_status'])
+            ->make(true);
     }
 
     public function usersChangeStatus($status, $id)
@@ -232,61 +232,61 @@ class AdminController extends Controller
     public function reportsDatatableGetData()
     {
         $reports = Report::select([
-                    'reports.report_id',
-                    'users.name',
-                    'posts.ad_title',
-                    'posts.status',
-                    'posts.post_id',
-                    'reports.reason',
-                    'reports.report_status',
-                    'reports.message',
-                    'reports.created_at'
-                ])
-                ->join('users', 'users.id', '=', 'reports.user_id')
-                ->join('posts', 'posts.post_id', '=', 'reports.post_id')
-                ->orderBy("report_status", 'asc')
-//                ->where('report_status', '=', 0)
-                ;
+            'reports.report_id',
+            'users.name',
+            'posts.ad_title',
+            'posts.status',
+            'posts.post_id',
+            'reports.reason',
+            'reports.report_status',
+            'reports.message',
+            'reports.created_at'
+        ])
+            ->join('users', 'users.id', '=', 'reports.user_id')
+            ->join('posts', 'posts.post_id', '=', 'reports.post_id')
+            ->orderBy("report_status", 'asc')
+            //                ->where('report_status', '=', 0)
+        ;
 
 
         return \DataTables::of($reports)
-                        ->editColumn('status', function ($row) {
-                            $status = 'something wrong';
-                            if ($row->status == 1) {
-                                $status = '<span class="label label-success">Published</span>';
-                            } elseif ($row->status == 0) {
-                                $status = '<span class="label label-warning">Unpublished</span>';
-                            }
-                            return $status;
-                        })
-                        ->editColumn('report_status', function ($row) {
-                            $status = 'something wrong';
-                            if ($row->report_status == 1) {
-                                $status = '<span class="label label-success">Reviewed</span>';
-                            } elseif ($row->report_status == 0) {
-                                $status = '<span class="label label-warning">New</span>';
-                            }
-                            return $status;
-                        })
-                        ->addColumn('actions', function ($row) {
-                            $buttons = "";
+            ->editColumn('status', function ($row) {
+                $status = 'something wrong';
+                if ($row->status == 1) {
+                    $status = '<span class="label label-success">Published</span>';
+                } elseif ($row->status == 0) {
+                    $status = '<span class="label label-warning">Unpublished</span>';
+                }
+                return $status;
+            })
+            ->editColumn('report_status', function ($row) {
+                $status = 'something wrong';
+                if ($row->report_status == 1) {
+                    $status = '<span class="label label-success">Reviewed</span>';
+                } elseif ($row->report_status == 0) {
+                    $status = '<span class="label label-warning">New</span>';
+                }
+                return $status;
+            })
+            ->addColumn('actions', function ($row) {
+                $buttons = "";
 
-                            /* View Complain */
-                            $buttons .= "<button  title='View Original Post' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->post_id/report'><i class='fa fa-eye'></i></button>";
+                /* View Complain */
+                $buttons .= "<button  title='View Original Post' id='external' class='btn btn-xs btn-primary dtbutton' data-href='" . url('ad') . "/$row->post_id/report'><i class='fa fa-eye'></i></button>";
 
-                            if ($row->status == 1) {
-                                $buttons .= "<button title='Unpublish This Post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='glyphicon glyphicon-stop'></i></button>";
-                            } elseif ($row->status == 0) {
-                                $buttons .= "<button title='Re Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='glyphicon glyphicon-play'></i></button>";
-                            }
+                if ($row->status == 1) {
+                    $buttons .= "<button title='Unpublish This Post' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/ads/changeStatus/unpublish') . "/$row->post_id'><i class='glyphicon glyphicon-stop'></i></button>";
+                } elseif ($row->status == 0) {
+                    $buttons .= "<button title='Re Publish This Post' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/ads/changeStatus/publish') . "/$row->post_id'><i class='glyphicon glyphicon-play'></i></button>";
+                }
 
-                            /* End Report */
-                            $buttons .= "<button title='Mark this complain as read' class='btn btn-xs btn-danger dtbutton confirmalert' data-href='" . url('admin/ad/complain/end') . "/$row->report_id'><i class='fa fa-times'></i></button>";
+                /* End Report */
+                $buttons .= "<button title='Mark this complain as read' class='btn btn-xs btn-danger dtbutton confirmalert' data-href='" . url('admin/ad/complain/end') . "/$row->report_id'><i class='fa fa-times'></i></button>";
 
-                            return "<div class='btn-group'>$buttons</div>";
-                        })
-                        ->rawColumns(['actions', 'status','report_status'])
-                        ->make(true);
+                return "<div class='btn-group'>$buttons</div>";
+            })
+            ->rawColumns(['actions', 'status', 'report_status'])
+            ->make(true);
     }
 
     public function reportsEnd($id)
@@ -313,46 +313,46 @@ class AdminController extends Controller
     public function adminMessagesDatatableGetData()
     {
         $admin_messages = AdminMessage::select([
-                    'admin_messages.admin_message_id',
-                    'users.name',
-                    'admin_messages.comment',
-                    'admin_messages.read_status',
-                    'admin_messages.created_at'
-                ])
-                ->join('users', 'users.id', '=', 'admin_messages.sender_id')
-                ->orderBy("read_status", 'asc')
-                ;
+            'admin_messages.admin_message_id',
+            'users.name',
+            'admin_messages.comment',
+            'admin_messages.response',
+            'admin_messages.read_status',
+            'admin_messages.created_at'
+        ])
+            ->join('users', 'users.id', '=', 'admin_messages.sender_id')
+            ->orderBy("read_status", 'asc');
 
 
         return \DataTables::of($admin_messages)
-                        
-                        ->editColumn('read_status', function ($row) {
-                            $status = '';
-                            if ($row->read_status == 1) {
-                                $status = '<span class="label label-success">Reviewed</span>';
-                            } elseif ($row->read_status == 0) {
-                                $status = '<span class="label label-warning">New</span>';
-                            }
-                            return $status;
-                        })
-                        ->addColumn('actions', function ($row) {
-                            $buttons = "";
 
-                            /* Sent response */
-                            $buttons .= "<button  title='Send response' id='external' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/admin_messages/respond') . "/$row->admin_message_id'><i class='fa fa-reply'></i></button>";
+            ->editColumn('read_status', function ($row) {
+                $status = '';
+                if ($row->read_status == 1) {
+                    $status = '<span class="label label-success">Reviewed</span>';
+                } elseif ($row->read_status == 0) {
+                    $status = '<span class="label label-warning">New</span>';
+                }
+                return $status;
+            })
+            ->addColumn('actions', function ($row) {
+                $buttons = "";
 
-                            
-                            /* read status */
-                            $buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-primary dtbutton confirmalert' data-href='" . url('admin/admin_messages/end') . "/$row->admin_message_id'><i class='fa fa-eye'></i></button>";
+                /* Sent response */
+                $buttons .= "<button  title='Send response' id='external' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/admin_messages/respond') . "/$row->admin_message_id'><i class='fa fa-reply'></i></button>";
 
-                            return "<div class='btn-group'>$buttons</div>";
-                        })
-                        ->rawColumns(['actions', 'status','read_status'])
-                        ->make(true);
+
+                /* read status */
+                $buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-primary dtbutton confirmalert' data-href='" . url('admin/admin_messages/end') . "/$row->admin_message_id'><i class='fa fa-eye'></i></button>";
+
+                return "<div class='btn-group'>$buttons</div>";
+            })
+            ->rawColumns(['actions', 'status', 'read_status'])
+            ->make(true);
     }
 
 
-     /**
+    /**
      * Show Comment in Datatable
      * @return type
      */
@@ -399,42 +399,42 @@ class AdminController extends Controller
     public function rechargeDatatableGetData()
     {
         $recharges = RechargeRequest::select([
-                    'recharge_requests.recharge_request_id',
-                    'users.name',
-                    'recharge_requests.recharge_amount',
-                    'recharge_requests.request_status',
-                    'recharge_requests.created_at'
-                ])
-                ->join('users', 'users.id', '=', 'recharge_requests.user_id')
-                ->orderBy('recharge_requests.request_status', 'DESC');
+            'recharge_requests.recharge_request_id',
+            'users.name',
+            'recharge_requests.recharge_amount',
+            'recharge_requests.request_status',
+            'recharge_requests.created_at'
+        ])
+            ->join('users', 'users.id', '=', 'recharge_requests.user_id')
+            ->orderBy('recharge_requests.request_status', 'DESC');
 
 
         return \DataTables::of($recharges)
-                        ->editColumn('request_status', function ($row) {
-                            $status = 'something wrong';
-                            if ($row->request_status == 1) {
-                                $status = '<span class="label label-success">New</span>';
-                            } elseif ($row->request_status == 0) {
-                                $status = '<span class="label label-info">Processed</span>';
-                            }
-                            return $status;
-                        })
-                        ->addColumn('actions', function ($row) {
-                            $buttons = "";
+            ->editColumn('request_status', function ($row) {
+                $status = 'something wrong';
+                if ($row->request_status == 1) {
+                    $status = '<span class="label label-success">New</span>';
+                } elseif ($row->request_status == 0) {
+                    $status = '<span class="label label-info">Processed</span>';
+                }
+                return $status;
+            })
+            ->addColumn('actions', function ($row) {
+                $buttons = "";
 
-                            /* View Complain */
+                /* View Complain */
 
-                            if ($row->request_status == 1) {
-                                $buttons .= "<button title='Mark as Received' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/payment/changeStatus/received') . "/$row->recharge_request_id'><i class='fa fa-check'></i></button>";
-                            } elseif ($row->request_status == 0) {
-                                $buttons .= "<button title='Mark as Not Received/new' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/payment/changeStatus/new') . "/$row->recharge_request_id'><i class='fa fa-undo'></i></button>";
-                            }
+                if ($row->request_status == 1) {
+                    $buttons .= "<button title='Mark as Received' class='btn btn-xs btn-success dtbutton' data-href='" . url('admin/payment/changeStatus/received') . "/$row->recharge_request_id'><i class='fa fa-check'></i></button>";
+                } elseif ($row->request_status == 0) {
+                    $buttons .= "<button title='Mark as Not Received/new' class='btn btn-xs btn-warning dtbutton' data-href='" . url('admin/payment/changeStatus/new') . "/$row->recharge_request_id'><i class='fa fa-undo'></i></button>";
+                }
 
 
-                            return "<div class='btn-group'>$buttons</div>";
-                        })
-                        ->rawColumns(['actions', 'request_status'])
-                        ->make(true);
+                return "<div class='btn-group'>$buttons</div>";
+            })
+            ->rawColumns(['actions', 'request_status'])
+            ->make(true);
     }
 
     /* Accept recharge, or undo */
@@ -445,7 +445,7 @@ class AdminController extends Controller
                 $recharge = RechargeRequest::find($id);
                 $recharge->request_status = 0;
                 $recharge->save();
-                
+
                 $user = User::find($recharge->user_id);
                 $user->user_balance = $user->user_balance + $recharge->recharge_amount;
                 $user->save();
@@ -455,7 +455,7 @@ class AdminController extends Controller
                 $recharge = RechargeRequest::find($id);
                 $recharge->request_status = 1;
                 $recharge->save();
-                
+
                 $user = User::find($recharge->user_id);
                 $user->user_balance = $user->user_balance - $recharge->recharge_amount;
                 $user->save();
@@ -485,7 +485,7 @@ class AdminController extends Controller
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.category.list')
-                ->with('categories', $categories);
+            ->with('categories', $categories);
 
         //return view
         return view('admin.master', $this->layout);
@@ -502,7 +502,7 @@ class AdminController extends Controller
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.category.categorycreate')
-                ->with('oldCategoryData', $oldCategoryData);
+            ->with('oldCategoryData', $oldCategoryData);
 
         //return view
         return view('admin.master', $this->layout);
@@ -612,7 +612,7 @@ class AdminController extends Controller
 
                 $category->category_image = $imgUrl;
 
-            //If it is an edit , remove old file
+                //If it is an edit , remove old file
             } else {
 
                 //File Upload Failed,
@@ -640,7 +640,7 @@ class AdminController extends Controller
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.subcategory.form')
-                ->with('oldCategoryData', $oldCategoryData);
+            ->with('oldCategoryData', $oldCategoryData);
 
         //return view
         return view('admin.master', $this->layout);
@@ -737,7 +737,7 @@ class AdminController extends Controller
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.location.list')
-                ->with('divisions', $divisions);
+            ->with('divisions', $divisions);
 
         //return view
         return view('admin.master', $this->layout);
@@ -768,7 +768,7 @@ class AdminController extends Controller
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.location.divisionform')
-                ->with('oldDivisionData', $oldDivisionData);
+            ->with('oldDivisionData', $oldDivisionData);
 
         //return view
         return view('admin.master', $this->layout);
@@ -843,7 +843,7 @@ class AdminController extends Controller
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.location.cityform')
-                ->with('oldCityData', $oldCityData);
+            ->with('oldCityData', $oldCityData);
 
         //return view
         return view('admin.master', $this->layout);
@@ -900,7 +900,7 @@ class AdminController extends Controller
      * Location Management End
      */
 
-    
+
     /*
      * Sample page with a table
      */
@@ -951,17 +951,18 @@ class AdminController extends Controller
         return Redirect::to('/')->send();
     }
 
-    
-    public function showAdminMessage($id) {
+
+    public function showAdminMessage($id)
+    {
 
         $admin_message_respond = AdminMessage::select([
             'admin_messages.admin_message_id',
             'users.name',
             'admin_messages.comment'
         ])
-        ->join('users', 'users.id', '=', 'admin_messages.sender_id')
-        ->where('admin_message_id', '=', $id)
-        ->first();
+            ->join('users', 'users.id', '=', 'admin_messages.sender_id')
+            ->where('admin_message_id', '=', $id)
+            ->first();
 
         //Load Component
         $this->layout['adminContent'] = view('admin.partials.admin_message.respond_form')
@@ -971,22 +972,24 @@ class AdminController extends Controller
         return view('admin.master', $this->layout);
     }
 
-   /**
-    * Show admin_messages/respond page
-    * @return \Illuminate\Http\RedirectResponse
-    */
-   public function adminMessageRespond(Request $request) {
-       
-       $request->validate([
-           'id'=>'required|int',
-           'text' => 'required|string|max:500'
-       ]);
+    /**
+     * Show admin_messages/respond page
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function adminMessageRespond(Request $request)
+    {
 
-       $admin_message = AdminMessage::find($request->id);
-       $admin_message->response = $request->text;
-       $admin_message->save();
+        $request->validate([
+            'id' => 'required|int',
+            'response' => 'required|string|max:500'
+        ]);
 
-       return Redirect::to('admin/admin_messages');
-   }
+        $admin_message = AdminMessage::find($request->id);
+        $admin_message->response = $request->response;
+        $admin_message->read_status = 1;
+        $admin_message->save();
 
+
+        return Redirect::to('admin/admin_messages');
+    }
 }
