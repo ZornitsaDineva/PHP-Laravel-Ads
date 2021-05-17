@@ -18,9 +18,12 @@ use App\Models\Post;
 use App\Models\Report;
 use App\Models\Page;
 use App\Models\RechargeRequest;
-use App\User;
 use DB;
 use Cache;
+use Mail;
+use App\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Mail\Mailer;
 
 session_start();
 
@@ -989,7 +992,26 @@ class AdminController extends Controller
         $admin_message->read_status = 1;
         $admin_message->save();
 
+        $this->sendEmailAdminResponse($request, $admin_message);
 
         return Redirect::to('admin/admin_messages');
+    }
+/**
+     * Send an e-mail reminder to the user.
+     *
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
+     */
+    private function sendEmailAdminResponse(Request $request,$admin_message) {
+        $user = User::findOrFail($admin_message->sender_id);
+
+        Mail::send('response', ['user' => $user,'admin_message'=>$admin_message], function ($m) use ($user) {
+        //Mail::send('response', [], function ($m) {
+            $m->from('hello@app.com', 'BulSofa');
+
+            $m->to($user->email, $user->name)->subject('Admin Respose!');
+            //$m->to('me@help.com', 'me')->subject('Admin Respose!');
+        });
     }
 }
