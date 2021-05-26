@@ -33,8 +33,8 @@
                     <div class="footer-widget social-widget">
                         <h3>@lang('Follow us on')</h3>
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook-official"></i>@lang('Facebook')</a></li>
-                            <li><a href="#"><i class="fa fa-twitter-square"></i>@lang('Twitter')</a></li>
+                            <li><a href="https://www.facebook.com/BulSofa-105342381755953/?ref=pages_you_manage"><i class="fa fa-facebook-official"></i>@lang('Facebook')</a></li>
+                            <!--<li><a href="#"><i class="fa fa-twitter-square"></i>@lang('Twitter')</a></li>-->
                             <!--<li><a href="#"><i class="fa fa-google-plus-square"></i>@lang('Google+')</a></li>-->
                             <!--<li><a href="#"><i class="fa fa-youtube-play"></i>@lang('Youtube')</a></li>-->
                         </ul>
@@ -46,8 +46,8 @@
                         <ul>
                             <!--<li><a href="#"><i class="fa fa-facebook-official"></i>@lang('Facebook')</a></li>-->
                             <!--<li><a href="#"><i class="fa fa-twitter-square"></i>@lang('Twitter')</a></li>-->
-                            <li><a href="#"><i class="fa fa-google-plus-square"></i>@lang('Google+')</a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play"></i>@lang('Youtube')</a></li>
+                            <!--<li><a href="#"><i class="fa fa-google-plus-square"></i>@lang('Google+')</a></li>-->
+                            <li><a href="https://www.youtube.com/channel/UCIH1sMwv_5Lxd38Nt_C0ifQ"><i class="fa fa-youtube-play"></i>@lang('Youtube')</a></li>
                         </ul>
                     </div>
                 </div><!-- footer-widget -->

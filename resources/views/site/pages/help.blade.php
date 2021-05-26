@@ -21,9 +21,9 @@
             <form action="{{ route('sendAdminMessage') }}" id="usrform" method="POST">
                 {{ csrf_field() }}
                 <h1>{{ Auth::user()->name }}, @lang('contact us through this form:')</h1>
-                <textarea rows="4" cols="50" name="comment" form="usrform">@lang('Enter text here...')</textarea>
+                <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="@lang('Enter text here...')"></textarea>
                 <div>
-                    <input type="submit">
+                    <input type="submit" value="Submit">
                 </div>
             </form>
         </div>
