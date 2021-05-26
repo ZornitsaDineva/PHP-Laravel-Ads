@@ -23,7 +23,7 @@
                 <h1>{{ Auth::user()->name }}, @lang('contact us through this form:')</h1>
                 <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="@lang('Enter text here...')"></textarea>
                 <div>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="@lang('Submit')">
                 </div>
             </form>
         </div>
