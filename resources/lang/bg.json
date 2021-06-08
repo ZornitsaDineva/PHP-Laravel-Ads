@@ -254,7 +254,11 @@
      "You send mеssage to our administrator":"Вие изпратихте съобщение до нашия администратор",
      "contact us through this form:":"свържете се с нас чрез тази форма:",
      "Submit":"Изпрати",
-     "By signing up for an account you agree to our Terms and Conditions":"Регистрирайки се, вие се съгласявате с Общите условия"
+     "By signing up for an account you agree to our Terms and Conditions":"Регистрирайки се, вие се съгласявате с Общите условия",
+     "Sorry":"Грешка",
+    "Username or Password invalid":"Грешена парола или име",
+    "The administrator is in the system":"Администраторът е в системата"
+
 
 
 }

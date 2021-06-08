@@ -53,8 +53,8 @@ class AdminLoginController extends Controller {
             Session::put('admin_id', $result->admin_id);
             //Message for Notification Builder
             Session::put('message', array(
-                'title' => "Welcome, $result->admin_name",
-                'body' => 'You are now logged in',
+                'title' => __('Welcome'), $result->admin_name,
+                'body' => __('The administrator is in the system'),
                 'type' => 'success'
             ));
 
@@ -65,8 +65,8 @@ class AdminLoginController extends Controller {
 
             //Message for Notification Builder
             Session::put('message', array(
-                'title' => 'Sorry',
-                'body' => 'Username or Password invalid',
+                'title' => __('Sorry'),
+                'body' => __('Username or Password invalid'),
                 'type' => 'warning'
             ));
             return Redirect::to('/administrator');

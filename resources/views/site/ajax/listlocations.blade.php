@@ -6,9 +6,10 @@
                 <?php
                 $column = __('division_title_en');
                 //Cache Divisions
-                $divisions = Cache::rememberForever('divisions', function() {
-                            return DB::table('divisions')->orderBy('division_weight')->get();
-                        });
+                $divisions = Cache::rememberForever('divisions', function () {
+                    return DB::table('divisions')
+                                             ->orderBy('division_weight')->get();
+                });
                 ?>
                 @foreach($divisions as $aDiv)
                 <a class="list-group-item" data-toggle="tab" href="#division{{$aDiv->division_id}}"><i class="{{$aDiv->division_icon}}"></i> &nbsp;&nbsp;<?php echo $aDiv->$column ?><i class="fa fa-chevron-right pull-right"></i></a>
@@ -21,20 +22,20 @@
             $columnDistrict = __('city_title_en');
             foreach ($divisions as $aDiv) {
                 //Cache Districts For All Divisions
-                $districts = Cache::rememberForever("div-$aDiv->division_id-cities", function() use ($aDiv) {
-                            return DB::table('cities')
+                $districts = Cache::rememberForever("div-$aDiv->division_id-cities", function () use ($aDiv) {
+                    return DB::table('cities')
                                             ->where('division_id', $aDiv->division_id)
                                             ->get();
-                        });                
+                });
 
                 echo '<div class="list-group tab-pane" id="division' . $aDiv->division_id . '">';
                 foreach ($districts as $aDistrict) {
                     ?>
                     <a data-text="<?php echo $aDistrict->$columnDistrict ?>" data-id="<?php echo $aDistrict->city_id ?>" class="list-group-item" data-href="<?php echo url("all-ads/0/$aDistrict->city_id") ?>"><?php echo $aDistrict->$columnDistrict ?><span class="fa fa-chevron-right pull-right"></span></a>
                         <?php
-                    }
-                    echo '</div>';
                 }
+                echo '</div>';
+            }
                 ?>            
         </div>        
     </div>                            

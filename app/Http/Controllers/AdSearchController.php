@@ -28,7 +28,7 @@ class AdSearchController extends Controller {
         $usertype[1] = __('Dealer');
         View::share('usertype', $usertype);
 
-        View::share('category_title', __('category_title_en'));
+        View::share('category_title', __('category_title_en')); 
         View::share('subcategory_title', __('subcategory_title_en'));
         View::share('division_title', __('division_title_en'));
         View::share('city_title', __('city_title_en'));
@@ -167,7 +167,7 @@ class AdSearchController extends Controller {
 
 
         $ads = $query
-                ->paginate(10)
+                ->paginate(2)
                 ->appends(Input::except('page'));
 
 

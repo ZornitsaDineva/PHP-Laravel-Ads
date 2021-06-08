@@ -115,14 +115,14 @@
         $cities = \App\Models\City::all();
 
         foreach ($cities as $aCity) {
-            echo "cityIds['$aCity->city_title_en"."Jilla'] =  $aCity->city_id;\n";
+            echo "cityIds['$aCity->city_title_en"."City'] =  $aCity->city_id;\n";
         }
         ?>
 
         if ($(this).attr('class') === 'divisions mapclickable'){
             window.location.href  = '<?php echo url('all-ads') ?>?division_id='+divisionIds[name]+"&division="+name;
         }else if ($(this).attr('class') === 'cities mapclickable'){
-            window.location.href  = '<?php echo url('all-ads') ?>?city_id='+cityIds[name]+"&jilla="+name;
+            window.location.href  = '<?php echo url('all-ads') ?>?city_id='+cityIds[name]+"&city="+name;
         }
 
 

@@ -346,7 +346,7 @@ class AdminController extends Controller
 
 
                 /* read status */
-                /*$buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-primary dtbutton confirmalert' data-href='" . url('admin/admin_messages/end') . "/$row->admin_message_id'><i class='fa fa-eye'></i></button>";*/
+                $buttons .= "<button title='Mark this comment as read' class='btn btn-xs btn-primary dtbutton confirmalert' data-href='" . url('admin/admin_messages/end') . "/$row->admin_message_id'><i class='fa fa-eye'></i></button>";
 
                 return "<div >$buttons</div>";
             })

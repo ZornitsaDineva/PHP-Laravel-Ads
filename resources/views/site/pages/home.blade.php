@@ -39,11 +39,11 @@
         <div class="section services">
             <!-- single-service -->
             <?php
-            $categories = Cache::rememberForever('categories', function() {
-                        return DB::table('categories')
+            $categories = Cache::rememberForever('categories', function () {
+                return DB::table('categories')
                                         ->orderBy('category_weight', 'asc')
                                         ->get();
-                    });
+            });
             $rowItem = 0;
             ?>
             @foreach($categories as $aCat)
@@ -56,12 +56,12 @@
                     <ul>
                         <?php
                         $rowItem++;
-                        $subCategories = Cache::rememberForever("cat-$aCat->category_id-subcats", function() use ($aCat) {
-                                    return DB::table('subcategories')
+                        $subCategories = Cache::rememberForever("cat-$aCat->category_id-subcats", function () use ($aCat) {
+                            return DB::table('subcategories')
                                                     ->where('parent_category_id', $aCat->category_id)
                                                     ->orderBy('subcategory_weight', 'asc')
                                                     ->get();
-                                });
+                        });
                         ?>
                         @foreach($subCategories as $aSubCat)
                         <li><a href='{{url("all-ads")."?category_id=$aCat->category_id&subcategory_id=$aSubCat->subcategory_id"}}'>{{$aSubCat->$subcategory_title}}</a></li>
