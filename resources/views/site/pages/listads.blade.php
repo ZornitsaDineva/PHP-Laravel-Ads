@@ -91,11 +91,11 @@ $currentQuery = Illuminate\Support\Facades\Request::query();
                                 <!-- panel-heading -->
                                 <div class="panel-heading">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#accordion-one">
-                                        <h4 class="panel-title">@lang('All Categories')<span class="pull-right"><i class="fa fa-minus"></i></span></h4>
+                                        <h4 class="panel-title">@lang('All Categories')<span class="pull-right"><i class="fa fa-plus"></i></span></h4>
                                     </a>
                                 </div><!-- panel-heading -->
 
-                                <div id="accordion-one" class="panel-collapse collapse in">
+                                <div id="accordion-one" class="panel-collapse collapse">
                                     <!-- panel-body -->
                                     <div class="panel-body">
                                         <ul>

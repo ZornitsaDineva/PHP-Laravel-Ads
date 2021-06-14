@@ -11,9 +11,9 @@
             <!-- breadcrumb -->
             <ol class="breadcrumb">
                 <li><a href="{{url('/dashboard')}}">@lang('Home')</a></li>
-                <li>@lang('Favourites')</li>
+                <li>@lang('Inbox')</li>
             </ol><!-- breadcrumb -->						
-            <h2 class="title">@lang('My Favourites')</h2>
+            <h2 class="title">@lang('Inbox')</h2>
         </div><!-- banner -->
 
         @include('site.pages.dashboard.menu')			

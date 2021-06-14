@@ -12,13 +12,15 @@ use Session;
 use Redirect;
 use Illuminate\Support\Carbon;
 
-class AdSearchController extends Controller {
+class AdSearchController extends Controller
+{
 
     //Layout holder
     private $layout;
 
     //Construct Common Items and Check Auth
-    public function __construct() {
+    public function __construct()
+    {
 //        $this->middleware(CheckAdmin::class);
         $this->layout['siteContent'] = view('site.pages.home');
         $this->layout['notification'] = view('site.common.notification');
@@ -28,7 +30,7 @@ class AdSearchController extends Controller {
         $usertype[1] = __('Dealer');
         View::share('usertype', $usertype);
 
-        View::share('category_title', __('category_title_en')); 
+        View::share('category_title', __('category_title_en'));
         View::share('subcategory_title', __('subcategory_title_en'));
         View::share('division_title', __('division_title_en'));
         View::share('city_title', __('city_title_en'));
@@ -38,11 +40,8 @@ class AdSearchController extends Controller {
      * Ad Listing
      * @return type
      */
-    public function allAds(Request $request) {
-
-
-
-
+    public function allAds(Request $request)
+    {
         View::share('condition_collapse', '');
         View::share('price_collapse', '');
         View::share('sellertype_collapse', '');
@@ -52,7 +51,22 @@ class AdSearchController extends Controller {
         //Main Query
         $query = DB::table('posts')
                 ->select(
-                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bg', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bg', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bg', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bg', 'postimages.postimage_thumbnail'
+                    'posts.*',
+                    'subcategories.subcategory_title_en',
+                    'subcategories.subcategory_title_bg',
+                    'categories.category_id',
+                    'categories.category_title_en',
+                    'categories.category_title_bg',
+                    'users.name',
+                    'users.city_id',
+                    'users.user_type',
+                    'cities.city_id',
+                    'cities.city_title_en',
+                    'cities.city_title_bg',
+                    'divisions.division_id',
+                    'divisions.division_title_en',
+                    'divisions.division_title_bg',
+                    'postimages.postimage_thumbnail'
                 )
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('categories', 'categories.category_id', '=', 'subcategories.parent_category_id')
@@ -83,19 +97,23 @@ class AdSearchController extends Controller {
 
 
         /* Calcualte top ads */
-        //7 day ago 
+        //7 day ago
         $startDate = date('Y-m-d 00:00:00', strtotime('-7 days'));
         //today
         $endDate = date('Y-m-d 23:59:59', time());
         //Calcuate top ads based on current querry
-        $queryTop = clone $query;
-        $topAds = $queryTop
+        if (!$request->filled('page') || $request->page==1) {
+            $queryTop = clone $query;
+            $topAds = $queryTop
                 ->join('featureds', 'featureds.post_id', '=', 'posts.post_id')
                 ->where('featureds.created_at', '>', $startDate)
                 ->where('featureds.created_at', '<', $endDate)
                 ->inRandomOrder()
                 ->limit(2)
                 ->get();
+        } else {
+            $topAds=[];
+        }
         /* calculate top ads */
 
 
@@ -167,16 +185,16 @@ class AdSearchController extends Controller {
 
 
         $ads = $query
-                ->paginate(2)
+                ->paginate(3)
                 ->appends(Input::except('page'));
 
 
         //Cache Categories
-        $categories = Cache::rememberForever('categories', function() {
-                    return DB::table('categories')
+        $categories = Cache::rememberForever('categories', function () {
+            return DB::table('categories')
                                     ->orderBy('category_weight', 'asc')
                                     ->get();
-                });
+        });
 
 
         //Load Component
@@ -191,12 +209,12 @@ class AdSearchController extends Controller {
 
     /**
      * Ad listing By User
-     * @param type $id
+     * @param string $id
      * @param type $name
      * @return type
      */
-    public function adsByUser($id, $name) {
-
+    public function adsByUser($id, $name)
+    {
         View::share('condition_collapse', '');
         View::share('price_collapse', '');
         View::share('sellertype_collapse', '');
@@ -204,7 +222,22 @@ class AdSearchController extends Controller {
 
         $query = DB::table('posts')
                 ->select(
-                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bg', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bg', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bg', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bg', 'postimages.postimage_thumbnail'
+                    'posts.*',
+                    'subcategories.subcategory_title_en',
+                    'subcategories.subcategory_title_bg',
+                    'categories.category_id',
+                    'categories.category_title_en',
+                    'categories.category_title_bg',
+                    'users.name',
+                    'users.city_id',
+                    'users.user_type',
+                    'cities.city_id',
+                    'cities.city_title_en',
+                    'cities.city_title_bg',
+                    'divisions.division_id',
+                    'divisions.division_title_en',
+                    'divisions.division_title_bg',
+                    'postimages.postimage_thumbnail'
                 )
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('categories', 'categories.category_id', '=', 'subcategories.parent_category_id')
@@ -218,7 +251,7 @@ class AdSearchController extends Controller {
                 ->groupBy('postimages.post_id');
 
         /* Calcualte top ads */
-        //7 day ago 
+        //7 day ago
         $startDate = date('Y-m-d 00:00:00', strtotime('-7 days'));
         //today
         $endDate = date('Y-m-d 23:59:59', time());
@@ -244,11 +277,11 @@ class AdSearchController extends Controller {
                 ->appends(Input::except('page'));
 
         //Cache Categories
-        $categories = Cache::rememberForever('categories', function() {
-                    return DB::table('categories')
+        $categories = Cache::rememberForever('categories', function () {
+            return DB::table('categories')
                                     ->orderBy('category_weight', 'asc')
                                     ->get();
-                });
+        });
 
         //Load Component
         $this->layout['siteContent'] = view('site.pages.listads')
@@ -267,8 +300,8 @@ class AdSearchController extends Controller {
      * @param type $title
      * @return type
      */
-    public function adDetails($id, $title = "") {
-
+    public function adDetails($id, $title = "")
+    {
         $adDetails = Post::findPublished($id);
 
         if (!$adDetails) {
@@ -284,7 +317,22 @@ class AdSearchController extends Controller {
 
         $relatedPosts = DB::table('posts')
                 ->select(
-                        'posts.*', 'subcategories.subcategory_title_en', 'subcategories.subcategory_title_bg', 'categories.category_id', 'categories.category_title_en', 'categories.category_title_bg', 'users.name', 'users.city_id', 'users.user_type', 'cities.city_id', 'cities.city_title_en', 'cities.city_title_bg', 'divisions.division_id', 'divisions.division_title_en', 'divisions.division_title_bg', 'postimages.postimage_thumbnail'
+                    'posts.*',
+                    'subcategories.subcategory_title_en',
+                    'subcategories.subcategory_title_bg',
+                    'categories.category_id',
+                    'categories.category_title_en',
+                    'categories.category_title_bg',
+                    'users.name',
+                    'users.city_id',
+                    'users.user_type',
+                    'cities.city_id',
+                    'cities.city_title_en',
+                    'cities.city_title_bg',
+                    'divisions.division_id',
+                    'divisions.division_title_en',
+                    'divisions.division_title_bg',
+                    'postimages.postimage_thumbnail'
                 )
                 ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
                 ->join('categories', 'categories.category_id', '=', 'subcategories.parent_category_id')
@@ -310,11 +358,11 @@ class AdSearchController extends Controller {
     }
 
     /**
-     * 
+     *
      * @param type $id
      */
-    public function ajaxView($id, $tok) {
-
+    public function ajaxView($id, $tok)
+    {
         if ($tok == csrf_token()) {
             $post = Post::find($id);
             $post->views = $post->views + 1;
@@ -325,8 +373,8 @@ class AdSearchController extends Controller {
         }
     }
 
-    public function test() {
-
+    public function test()
+    {
         $query = DB::table('posts')
                 ->select('posts.*', 'postimages.postimage_thumbnail')
                 ->join('postimages', 'postimages.post_id', '=', 'posts.post_id')
@@ -341,5 +389,4 @@ class AdSearchController extends Controller {
 
         exit();
     }
-
 }
