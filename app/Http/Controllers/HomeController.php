@@ -291,7 +291,7 @@ class HomeController extends Controller {
         //Message for Notification Builder
         Session::put('message', array(
             'title' => __('Updated'),
-            'body' => __('Youre account detail has been updated'),
+            'body' => __('Your account detail has been updated'),
             'type' => 'success'
         ));
 

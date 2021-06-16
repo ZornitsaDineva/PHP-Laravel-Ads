@@ -7,20 +7,26 @@ use App\Models\Message;
 use Session;
 use Auth;
 use DB;
-class MessengerController extends Controller {
+
+class MessengerController extends Controller
+{
 
     /**
      * Display a listing of the resource.
      *
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function index($id) {
-
+    public function index($id)
+    {
         $id = base64_url_decode($id);
 
-        $threads = Message::select('messages.*', 
-                DB::raw('count(read_status) as unread'),
-                'sender.name as sender', 'receiver.name as receiver')
+        $threads = Message::select(
+            'messages.*',
+            DB::raw('count(read_status) as unread'),
+            'sender.name as sender',
+            'receiver.name as receiver'
+        )
                 ->join('users as sender', 'sender.id', '=', 'messages.sender_id')
                 ->join('users as receiver', 'receiver.id', '=', 'messages.receiver_id')
                 ->where('sender_id', $id)
@@ -29,11 +35,10 @@ class MessengerController extends Controller {
                 ->orderBy('message_id')
                 ->get();
         
-        foreach($threads as $key=>$row){
-            
-            $unreadInThread = Message::where('receiver_id',$id)
-                    ->where("read_status",0)
-                    ->where('thread',$row->thread)
+        foreach ($threads as $key=>$row) {
+            $unreadInThread = Message::where('receiver_id', $id)
+                    ->where("read_status", 0)
+                    ->where('thread', $row->thread)
                     ->count();
             $threads[$key]->unread = $unreadInThread;
         }
@@ -47,10 +52,9 @@ class MessengerController extends Controller {
      * @param type $reader_id
      * @return type
      */
-    public function getMessageThread($code, $reader_id) {
-
-
-        $messages = Message::select('messages.message','messages.read_status', 'messages.sender_id', 'messages.receiver_id', 'sender.name as sender', 'receiver.name as receiver')
+    public function getMessageThread($code, $reader_id)
+    {
+        $messages = Message::select('messages.message', 'messages.read_status', 'messages.sender_id', 'messages.receiver_id', 'sender.name as sender', 'receiver.name as receiver')
                 ->join('users as sender', 'sender.id', '=', 'messages.sender_id')
                 ->join('users as receiver', 'receiver.id', '=', 'messages.receiver_id')
                 ->where('thread', $code)
@@ -62,7 +66,7 @@ class MessengerController extends Controller {
 
         //mark messages in this thread that is for me as read
         Message::where('thread', $code)
-               ->where("receiver_id",$reader_id)
+               ->where("receiver_id", $reader_id)
                 ->update(array(
                     'read_status' => 1 //mark as read
         ));
@@ -77,9 +81,8 @@ class MessengerController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function sendMessage(Request $request) {
-
-
+    public function sendMessage(Request $request)
+    {
         $sender_id = $request->sender_id;
         $receiver_id = $request->receiver_id;
         $thread = $request->thread;
@@ -111,7 +114,8 @@ class MessengerController extends Controller {
      * Get number of unread message by this user
      * @param type $userId
      */
-    public function getUnreadCount($userId){
+    public function getUnreadCount($userId)
+    {
         $count = Message::where('receiver_id', $userId)
                 ->where('read_status', 0)
                 ->count();
@@ -124,7 +128,8 @@ class MessengerController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         //
     }
 
@@ -134,7 +139,8 @@ class MessengerController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         //
     }
 
@@ -144,7 +150,8 @@ class MessengerController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         //
     }
 
@@ -154,7 +161,8 @@ class MessengerController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         //
     }
 
@@ -165,7 +173,8 @@ class MessengerController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         //
     }
 
@@ -175,8 +184,8 @@ class MessengerController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         //
     }
-
 }

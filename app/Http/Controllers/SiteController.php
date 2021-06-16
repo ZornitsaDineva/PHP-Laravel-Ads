@@ -52,10 +52,10 @@ class SiteController extends Controller {
                 ->groupBy('postimages.post_id');
 
         /* Get Top Views */
-        $topViewedPosts = $query->orderBy('posts.views', 'DESC')->limit(5)->get();
+        $topViewedPosts = $query->orderBy('posts.views', 'DESC')->limit(3)->get();
 
         /* Get Recent Posts */
-        $latestPosts = $query->orderBy('posts.created_at', 'DESC')->limit(5)->get();
+        $latestPosts = $query->orderBy('posts.created_at', 'DESC')->limit(3)->get();
 
 
         //Load Component
@@ -75,29 +75,16 @@ class SiteController extends Controller {
         return view('site.ajax.listlocations');
     }
 
-    /**
-     * Basic CMS features
-     */
-    public function page($key) {
-        
-        $page = Page::where('page_slug',$key)->first();
-        
-        //Load Component
-        $this->layout['siteContent'] = view('site.pages.simple')->with('page',$page);
-
-        //return view
-        return view('site.master', $this->layout);
-    }
-
+    
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+/*     public function store(Request $request) {
         //
-    }
+    } */
 
     /**
      * Display the specified resource.
@@ -105,9 +92,9 @@ class SiteController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+/*     public function show($id) {
         //
-    }
+    } */
 
     /**
      * Show the form for editing the specified resource.
@@ -115,9 +102,9 @@ class SiteController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+/*     public function edit($id) {
         //
-    }
+    } */
 
     /**
      * Update the specified resource in storage.
@@ -126,9 +113,9 @@ class SiteController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+  /*   public function update(Request $request, $id) {
         //
-    }
+    } */
 
     /**
      * Remove the specified resource from storage.
@@ -136,15 +123,15 @@ class SiteController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+/*     public function destroy($id) {
         //
-    }
+    } */
 
-    public function postAdImageHandler() {
+    /**public function postAdImageHandler() {
 
         error_reporting(E_ALL | E_STRICT);
         require('../app/Helpers/UploadHandler.php');
         $upload_handler = new UploadHandler();
-    }
+    }*/
 
 }
