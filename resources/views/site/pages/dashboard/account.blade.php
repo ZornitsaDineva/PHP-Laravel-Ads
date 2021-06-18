@@ -178,7 +178,6 @@
                             </div> 
 
 
-
                         </div> preferences-settings -->
 
                         <button type="submit" class="btn btn-success">@lang('Update')</button>
