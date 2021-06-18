@@ -16,7 +16,6 @@ class CreateRechargeRequestsTable extends Migration
         Schema::create('recharge_requests', function (Blueprint $table) {
             $table->increments('recharge_request_id');
             $table->integer('user_id');
-            //$table->string('bkash_code');
             $table->float('recharge_amount');
             $table->tinyInteger('request_status')->default(1);
             $table->timestamps();

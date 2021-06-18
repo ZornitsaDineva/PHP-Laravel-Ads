@@ -21,12 +21,14 @@ use App\Models\AdminMessage;
 
 session_start();
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
     //Layout holder
     private $layout;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
 
         $this->layout['notification'] = view('site.common.notification');
@@ -41,16 +43,14 @@ class HomeController extends Controller {
         View::share('subcategory_title', __('subcategory_title_en'));
         View::share('division_title', __('division_title_en'));
         View::share('city_title', __('city_title_en'));
-
-
     }
 
     /**
      * User Dashboard / Controlpanel
      * @return type
      */
-    public function dashboard() {
-
+    public function dashboard()
+    {
         $userAds = Post::where("user_id", \Auth::user()->id)
                 ->orderBy('post_id', 'desc')
                 ->get();
@@ -68,8 +68,8 @@ class HomeController extends Controller {
      * Show users favourite ads
      * @return type
      */
-    public function userFavourites() {
-
+    public function userFavourites()
+    {
         $favouriteAds = Favourites::where("user_id", \Auth::user()->id)
                 ->orderBy('post_id', 'desc')
                 ->get();
@@ -86,15 +86,14 @@ class HomeController extends Controller {
 
     /**
      * Show balance and refil page
-     * 
+     *
      * @return type
      */
-    public function balance() {
-
-
+    public function balance()
+    {
         $userid = \Auth::user()->id;
 
-        //7 day ago 
+        //7 day ago
         $startDate = date('Y-m-d 00:00:00', strtotime('-7 days'));
 
         //today
@@ -120,8 +119,8 @@ class HomeController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function requestRecharge(Request $request) {
-
+    public function requestRecharge(Request $request)
+    {
         $request->validate([
             'recharge_amount' => 'required|numeric'
         ]);
@@ -134,7 +133,7 @@ class HomeController extends Controller {
 
         Session::put('message', array(
             'title' => __('Request Sent'),
-            'body' =>__ ('Your account balance recharge request has been sent for approval.')
+            'body' =>__('Your account balance recharge request has been sent for approval.')
             ,
             'type' => 'success'
         ));
@@ -146,8 +145,8 @@ class HomeController extends Controller {
      * Show open threads
      * @return type
      */
-    public function messages() {
-
+    public function messages()
+    {
         View::share('userId', \Auth::user()->id);
 
         //Load Component
@@ -164,9 +163,8 @@ class HomeController extends Controller {
      * @param type $receiver
      * @return type
      */
-    public function viewMessage($code, $sender, $receiver) {
-
-
+    public function viewMessage($code, $sender, $receiver)
+    {
         $loggedId = \Auth::user()->id;
 
         if ($sender == $loggedId) {
@@ -212,15 +210,15 @@ class HomeController extends Controller {
     }
 
 //    public function threadsGet(){
-//        
+//
 //       }
 
     /**
      * Profile Info Edit Form
      * @return type
      */
-    public function account() {
-
+    public function account()
+    {
         $userData = User::find(\Auth::user()->id);
 
         //Load Component
@@ -235,8 +233,8 @@ class HomeController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function accountUpdate(Request $request) {
-
+    public function accountUpdate(Request $request)
+    {
         $authUser = \Auth::user();
         $userData = User::find($authUser->id);
 
@@ -267,19 +265,20 @@ class HomeController extends Controller {
             }
         }
 
-        /* Preference Comment */
+        /* Preference Comment 
         if ($request->has('comment_enabled')) {
             $userData->comment_enabled = 1;
         } else {
             $userData->comment_enabled = 0;
         }
+        */
 
-        /* Preference Newsletter */
+        /* Preference Newsletter 
         if ($request->has('newsletter_enabled')) {
             $userData->newsletter_enabled = 1;
         } else {
             $userData->newsletter_enabled = 0;
-        }
+        }*/
 
         $userData->name = $request->name;
         $userData->info = $request->info;
@@ -302,8 +301,8 @@ class HomeController extends Controller {
      * Show Ad Post Form
      * @return type
      */
-    public function postAd() {
-
+    public function postAd()
+    {
         $errors = Session::get('errors');
         if (isset($errors)) {
             //This is a validation redirect, dont empty image cache
@@ -332,9 +331,8 @@ class HomeController extends Controller {
      * Post Image Ajax Handler
      * @param Request $request
      */
-    public function postImageUpload(Request $request) {
-
-
+    public function postImageUpload(Request $request)
+    {
         $folder = Session::get('post-image-cache');
         if (!$folder) {
             $user = \Auth::user();
@@ -376,8 +374,8 @@ class HomeController extends Controller {
      * Post Image delete handler
      * @param Request $request
      */
-    public function postImageDeleteCache(Request $request) {
-
+    public function postImageDeleteCache(Request $request)
+    {
         $fileToDelete = $request->uploadname;
         $folder = Session::get('post-image-cache');
         if ($folder) {
@@ -393,9 +391,8 @@ class HomeController extends Controller {
      * Ad Post Submit Handler
      * @param Request $request
      */
-    public function postAdSubmit(Request $request) {
-
-
+    public function postAdSubmit(Request $request)
+    {
         $request->validate([
             'ad_type' => 'required',
             'ad_title' => 'required|string|max:200',
@@ -455,7 +452,6 @@ class HomeController extends Controller {
         $folder = Session::get('post-image-cache');
 
         foreach ($images as $orig => $filename) {
-
             $tempPath = base_path("public/images/temp/$folder/$filename");
             $newPath = base_path("public/images/" . $user->id . "_" . $filename);
 
@@ -493,8 +489,8 @@ class HomeController extends Controller {
      * Edit Ad Form
      * @return type
      */
-    public function editAd($post_id) {
-
+    public function editAd($post_id)
+    {
         $errors = Session::get('errors');
         if (isset($errors)) {
             //This is a validation redirect, dont empty image cache
@@ -529,8 +525,8 @@ class HomeController extends Controller {
      * Remove image from edit post
      * @param type $id
      */
-    public function postImageEditRemove($id) {
-
+    public function postImageEditRemove($id)
+    {
         $postImage = Postimage::find($id);
 
         $parentPost = Post::find($postImage->post_id);
@@ -564,9 +560,8 @@ class HomeController extends Controller {
      * @param Request $request
      * @return type
      */
-    public function editAdSubmit(Request $request) {
-
-
+    public function editAdSubmit(Request $request)
+    {
         $request->validate([
             'ad_type' => 'required',
             'ad_title' => 'required|string|max:200',
@@ -606,12 +601,10 @@ class HomeController extends Controller {
 
 
         if (strlen($request->imagenames) > 5) {
-
             $images = json_decode($request->imagenames);
             $folder = Session::get('post-image-cache');
 
             foreach ($images as $orig => $filename) {
-
                 $tempPath = base_path("public/images/temp/$folder/$filename");
                 $newPath = base_path("public/images/" . $user->id . "_" . $filename);
 
@@ -651,8 +644,8 @@ class HomeController extends Controller {
      * @param type $id
      * @return type
      */
-    public function deleteAd($id) {
-
+    public function deleteAd($id)
+    {
         $user = \Auth::user();
 
         $post = Post::where('post_id', $id)
@@ -660,7 +653,6 @@ class HomeController extends Controller {
                 ->first();
 
         foreach ($post->postimages as $aPostImage) {
-
             $image = base_path("public/$aPostImage->postimage_file");
             $thumbnail = base_path("public/$aPostImage->postimage_thumbnail");
 
@@ -683,8 +675,8 @@ class HomeController extends Controller {
     /**
      * Show report form for someones ad
      */
-    public function reportAd(Request $request) {
-
+    public function reportAd(Request $request)
+    {
         $already = Report::where("post_id", $request->post_id)
                 ->where("user_id", \Auth::user()->id)
                 ->first();
@@ -727,8 +719,8 @@ class HomeController extends Controller {
      * Set this ad as your favourite
      * @param type $id
      */
-    public function favourAd($id) {
-
+    public function favourAd($id)
+    {
         $user_id = \Auth::user()->id;
         $already = Favourites::where("post_id", $id)
                 ->where("user_id", $user_id)
@@ -757,8 +749,8 @@ class HomeController extends Controller {
         return Redirect::to("ad/$id");
     }
 
-    public function promoteAd($id) {
-
+    public function promoteAd($id)
+    {
         $user = \Auth::user();
 
         $user_id = $user->id;
@@ -820,7 +812,8 @@ class HomeController extends Controller {
      * Show help page
      * @return type
      */
-    public function help() {
+    public function help()
+    {
         //Load Component
         $this->layout['siteContent'] = view('site.pages.help');
 
@@ -832,7 +825,8 @@ class HomeController extends Controller {
      * Show help page
      * @return type
      */
-    public function sendAdminMessage(Request $request) {
+    public function sendAdminMessage(Request $request)
+    {
         Session::put('message', array(
             'title' => __('Admin Message'),
             'body' => __('You send mеssage to our administrator'),
@@ -851,6 +845,4 @@ class HomeController extends Controller {
 
         return Redirect::to("help");
     }
-
-
 }

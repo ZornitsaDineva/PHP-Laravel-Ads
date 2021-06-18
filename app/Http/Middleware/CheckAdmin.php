@@ -24,8 +24,8 @@ class CheckAdmin {
         if ($id == NULL || $id == 0) {
             
             Session::put('message', array(
-                'title' => 'You Are Logged Out',
-                'body' => 'Username or Password invalid',
+                'title' => __('You Are Logged Out'),
+                'body' => __('Username or Password invalid'),
                 'type' => 'warning'
             ));
               

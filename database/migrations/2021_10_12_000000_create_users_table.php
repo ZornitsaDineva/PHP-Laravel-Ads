@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             $table->integer('city_id')->nullable();
             $table->integer('user_type')->default(0);
             
-            $table->tinyInteger('comment_enabled')->default(0); 
-            $table->tinyInteger('newsletter_enabled')->default(1); 
+            //$table->tinyInteger('comment_enabled')->default(0); 
+            //$table->tinyInteger('newsletter_enabled')->default(1); 
             
             $table->tinyInteger('account_status')->default(1);  //1 Active, 2 Closed, 3 Banned
             

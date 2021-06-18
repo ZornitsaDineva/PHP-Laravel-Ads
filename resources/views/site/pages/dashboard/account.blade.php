@@ -158,10 +158,10 @@
                         </div>
                         <!-- change-password -->
 
-                        <!-- preferences-settings -->
+                        <!-- preferences-settings 
                         <div class="preferences-settings section">
                             <h2>@lang('Preferences')</h2>
-                            <!-- checkbox -->   
+                            checkbox 
                             <div class="form-group">                                
                                 <div class="col-sm-9">
                                     <label>
@@ -175,11 +175,11 @@
                                         <input type="checkbox" name="newsletter_enabled" <?php echo ($userData->newsletter_enabled ? 'checked' : '') ?>>@lang('Send me newsletter from BulSofa')
                                     </label>
                                 </div>                                
-                            </div>
+                            </div> 
 
 
 
-                        </div><!-- preferences-settings -->
+                        </div> preferences-settings -->
 
                         <button type="submit" class="btn btn-success">@lang('Update')</button>
                         <a href="#" class="btn btn-default">@lang('Cancel')</a>
