@@ -10,21 +10,21 @@
             <ol class="breadcrumb">
                 <li><a href="{{url('/dashboard')}}">@lang('Home')</a></li>
                 <li>@lang('Account')</li>
-            </ol><!-- breadcrumb -->						
+            </ol><!-- breadcrumb -->
             <h2 class="title">@lang("My Account")</h2>
         </div><!-- banner -->
 
-        @include('site.pages.dashboard.menu')			
+        @include('site.pages.dashboard.menu')
 
         <div class="ads-info">
             <div class="row">
 
 
-                <!--profile page--> 
+                <!--profile page-->
 
                 <div class="col-sm-9">
                     {!! Form::model($userData,['url' => 'account/update', 'class'=> 'form-horizontal', 'method' => 'post']) !!}
-                    <div >
+                    <div>
                         <!-- profile-details -->
                         <div class="profile-details section">
                             <h2>@lang('Account Details')</h2>
@@ -38,14 +38,14 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                     @endif
-                                </div>                                
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-sm-3">@lang('Email Address')</label>
                                 <div class="col-sm-9">
-                                    {!! Form::email('email', null, ['class' => 'form-control', 'disabled'=> 'true']) !!}    
-                                </div>                                
+                                    {!! Form::email('email', null, ['class' => 'form-control', 'disabled'=> 'true']) !!}
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -57,9 +57,9 @@
                                         <strong>{{ $errors->first('mobile') }}</strong>
                                     </span>
                                     @endif
-                                </div>                                
+                                </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label class="control-label col-sm-3">@lang('About')</label>
                                 <div class="col-sm-9">
@@ -69,13 +69,13 @@
                                         <strong>{{ $errors->first('info') }}</strong>
                                     </span>
                                     @endif
-                                </div>                                
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-sm-3">@lang('Your Location')</label>
                                 <div class="col-sm-9">
-                                     <?php
+                                    <?php
                                     $columnCity = __('city_title_en');
                                     if (old('city_id')) {
                                         //Form validation redirect
@@ -93,14 +93,14 @@
                                     }
                                     ?>
                                     <a class="btn btn-select" data-toggle="modal" data-target="#popupSelectModal" data-href="{{url('ajax/locations')}}" href="#">
-                                        <span id='location-selector-text' class="change-text">{{$city_text}}</span> 
+                                        <span id='location-selector-text' class="change-text">{{$city_text}}</span>
                                         <i class="fa fa-angle-down pull-right"></i>
-                                    </a>                                                                                                               
+                                    </a>
                                     {!! Form::hidden('city_id', $city_id , ['id' => 'location-selector-value']) !!}
                                     @include('site.common.categorymodal')
-                                    
+
                                 </div>
-                            </div>	                            
+                            </div>
 
 
                             <div class="form-group">
@@ -113,10 +113,10 @@
                                     ?>
                                     {{ Form::select('user_type', $selectData, $userData->user_type, ['class' => 'form-control']) }}
 
-                                   
+
                                 </div>
 
-                            </div>					
+                            </div>
                         </div><!-- profile-details -->
 
                         <!-- change-password -->
@@ -132,7 +132,7 @@
                                         <strong>The Password is Incorrect</strong>
                                     </span>
                                     @endif
-                                </div>                                
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -144,41 +144,21 @@
                                         <strong>{{ $errors->first('password_new') }}</strong>
                                     </span>
                                     @endif
-                                </div>                                
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-sm-3">@lang('Repeat Password')</label>
                                 <div class="col-sm-9">
-                                    <input type="password" name="password_new_confirmation" class="form-control">                                    
-                                </div>                                
+                                    <input type="password" name="password_new_confirmation" class="form-control">
+                                </div>
                             </div>
 
 
                         </div>
                         <!-- change-password -->
 
-                        <!-- preferences-settings 
-                        <div class="preferences-settings section">
-                            <h2>@lang('Preferences')</h2>
-                            checkbox 
-                            <div class="form-group">                                
-                                <div class="col-sm-9">
-                                    <label>
-                                        <input type="checkbox" name="comment_enabled" <?php echo ($userData->comment_enabled ? 'checked' : '') ?>>@lang('Allow comments on my posts')
-                                    </label>
-                                </div>                                
-                            </div>
-                            <div class="form-group">                                
-                                <div class="col-sm-9">
-                                    <label>
-                                        <input type="checkbox" name="newsletter_enabled" <?php echo ($userData->newsletter_enabled ? 'checked' : '') ?>>@lang('Send me newsletter from BulSofa')
-                                    </label>
-                                </div>                                
-                            </div> 
 
-
-                        </div> preferences-settings -->
 
                         <button type="submit" class="btn btn-success">@lang('Update')</button>
                         <a href="#" class="btn btn-default">@lang('Cancel')</a>
@@ -188,8 +168,8 @@
                 <!-- profile -->
 
 
-                <!-- sidebar --> 
-                @include('site.pages.dashboard.sidebar')				
+                <!-- sidebar -->
+                @include('site.pages.dashboard.sidebar')
 
             </div><!-- row -->
         </div>

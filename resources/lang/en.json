@@ -213,7 +213,7 @@
     "Logo": "BulSofa",
     "Title":"Ads",
     "Insufficient Funds":"Insufficient Funds",
-    "You need 100EUR for promoting an ad 7 days, please refill":"You need 1000EUR for promoting an ad 7 days, please refill",
+    "You need 100EUR for promoting an ad 7 days, please refill":"You need 100EUR for promoting an ad 7 days, please refill",
     "Order branded T-shirts and business cards to promote your ad":"Order branded T-shirts and business cards to promote your ad",
     "Enter text here...":"Enter text here...",
     "Person information":"Person information",
@@ -254,7 +254,9 @@
     "By signing up for an account you agree to our Terms and Conditions":"By signing up for an account you agree to our Terms and Conditions",
     "Sorry":"Sorry",
     "Username or Password invalid":"Username or Password invalid",
-    "The administrator is in the system":"The administrator is in the system"
+    "The administrator is in the system":"The administrator is in the system",
+    "Тhis ad will be on top 2 on all ads for 7 days":"Тhis ad will be on top 2 on all ads for 7 days"
+   
   
    
 

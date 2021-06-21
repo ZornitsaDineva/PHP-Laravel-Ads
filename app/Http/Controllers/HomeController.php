@@ -778,10 +778,10 @@ class HomeController extends Controller
             ));
         } else {
             //Insufficient Funds
-            if ($user->user_balance < 1000) {
+            if ($user->user_balance < 100) {
                 Session::put('message', array(
                     'title' => __('Insufficient Funds'),
-                    'body' => __('You need 10EUR for promoting an ad 7 days, please refill '),
+                    'body' => __('You need 100EUR for promoting an ad 7 days, please refill'),
                     'type' => 'danger'
                 ));
             } else {
@@ -797,8 +797,8 @@ class HomeController extends Controller
                 $featured->save();
 
                 Session::put('message', array(
-                    'title' => __('Ad Promoted to show as top ad'),
-                    'body' => __('You will see this ad on top 2 on all ads for 7 days'),
+                    'title' => __('Ad Promoted to show as the top ad'),
+                    'body' => __('Тhis ad will be on top 2 on all ads for 7 days'),
                     'type' => 'success'
                 ));
             }

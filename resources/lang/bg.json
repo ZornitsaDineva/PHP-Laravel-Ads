@@ -216,7 +216,7 @@
     "Logo": "BulSofa",
     "Title":"Реклами",
     "Insufficient Funds":"Недостатъчна наличност",
-    "You need 100EUR for promoting an ad 7 days, please refill":"Баланса трябва да е 1000EUR за да прмотирате тази реклама, моля презаредете",
+    "You need 100EUR for promoting an ad 7 days, please refill":"Баланса трябва да е 100EUR за да прмотирате тази реклама 7 дена, моля презаредете",
     "Order branded T-shirts and business cards to promote your ad":"Поръчйте си тениски и визитки за да подкрепите рекламата си",
      "Enter text here...":"Въведете текст...",
      "Person information":"Информация за човека",
@@ -248,7 +248,7 @@
      "This ad doesnt exist":"Тази реклама не съществува",
      "This ad does not exist, or it does not belong to you.":"Тази реклама не съществува или не ви принадлежи",
      "Already Running Promotion":"Вече е в промоция",
-     "You can see this ad on your dashboard > balance":"Можете да видите тази реклама на таблото си в баланс",
+     "We can see this ad on dashboard ":"Можете да видите тази реклама на таблото си в баланс",
      "Ad Promoted to show as the top ad":"Рекламата е популяризирана, и ще се покаже като водеща реклама",
      "Admin Message":"Съобщение до администратора",
      "You send mеssage to our administrator":"Вие изпратихте съобщение до нашия администратор",
@@ -257,7 +257,8 @@
      "By signing up for an account you agree to our Terms and Conditions":"Регистрирайки се, вие се съгласявате с Общите условия",
      "Sorry":"Грешка",
     "Username or Password invalid":"Грешена парола или име",
-    "The administrator is in the system":"Администраторът е в системата"
+    "The administrator is in the system":"Администраторът е в системата",
+    "Тhis ad will be on top 2 on all ads for 7 days":"Рекламата ще бъде в топ 2 за 7 дена"
 
 
 

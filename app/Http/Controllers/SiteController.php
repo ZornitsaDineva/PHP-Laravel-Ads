@@ -51,11 +51,13 @@ class SiteController extends Controller {
                 ->where("posts.status", 1)
                 ->groupBy('postimages.post_id');
 
+        $query1 = clone $query;
+                
         /* Get Top Views */
         $topViewedPosts = $query->orderBy('posts.views', 'DESC')->limit(3)->get();
-
+                
         /* Get Recent Posts */
-        $latestPosts = $query->orderBy('posts.created_at', 'DESC')->limit(3)->get();
+        $latestPosts = $query1->orderBy('posts.created_at', 'DESC')->limit(3)->get();
 
 
         //Load Component

@@ -25,7 +25,7 @@ class PostsSeeder extends Seeder {
         
         $this->command->info("Generating $numberOfUsers fake users..");
         /* Fake Users */
-        DB::table('Users')->delete();
+        //DB::table('Users')->delete();
         $pass = Hash::make('123456'); //for all fake user pass is 123456
         for ($nc = 1; $nc <= $numberOfUsers; $nc++) {
 
@@ -35,7 +35,7 @@ class PostsSeeder extends Seeder {
                 'password' => $pass,
                 'mobile' => $faker->phoneNumber,                
                 'user_type' => $faker->numberBetween(0, 1),
-                'city_id' => $faker->numberBetween(1, 64),
+                'city_id' => $faker->numberBetween(1, 329),
                 'user_balance' => "2000"
             ]);
         }
@@ -54,11 +54,12 @@ class PostsSeeder extends Seeder {
             
             $postId = App\Models\Post::create([
                 'user_id' => $rndUser,
+                'city_id' => $faker->numberBetween(1, 329),
                 'subcategory_id' => $faker->numberBetween(2, 65),
                 'ad_type' => "newsell",
                 'ad_title' => $faker->complexProduct,
                 'item_condition' => $types[$faker->numberBetween(0,1)],
-                'item_price' => $faker->price(1000, 50000),
+                'item_price' => $faker->price(1000, 5000000),
                 'price_negotiable' => '0',
                 'model' => $faker->size." ".$faker->material,
                 'brand' => $faker->company,
