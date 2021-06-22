@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('adminContent')
 
-<div class="row">    
+<div class="row">
     <!-- left column -->
     <div class="col-md-9">
         <!-- general form elements -->
@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label for="category_title_en" class="col-sm-3 control-label">Category Name (English)</label>
                     <div class="col-sm-9">
-                        {!! Form::text('category_title_en', null, ['class' => 'form-control']) !!}                        
+                        {!! Form::text('category_title_en', null, ['class' => 'form-control']) !!}
                         @if ($errors->has('category_title_en'))
                         <span class="text-danger">
                             <i class="fa fa-warning"></i> {{ $errors->first('category_title_en') }}
@@ -40,7 +40,7 @@
                     <label for="category_title_bg" class="col-sm-3 control-label">Category Name (Bulgarian)</label>
 
                     <div class="col-sm-9">
-                        {!! Form::text('category_title_bg', null, ['class' => 'form-control']) !!}                        
+                        {!! Form::text('category_title_bg', null, ['class' => 'form-control']) !!}
                         @if ($errors->has('category_title_bg'))
                         <span class="text-danger">
                             <i class="fa fa-warning"></i> {{ $errors->first('category_title_bg') }}
@@ -52,7 +52,7 @@
                 <div class="form-group">
                     <label for="category_image" class="col-sm-3 control-label">Category Image</label>
                     <div class="col-sm-5">
-                        <input name="category_image" class="form-control" type="file" id="product_image">
+                        <input name="category_image" class="form-control" type="file" id="category_image">
                         @if ($errors->has('category_image'))
                         <span class="text-danger">
                             <i class="fa fa-warning"></i> {{ $errors->first('category_image') }}
@@ -80,7 +80,7 @@
                     <label for="category_caption" class="col-sm-3 control-label">Caption</label>
 
                     <div class="col-sm-5">
-                        {!! Form::textarea('category_caption', null, [ 'rows'=> '3', 'class' => 'form-control']) !!}                        
+                        {!! Form::textarea('category_caption', null, [ 'rows'=> '3', 'class' => 'form-control']) !!}
                     </div>
                 </div>
 
@@ -100,8 +100,8 @@
 
             </div>
             <!-- /.box-body -->
-            <div class="box-footer">                    
-                <div class="form-group">                    
+            <div class="box-footer">
+                <div class="form-group">
                     <div class="col-sm-6 col-sm-offset-3">
                         <button type="submit" class="btn btn-success btn-lg">{{$process}} Category</button>
                     </div>
@@ -109,11 +109,11 @@
             </div>
             <!-- /.box-footer -->
 
-            {!! Form::close() !!}       
+            {!! Form::close() !!}
         </div>
-        <!-- /.box -->    
-    </div>    
-    
+        <!-- /.box -->
+    </div>
+
 </div>
 <!-- /.row -->
 
