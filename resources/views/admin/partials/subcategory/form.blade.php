@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="subcategory_title_bg" class="col-sm-3 control-label">Sub Category Name (Bengali)</label>
+                    <label for="subcategory_title_bg" class="col-sm-3 control-label">Sub Category Name (Bulgarian)</label>
 
                     <div class="col-sm-9">
                         {!! Form::text('subcategory_title_bg', null, ['class' => 'form-control']) !!}                        
@@ -74,13 +74,13 @@
                 </div>
 
 
-                <div class="form-group">
+               <!-- <div class="form-group">
                     <label for="subcategory_caption" class="col-sm-3 control-label">Caption</label>
 
                     <div class="col-sm-5">
                         {!! Form::textarea('subcategory_caption', null, [ 'rows'=> '3', 'class' => 'form-control']) !!}                        
                     </div>
-                </div>
+                </div>-->
 
                 <div class="form-group">
                     <label for="subcategory_weight" class="col-sm-3 control-label">Sub Category Weight</label>

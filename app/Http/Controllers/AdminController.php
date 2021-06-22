@@ -548,7 +548,7 @@ class AdminController extends Controller
             $validatedData = $request->validate([
                 'category_title_en' => 'required|string|unique:categories|max:50',
                 'category_title_bg' => 'required|string|unique:categories|max:50',
-                'category_image' => 'required',
+                //'category_image' => 'required',
                 'category_icon' => 'required'
             ]);
 
@@ -560,7 +560,7 @@ class AdminController extends Controller
                 'type' => 'success'
             ));
 
-            $category->category_image = "";
+            //$category->category_image = "";
         }
 
 
@@ -571,7 +571,7 @@ class AdminController extends Controller
         $category->category_icon = $request->category_icon;
 
         $category->category_weight = $request->category_weight;
-        $category->category_caption = $request->category_caption;
+        //$category->category_caption = $request->category_caption;
 
 
         /*

@@ -18,9 +18,9 @@ class PostsSeeder extends Seeder {
         $faker->locale('en_GB'); 
 
         
-        $numberOfUsers = 10; //<- change this to less numbers if you want less test data
-        $numberOfAds = 300; //<- change this to less numbers if you want less test data
-        $numberOfPromoted = ceil($numberOfAds / 20);
+        $numberOfUsers = 329; //<- change this to less numbers if you want less test data
+        $numberOfAds = 329; //<- change this to less numbers if you want less test data
+        $numberOfPromoted = ceil($numberOfAds / 5);
         
         
         $this->command->info("Generating $numberOfUsers fake users..");
