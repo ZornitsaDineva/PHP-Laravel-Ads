@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <!--<div class="form-group">
+                <div class="form-group">
                     <label for="category_image" class="col-sm-3 control-label">Category Image</label>
                     <div class="col-sm-5">
                         <input name="category_image" class="form-control" type="file" id="product_image">
@@ -59,7 +59,7 @@
                         </span>
                         @endif
                     </div>
-                </div>-->
+                </div>
 
 
                 <div class="form-group">
