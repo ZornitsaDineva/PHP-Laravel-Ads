@@ -80,12 +80,12 @@ class AdminController extends Controller
             ->join('subcategories', 'subcategories.subcategory_id', '=', 'posts.subcategory_id')
             ->join('users', 'users.id', '=', 'posts.user_id')
             ->join('cities', 'cities.city_id', '=', 'users.city_id')
-            ->orderBy('posts.post_id', "DESC");
+            ->orderBy('posts.post_id', "ASC");
 
 
         return \DataTables::of($posts)
             ->editColumn('status', function ($row) {
-                $status = 'something wrong';
+                $status = 'something';
                 if ($row->status == 1) {
                     $status = '<span class="label label-success">Published</span>';
                 } elseif ($row->status == 0) {
@@ -172,7 +172,7 @@ class AdminController extends Controller
 
         return \DataTables::of($users)
             ->editColumn('account_status', function ($row) {
-                $status = 'something wrong';
+                $status = 'something';
                 if ($row->account_status == 1) {
                     $status = "<span class='label label-success'>Active</span>";
                 } elseif ($row->account_status == 0) {
@@ -248,13 +248,13 @@ class AdminController extends Controller
             ->join('users', 'users.id', '=', 'reports.user_id')
             ->join('posts', 'posts.post_id', '=', 'reports.post_id')
             ->orderBy("report_status", 'asc')
-            //                ->where('report_status', '=', 0)
+            //->where('report_status', '=', 1)
         ;
 
 
         return \DataTables::of($reports)
             ->editColumn('status', function ($row) {
-                $status = 'something wrong';
+                $status = 'something';
                 if ($row->status == 1) {
                     $status = '<span class="label label-success">Published</span>';
                 } elseif ($row->status == 0) {
@@ -263,7 +263,7 @@ class AdminController extends Controller
                 return $status;
             })
             ->editColumn('report_status', function ($row) {
-                $status = 'something wrong';
+                $status = 'something';
                 if ($row->report_status == 1) {
                     $status = '<span class="label label-success">Reviewed</span>';
                 } elseif ($row->report_status == 0) {
@@ -908,29 +908,7 @@ class AdminController extends Controller
      * Sample page with a table
      */
 
-    public function table()
-    {
-
-
-        //Load Component
-        //Load Component
-        $this->layout['adminContent'] = view('admin.partials.tables');
-
-        //return view
-        return view('admin.master', $this->layout);
-    }
-
-    public function form()
-    {
-
-
-        //Load Component
-        //Load Component
-        $this->layout['adminContent'] = view('admin.partials.form');
-
-        //return view
-        return view('admin.master', $this->layout);
-    }
+   
 
     public function logout()
     {
