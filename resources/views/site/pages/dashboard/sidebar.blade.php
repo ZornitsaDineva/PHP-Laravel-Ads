@@ -20,7 +20,7 @@
 
             <!-- single-cta -->
             <div class="single-cta">
-                <h5>@lang('Need Help?')</h5>
+                <h5>@lang('Connection with the oparator')</h5>
                 <p><span>@lang('Give a Call ')</span><a href="tellto:08048100000"> 08048100000</a></p>
             </div>
             <!-- single-cta -->

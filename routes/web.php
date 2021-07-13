@@ -30,7 +30,7 @@ Route::group(
     Route::get('/ads-by/{id}/{username}', 'AdSearchController@adsByUser');
     Route::get('/ad/{id}/{title}', 'AdSearchController@adDetails');
     Route::get('/ad/{id}', 'AdSearchController@adDetails');
-    Route::get('/test', 'AdSearchController@test');
+  
 
 
     /* Site Ajax Location and Categories */

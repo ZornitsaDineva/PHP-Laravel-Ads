@@ -16,10 +16,9 @@
                             <th>#</th>
                             <th>User Name</th>
                             <th>Amount</th>
-                            <th>Code</th>
                             <th>Status</th>
                             <th>Date</th>
-                            <th style="min-width: 80px"></th>
+                            <th style="min-width: 80px">Action</th>
                         </tr>
                     </thead>
                 </table>

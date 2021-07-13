@@ -28,8 +28,8 @@ class AdSearchController extends Controller
         $usertype = [];
         $usertype[0] = __('Individual');
         $usertype[1] = __('Dealer');
-        View::share('usertype', $usertype);
 
+        View::share('usertype', $usertype);
         View::share('category_title', __('category_title_en'));
         View::share('subcategory_title', __('subcategory_title_en'));
         View::share('division_title', __('division_title_en'));
@@ -273,7 +273,7 @@ class AdSearchController extends Controller
 
         $ads = $query
                 ->orderBy('post_id', 'desc')
-                ->paginate(10)
+                ->paginate(5)
                 ->appends(Input::except('page'));
 
         //Cache Categories
@@ -373,20 +373,4 @@ class AdSearchController extends Controller
         }
     }
 
-    public function test()
-    {
-        $query = DB::table('posts')
-                ->select('posts.*', 'postimages.postimage_thumbnail')
-                ->join('postimages', 'postimages.post_id', '=', 'posts.post_id')
-                ->groupBy('postimages.post_id');
-
-
-
-        $data = $query->get();
-        foreach ($data as $row) {
-            echo $row->post_id . "<br/>";
-        }
-
-        exit();
-    }
 }
