@@ -203,43 +203,7 @@
                                     </div>                                    
                                 </div>
                             </div> 
-
- <!--                           <div class="row form-group model-name">
-                                <label class="col-sm-3 label-title">@lang('Delivery')</label>
-                                <div class="col-sm-9">
-                                    <?php
-                                    $selectData = [];
-                                    $selectData["In Person"] = __('In Person');
-                                    $selectData["By Post"] = __('By Post');
-                                    ?>
-                                    {{ Form::select('delivery', $selectData, null, ['class' => 'form-control']) }}                                   
-                                </div>
-                            </div>
-
-                            <div class="row form-group model-name">
-                                <label class="col-sm-3 label-title">@lang('Brand')</label>
-                                <div class="col-sm-9">                                    
-                                    {!! Form::text('brand', null , ['form'=>'new-post-form', 'class' => 'form-control' ]) !!}
-                                    @if ($errors->has('brand'))
-                                    <span class="text-danger">
-                                        <i class="fa fa-warning"></i> {{ $errors->first('brand') }}
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="row form-group model-name">
-                                <label class="col-sm-3 label-title">@lang('Model')<span class="required">*</span></label>
-                                <div class="col-sm-9">                                    
-                                    {!! Form::text('model', null , ['form'=>'new-post-form', 'class' => 'form-control' ]) !!}
-                                    @if ($errors->has('model'))
-                                    <span class="text-danger">
-                                        <i class="fa fa-warning"></i> {{ $errors->first('model') }}
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-                                -->
+                                                      
 
                             <div class="row form-group item-description">
                                 <label class="col-sm-3 label-title">@lang('Short Description')<span class="required">*</span></label>
@@ -291,9 +255,7 @@
                         </div><!-- section -->
                         @endif
 
-                        <!--include inline register-->
-
-                        <!--include make your ad premium-->
+                               
 
 
                         {!! Form::hidden('imagenames', null , ['id' => 'imagenames', 'form'=>'new-post-form', 'class' => 'form-control' ]) !!}
@@ -501,27 +463,7 @@ if (old('imagenames')) {
                                 };
 
                                 window.onbeforeunload = null;
-
-//                                $("#new-post-form").change(function () {
-//
-//                                    if (!submit) {
-//                                        window.onbeforeunload = function () {
-//                                            return "Are you sure you wish to leave the page?";
-//                                        };
-//                                    }else{
-//                                        window.onbeforeunload  = null;
-//                                    }
-//                                });
-//
-//                                var submitted = false;
-//                                $("form").submit(function () {
-//                                    submitted = true;
-//                                });
-
-
-
-
-
+                  
 
 </script>
 @endpush
