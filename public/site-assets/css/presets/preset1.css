@@ -165,7 +165,8 @@ a.verified i,
 
 #main {
  	/*background-image: url(../../images/bg/main.png);*/
-        background-image: url(../../images/bg/2_6051efd95faf3.jpg);
+    /*background-image: url(../../images/bg/2_6051efd95faf3.jpg);*/
+	
 }
 
 #download.parallax-section:before {
