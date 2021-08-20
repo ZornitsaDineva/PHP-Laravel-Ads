@@ -16,7 +16,7 @@
                         <a href="{{url('post-ad')}}" class="btn btn-primary">@lang('Place Your Ad')</a>
                     </div>
                 </div>
-                <div class="col-sm-6 pull-right">                            
+                <div class="col-xs-12 col-sm-6 col-lg-6 pull-right">                            
                     @include('site.bulgariamap')
                 </div>
             </div><!-- row -->
@@ -36,7 +36,7 @@
         </div><!-- row -->	
 
 
-        <div class="section services">
+        <div class="section services ">
             <!-- single-service -->
             <?php
             $categories = Cache::rememberForever('categories', function () {
@@ -45,11 +45,14 @@
                                         ->get();
             });
             $rowItem = 0;
+            
             ?>
+
             @foreach($categories as $aCat)
             @if($rowItem ==0)
             <div class="row">
-                @endif
+            @endif
+            
                 <div class="single-service">
                     <div class="services-icon"><img src="{{asset($aCat->category_image)}}" alt="images" class="img-responsive"></div>
                     <h5>{{$aCat->$category_title}}</h5>
@@ -73,7 +76,7 @@
             </div>
             @endif
             @endforeach
-
+            
             <!-- single-service -->
 
 
